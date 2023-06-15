@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* Light Mode Vars */
+  :root {
+    --background: hsl(0 0% 100%);
+    --foreground: hsl(222.2 47.4% 11.2%);
+
+    --paper: hsl(0 0% 100%);
+  }
+
+  /* Dark Mode Vars */
+  .dark {
+    --background: hsl(180 4% 5%);
+    --foreground: hsl(213 31% 91%);
+
+    --paper: hsl(0 0% 9%);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}

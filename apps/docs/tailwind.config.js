@@ -9,7 +9,39 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        paper: "var(--paper)",
+      },
+
+      animation: {
+        fadeIn: "fadeIn 0.25s ease-in-out forwards",
+        fadeOut: "fadeOut 0.2s ease-in-out forwards",
+        zoomIn: "zoomIn 0.25s ease-in-out forwards",
+        zoomOut: "zoomOut 0.2s ease-in-out forwards",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        fadeOut: {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
+        zoomIn: {
+          "0%": { opacity: "0", scale: "0.85" },
+          "100%": { opacity: "1", scale: "1" },
+        },
+        zoomOut: {
+          "100%": { opacity: "0", scale: "0.85" },
+          "0%": { opacity: "1", scale: "1" },
+        },
+      },
+    },
   },
   plugins: [],
+  darkMode: "class",
 };
