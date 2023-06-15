@@ -1,0 +1,9 @@
+{
+  "extends": "@ezui/tsconfig/base.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "lib": ["ESNext", "dom"],
+    "target": "ES2015"
+  }
+}

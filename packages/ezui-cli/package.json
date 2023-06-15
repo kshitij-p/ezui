@@ -1,0 +1,35 @@
+{
+  "name": "@ezui/cli",
+  "version": "0.4.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/tests/playground.ts --format esm,cjs --dts && node ./dist/playground.js",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "test": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@ezui/tsconfig": "workspace:*",
+    "@vitest/coverage-c8": "^0.31.1",
+    "eslint": "^7.32.0",
+    "eslint-config-ezui": "workspace:*",
+    "tsup": "^5.10.1",
+    "typescript": "^4.5.3",
+    "vitest": "^0.31.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "puppeteer": "^20.4.0",
+    "zod": "^3.21.4"
+  }
+}
