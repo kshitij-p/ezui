@@ -11,9 +11,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        paper: "var(--paper)",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        paper: "hsl(var(--paper))",
       },
 
       animation: {
