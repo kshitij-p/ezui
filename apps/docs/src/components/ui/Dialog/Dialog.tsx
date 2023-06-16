@@ -8,6 +8,8 @@ const Dialog = RadixDialog.Root;
 
 const DialogTrigger = RadixDialog.Trigger;
 
+const DialogClose = RadixDialog.Close;
+
 const DialogPortal = ({ className, children, ...rest }: RadixDialog.DialogPortalProps) => {
   return (
     <RadixDialog.Portal {...rest} className={cn("fixed inset-0 z-[1400]", className)}>
@@ -74,7 +76,7 @@ const DialogContent = React.forwardRef<
       <RadixDialog.Content
         {...rest}
         className={cn(
-          "fixed z-[1400] h-[50rem] max-h-[75vh] w-[50rem] max-w-[90vw] origin-top-left overflow-y-auto rounded bg-paper p-6 shadow shadow-black/20 animate-zoomIn data-[state='closed']:animate-zoomOut",
+          "fixed z-[1400] w-full sm:max-w-lg max-w-[90vw] origin-top-left overflow-y-auto rounded bg-paper p-6 shadow shadow-black/20 animate-zoomIn data-[state='closed']:animate-zoomOut flex flex-col gap-4",
           positionLookup.x[position.x],
           positionLookup.y[position.y],
           className
@@ -88,10 +90,32 @@ const DialogContent = React.forwardRef<
 });
 DialogContent.displayName = RadixDialog.Content.displayName;
 
-const DialogHeader = ({ ...rest }: React.HTMLAttributes<HTMLDivElement>) => <div {...rest} />;
+const DialogHeader = React.forwardRef(
+  (
+    { children, className, ...rest }: React.HTMLAttributes<HTMLDivElement>,
+    passedRef: React.ForwardedRef<HTMLDivElement>
+  ) => (
+    <div {...rest} className={cn("flex flex-col space-y-2 text-center sm:text-left", className)} ref={passedRef}>
+      {children}
+    </div>
+  )
+);
 DialogHeader.displayName = "DialogHeader";
 
-const DialogFooter = ({ ...rest }: React.HTMLAttributes<HTMLDivElement>) => <div {...rest} />;
+const DialogFooter = React.forwardRef(
+  (
+    { children, className, ...rest }: React.HTMLAttributes<HTMLDivElement>,
+    passedRef: React.ForwardedRef<HTMLDivElement>
+  ) => (
+    <div
+      {...rest}
+      className={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className)}
+      ref={passedRef}
+    >
+      {children}
+    </div>
+  )
+);
 DialogFooter.displayName = "DialogFooter";
 
 const DialogTitle = React.forwardRef<
@@ -113,8 +137,6 @@ const DialogDescription = React.forwardRef<
   <RadixDialog.Description {...rest} className={cn("text-sm", className)} ref={passedRef} />
 ));
 DialogDescription.displayName = RadixDialog.Description.displayName;
-
-const DialogClose = RadixDialog.Close;
 
 export {
   Dialog,
