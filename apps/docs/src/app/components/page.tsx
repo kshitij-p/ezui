@@ -19,10 +19,19 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/Dialog";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/Select";
 
 const page = () => {
   return (
-    <div>
+    <div className="p-8">
       <Dialog>
         <DialogTrigger>Edit Profile</DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
@@ -32,15 +41,11 @@ const page = () => {
           </DialogHeader>
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
-              <label htmlFor="name" className="text-right">
-                Name
-              </label>
+              <label htmlFor="name">Name</label>
               <input id="name" defaultValue="Pedro Duarte" className="col-span-3" />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
-              <label htmlFor="username" className="text-right">
-                Username
-              </label>
+              <label htmlFor="username">Username</label>
               <input id="username" defaultValue="@peduarte" className="col-span-3" />
             </div>
           </div>
@@ -67,6 +72,24 @@ const page = () => {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+
+      <Select>
+        <SelectTrigger className="w-[180px]">
+          <SelectValue placeholder="Select a fruit" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            <SelectLabel className="">Fruits</SelectLabel>
+            <SelectItem value="apple">Apple</SelectItem>
+            <SelectItem value="banana">Banana</SelectItem>
+            <SelectItem value="blueberry">Blueberry</SelectItem>
+            <SelectItem value="grapes">Grapes</SelectItem>
+            <SelectItem disabled value="pineapple">
+              Pineapple
+            </SelectItem>
+          </SelectGroup>
+        </SelectContent>
+      </Select>
     </div>
   );
 };

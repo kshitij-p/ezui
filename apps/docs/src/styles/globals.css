@@ -9,6 +9,14 @@
     --foreground: 222.2 47.4% 11.2%;
 
     --paper: 0 0% 100%;
+
+    --border: 175 84% 32%;
+
+    --accent: 175 61% 19%;
+
+    --scroll-thumb: 0 0% 64%;
+
+    --invalid: 0 90% 71%;
   }
 
   /* Dark Mode Vars */
@@ -17,6 +25,8 @@
     --foreground: 213 31% 91%;
 
     --paper: 0 0% 9%;
+
+    --scroll-thumb: 0 0% 45%;
   }
 
   body {
