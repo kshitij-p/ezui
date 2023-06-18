@@ -23,7 +23,7 @@ const AlertDialogOverlay = React.forwardRef<
   <RadixAlertDialog.Overlay
     {...rest}
     className={cn(
-      "fixed inset-0 z-[1399] w-full bg-background/10 backdrop-blur-[6px] transition-all duration-100",
+      "fixed inset-0 z-[1399] w-full bg-background/10 backdrop-blur-[8px] transition-all duration-100",
       className
     )}
     ref={passedRef}

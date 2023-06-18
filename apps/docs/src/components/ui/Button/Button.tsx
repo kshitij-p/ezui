@@ -12,9 +12,10 @@ const ALL_BUTTON_VARIANTS = {
     xl: "h-14 text-xl px-8 border-2 rounded focus-visible:ring-offset-4",
   },
   type: {
-    primary: "bg-primary border-none hover:bg-primary/80 focus-visible:bg-primary/80",
+    primary: "bg-primary font-medium border-none hover:bg-primary/80 focus-visible:bg-primary/80",
     secondary: "bg-background border-border hover:bg-accent focus-visible:bg-accent",
-    danger: "bg-danger border-none hover:bg-danger/80 focus-visible:bg-danger/80 focus-visible:ring-danger/75",
+    danger:
+      "bg-danger font-medium border-none hover:bg-danger/80 focus-visible:bg-danger/80 focus-visible:ring-danger/75",
     "danger-secondary":
       "bg-background border-danger hover:bg-danger/50 focus-visible:bg-danger/50 focus-visible:ring-danger/75",
     ghost: "bg-transparent border-none hover:bg-accent focus-visible:bg-accent",

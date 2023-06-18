@@ -38,42 +38,58 @@ const page = () => {
       <div className="flex flex-wrap gap-8">
         <div className="flex flex-col gap-8">
           <Dialog>
-            <DialogTrigger>Edit Profile</DialogTrigger>
+            <DialogTrigger asChild>
+              <Button className="max-w-max" variants={{ type: "secondary" }}>
+                Edit Profile
+              </Button>
+            </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle>Edit profile</DialogTitle>
+                <DialogTitle className="text-xl">Edit profile</DialogTitle>
                 <DialogDescription>Make changes to your profile here. Click save when you're done.</DialogDescription>
               </DialogHeader>
-              <div className="grid gap-4 py-4">
+              <div className="grid gap-4">
                 <div className="grid grid-cols-4 items-center gap-4">
                   <label htmlFor="name">Name</label>
-                  <input id="name" defaultValue="Pedro Duarte" className="col-span-3" />
+                  <Input variants={{ size: "sm" }} id="name" defaultValue="Pedro Duarte" className="col-span-3" />
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                   <label htmlFor="username">Username</label>
-                  <input id="username" defaultValue="@peduarte" className="col-span-3" />
+                  <Input variants={{ size: "sm" }} id="username" defaultValue="@peduarte" className="col-span-3" />
                 </div>
               </div>
               <DialogFooter>
-                <DialogClose>Discard Changes</DialogClose>
-                <button type="submit">Save changes</button>
+                <DialogClose asChild>
+                  <Button variants={{ size: "sm", type: "secondary" }}>Discard Changes</Button>
+                </DialogClose>
+                <Button variants={{ size: "sm" }} type="submit">
+                  Save changes
+                </Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>
 
           <AlertDialog>
-            <AlertDialogTrigger>Alert Dialog Open</AlertDialogTrigger>
+            <AlertDialogTrigger asChild>
+              <Button className="max-w-max" variants={{ type: "danger" }}>
+                Delete Profile
+              </Button>
+            </AlertDialogTrigger>
             <AlertDialogContent>
               <AlertDialogHeader>
-                <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                <AlertDialogTitle className="text-xl">Are you absolutely sure?</AlertDialogTitle>
                 <AlertDialogDescription>
                   This action cannot be undone. This will permanently delete your account and remove your data from our
                   servers.
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
-                <AlertDialogCancel>Cancel</AlertDialogCancel>
-                <AlertDialogAction>Continue</AlertDialogAction>
+                <AlertDialogCancel asChild>
+                  <Button variants={{ size: "sm", type: "danger-secondary" }}>Cancel</Button>
+                </AlertDialogCancel>
+                <AlertDialogAction asChild>
+                  <Button variants={{ size: "sm", type: "danger" }}>Continue</Button>
+                </AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>

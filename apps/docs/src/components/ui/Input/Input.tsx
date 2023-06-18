@@ -4,8 +4,8 @@ import React, { ForwardedRef } from "react";
 
 const ALL_INPUT_VARIANTS = {
   size: {
-    xs: "h-7 text-xs px-2.5 border rounded focus-visible:ring-offset-2",
-    sm: "h-8 text-sm px-3 border rounded focus-visible:ring-offset-2",
+    xs: "h-7 text-xs px-2 border rounded focus-visible:ring-offset-2",
+    sm: "h-8 text-sm px-2.5 border rounded focus-visible:ring-offset-2",
     md: "h-10 text-base px-3 border-2 rounded-md focus-visible:ring-offset-2",
     lg: "h-11 text-lg px-3 border-2 rounded-lg focus-visible:ring-offset-4",
     xl: "h-14 text-xl px-4 border-2 rounded-lg focus-visible:ring-offset-4",
