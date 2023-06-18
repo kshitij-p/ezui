@@ -10,15 +10,18 @@
 
     --paper: 0 0% 100%; /*  Used for the bg colors of comps */
 
+    --primary: 175 80% 40%; /* Used for primary button and other primary variants */
     --border: 175 84% 32%; /* Used for borders */
 
     --ring: 175 84% 38%;
 
-    --accent: 175 61% 19%; /* Used for */
+    --accent: 175 61% 34%; /* Used for selected states, hovered states */
 
     --scroll-thumb: 0 0% 64%; /* Scrollbar thumb body color */
 
     --invalid: 0 90% 71%; /* Invalid state color - red */
+
+    --danger: 345 77% 50%; /* Used for danger variants */
   }
 
   /* Dark Mode Vars */
@@ -29,6 +32,8 @@
     --paper: 0 0% 9%;
 
     --ring: 175 84% 24%;
+
+    --accent: 175 61% 19%;
 
     --scroll-thumb: 0 0% 45%;
   }
