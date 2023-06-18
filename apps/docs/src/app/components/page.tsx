@@ -19,6 +19,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/Dialog";
+import { Input } from "@/components/ui/Input";
 import {
   Select,
   SelectContent,
@@ -31,7 +32,7 @@ import {
 
 const page = () => {
   return (
-    <div className="p-8">
+    <div className="p-8 flex flex-col gap-8 max-w-max">
       <Dialog>
         <DialogTrigger>Edit Profile</DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
@@ -74,7 +75,7 @@ const page = () => {
       </AlertDialog>
 
       <Select>
-        <SelectTrigger className="w-[180px]">
+        <SelectTrigger aria-invalid className="w-[180px]">
           <SelectValue placeholder="Select a fruit" />
         </SelectTrigger>
         <SelectContent>
@@ -90,6 +91,12 @@ const page = () => {
           </SelectGroup>
         </SelectContent>
       </Select>
+
+      <Input variants={{ size: "xs" }} defaultValue={"The quicky brown fox"} />
+      <Input variants={{ size: "sm" }} defaultValue={"The quicky brown fox"} />
+      <Input variants={{ size: "md" }} defaultValue={"The quicky brown fox"} />
+      <Input variants={{ size: "lg" }} defaultValue={"The quicky brown fox"} />
+      <Input variants={{ size: "xl" }} defaultValue={"The quicky brown fox"} />
     </div>
   );
 };

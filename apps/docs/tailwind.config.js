@@ -15,6 +15,7 @@ module.exports = {
         foreground: "hsl(var(--foreground))",
         paper: "hsl(var(--paper))",
         border: "hsl(var(--border))",
+        ring: "hsl(var(--ring))",
         accent: "hsl(var(--accent))",
         "scroll-thumb": "hsl(var(--scroll-thumb))",
         invalid: "hsl(var(--invalid))",

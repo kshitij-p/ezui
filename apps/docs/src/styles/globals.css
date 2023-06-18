@@ -5,18 +5,20 @@
 @layer base {
   /* Light Mode Vars */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
+    --background: 0 0% 100%; /* Body's bg color */
+    --foreground: 222.2 47.4% 11.2%; /* Default text color */
 
-    --paper: 0 0% 100%;
+    --paper: 0 0% 100%; /*  Used for the bg colors of comps */
 
-    --border: 175 84% 32%;
+    --border: 175 84% 32%; /* Used for borders */
 
-    --accent: 175 61% 19%;
+    --ring: 175 84% 38%;
 
-    --scroll-thumb: 0 0% 64%;
+    --accent: 175 61% 19%; /* Used for */
 
-    --invalid: 0 90% 71%;
+    --scroll-thumb: 0 0% 64%; /* Scrollbar thumb body color */
+
+    --invalid: 0 90% 71%; /* Invalid state color - red */
   }
 
   /* Dark Mode Vars */
@@ -25,6 +27,8 @@
     --foreground: 213 31% 91%;
 
     --paper: 0 0% 9%;
+
+    --ring: 175 84% 24%;
 
     --scroll-thumb: 0 0% 45%;
   }

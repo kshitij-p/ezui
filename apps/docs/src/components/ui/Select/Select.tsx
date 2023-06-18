@@ -20,7 +20,7 @@ const SelectTrigger = React.forwardRef<
     <RadixSelect.Trigger
       {...rest}
       className={cn(
-        "group flex items-center justify-center gap-2 rounded-md border-2 border-border bg-transparent py-1 pl-3 pr-2 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border/75 focus-visible:ring-offset-2 focus-visible:ring-offset-paper aria-[invalid=true]:border-invalid aria-[invalid=true]:focus-visible:ring-invalid/75 data-[disabled]:opacity-50",
+        "group flex items-center justify-center gap-2 rounded-md border-2 border-border bg-transparent py-1 pl-3 pr-2 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-paper aria-[invalid=true]:border-invalid aria-[invalid=true]:focus-visible:ring-invalid/75 data-[disabled]:opacity-50",
         className
       )}
       ref={passedRef}
