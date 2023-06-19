@@ -3,6 +3,13 @@ import * as React from "react";
 import * as RadixDialog from "@radix-ui/react-dialog";
 
 import { cn } from "@/lib/utils";
+import {
+  DEFAULT_DIALOG_POSITION,
+  DialogAnimation,
+  DialogPosition,
+  dialogAnimationLookup,
+  dialogPositionLookup,
+} from "@/components/ui/Dialog/utils";
 
 const Dialog = RadixDialog.Root;
 
@@ -34,60 +41,40 @@ const DialogOverlay = React.forwardRef<
 ));
 DialogOverlay.displayName = RadixDialog.Overlay.displayName;
 
-const DEFAULT_DIALOG_POSITION = { x: "center", y: "center" } as {
-  x: "left" | "center" | "right";
-  y: "top" | "center" | "bottom";
-};
-
-type DialogPosition = typeof DEFAULT_DIALOG_POSITION;
-
-const positionLookup: {
-  x: {
-    [k in DialogPosition["x"]]: string;
-  };
-  y: {
-    [k in DialogPosition["y"]]: string;
-  };
-} = {
-  x: {
-    left: "left-0",
-    center: "left-1/2 -translate-x-1/2",
-    right: "right-0",
-  },
-  y: {
-    top: "top-0",
-    center: "top-1/2 -translate-y-1/2",
-    bottom: "bottom-0",
-  },
-};
-
 const DialogContent = React.forwardRef<
   React.ElementRef<typeof RadixDialog.Content>,
   React.ComponentPropsWithoutRef<typeof RadixDialog.Content> & {
     position?: Partial<DialogPosition>;
+    animation?: DialogAnimation;
   }
->(({ className, children, position: passedPosition = DEFAULT_DIALOG_POSITION, ...rest }, passedRef) => {
-  const position = { ...DEFAULT_DIALOG_POSITION, ...passedPosition };
+>(
+  (
+    { className, children, position: passedPosition = DEFAULT_DIALOG_POSITION, animation = "zoom", ...rest },
+    passedRef
+  ) => {
+    const position = { ...DEFAULT_DIALOG_POSITION, ...passedPosition };
 
-  return (
-    <DialogPortal>
-      <DialogOverlay className="group" />
+    return (
+      <DialogPortal>
+        <DialogOverlay className="group" />
 
-      <RadixDialog.Content
-        {...rest}
-        className={cn(
-          "fixed z-[1400] w-full sm:max-w-lg max-w-[90vw] origin-top-left overflow-y-auto rounded bg-paper p-6 shadow shadow-black/20 animate-zoomIn data-[state='closed']:animate-zoomOut flex flex-col gap-4",
-          positionLookup.x[position.x],
-          positionLookup.y[position.y],
-          className
-        )}
-        ref={passedRef}
-      >
-        {children}
-      </RadixDialog.Content>
-    </DialogPortal>
-  );
-});
+        <RadixDialog.Content
+          {...rest}
+          className={cn(
+            "fixed z-[1400] w-full sm:max-w-lg max-w-[90vw] origin-top-left overflow-y-auto rounded bg-paper p-6 shadow shadow-black/20 flex flex-col gap-4",
+            dialogAnimationLookup[animation],
+            dialogPositionLookup.x[position.x],
+            dialogPositionLookup.y[position.y],
+            className
+          )}
+          ref={passedRef}
+        >
+          {children}
+        </RadixDialog.Content>
+      </DialogPortal>
+    );
+  }
+);
 DialogContent.displayName = RadixDialog.Content.displayName;
 
 const DialogHeader = React.forwardRef(

@@ -1,3 +1,4 @@
+import DemoSheet from "@/components/demo/DemoSheet";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -30,6 +31,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/Select";
+
 import Link from "next/link";
 
 const page = () => {
@@ -111,6 +113,8 @@ const page = () => {
               </SelectGroup>
             </SelectContent>
           </Select>
+
+          <DemoSheet />
         </div>
         <div className="flex flex-col gap-8">
           <Input variants={{ size: "xs" }} defaultValue={"The quicky brown fox"} />
