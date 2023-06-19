@@ -48,11 +48,7 @@ const DemoSheet = () => {
         <SheetTrigger asChild>
           <Button>Open sheet</Button>
         </SheetTrigger>
-        <SheetContent
-          variants={{
-            position,
-          }}
-        >
+        <SheetContent position={position}>
           <SheetHeader>
             <SheetTitle asChild>
               <Dialog>

@@ -60,44 +60,44 @@ module.exports = {
         },
 
         slideInLeft: {
-          "0%": { translate: "-101% 0%" },
-          "100%": { translate: "0% 0%" },
+          "0%": { translate: "-101% 0%", opacity: "0" },
+          "100%": { translate: "0% 0%", opacity: "1" },
         },
         slideOutLeft: {
-          "100%": { translate: "-101% 0%" },
-          "0%": { translate: "0% 0%" },
+          "100%": { translate: "-101% 0%", opacity: "1" },
+          "0%": { translate: "0% 0%", opacity: "0" },
         },
 
         slideInRight: {
-          "0%": { translate: "101% 0%" },
-          "100%": { translate: "0% 0%" },
+          "0%": { translate: "101% 0%", opacity: "0" },
+          "100%": { translate: "0% 0%", opacity: "1" },
         },
         slideOutRight: {
-          "100%": { translate: "101% 0%" },
-          "0%": { translate: "0% 0%" },
+          "100%": { translate: "101% 0%", opacity: "1" },
+          "0%": { translate: "0% 0%", opacity: "0" },
         },
 
         slideInTop: {
-          "0%": { translate: "0% -101%" },
-          "100%": { translate: "0% 0%" },
+          "0%": { translate: "0% -101%", opacity: "0" },
+          "100%": { translate: "0% 0%", opacity: "1" },
         },
         slideOutTop: {
-          "100%": { translate: "0% -101%" },
-          "0%": { translate: "0% 0%" },
+          "100%": { translate: "0% -101%", opacity: "1" },
+          "0%": { translate: "0% 0%", opacity: "0" },
         },
 
         slideInBottom: {
-          "0%": { translate: "0% 101%" },
-          "100%": { translate: "0% 0%" },
+          "0%": { translate: "0% 101%", opacity: "0" },
+          "100%": { translate: "0% 0%", opacity: "1" },
         },
         slideOutBottom: {
-          "100%": { translate: "0% 101%" },
-          "0%": { translate: "0% 0%" },
+          "100%": { translate: "0% 101%", opacity: "1" },
+          "0%": { translate: "0% 0%", opacity: "0" },
         },
       },
       zIndex: {
-        "dialog-backdrop": 1399, //Dialog overlay/backdrop. Also applies to Sheet comp.
-        dialog: 1400, //Dialog portal and the content inside it. Also applies to Sheet comp.
+        "dialog-backdrop": 49, //Dialog overlay/backdrop. Also applies to Sheet comp.
+        dialog: 50, //Dialog portal and the content inside it. Also applies to Sheet comp.
       },
     },
   },

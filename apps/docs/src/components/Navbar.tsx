@@ -41,7 +41,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="sticky inset-0 z-[1300] bg-slate-900/10 backdrop-blur-sm">
+    <header className="sticky inset-0 z-40 bg-slate-900/10 backdrop-blur-sm">
       <NoiseFilter
         className="will-change-opacity opacity-25 mix-blend-soft-light transition-opacity data-[scroll='0']:opacity-0"
         data-scroll={"0"}

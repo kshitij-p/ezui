@@ -1,3 +1,4 @@
+import DemoPopover from "@/components/demo/DemoPopover";
 import DemoSheet from "@/components/demo/DemoSheet";
 import {
   AlertDialog,
@@ -175,6 +176,7 @@ const page = () => {
             <Link href={"#"}>Link demo</Link>
           </Button>
         </div>
+        <DemoPopover />
       </div>
     </div>
   );

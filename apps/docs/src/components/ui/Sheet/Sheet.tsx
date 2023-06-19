@@ -97,33 +97,44 @@ const animationHelper = {
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof DialogContent>,
   React.ComponentPropsWithoutRef<typeof RadixDialog.Content> & {
-    variants?: Partial<SheetVariants>;
+    variants?: Partial<Omit<SheetVariants, "position">>;
+    position?: SheetVariants["position"];
     animation?: DialogAnimation;
   }
->(({ children, className, variants = DEFAULT_VARIANTS, animation: passedAnimation, ...rest }, passedRef) => {
-  const passedPosition = variants.position ?? "right";
+>(
+  (
+    {
+      children,
+      className,
+      variants = DEFAULT_VARIANTS,
+      position: passedPosition = "right",
+      animation: passedAnimation,
+      ...rest
+    },
+    passedRef
+  ) => {
+    const isVertical = passedPosition in dialogPositionLookup["y"];
 
-  const isVertical = passedPosition in dialogPositionLookup["y"];
+    const position = {
+      x: (isVertical ? "center" : passedPosition) as DialogPosition["x"],
+      y: (isVertical ? passedPosition : "center") as DialogPosition["y"],
+    };
 
-  const position = {
-    x: (isVertical ? "center" : passedPosition) as DialogPosition["x"],
-    y: (isVertical ? passedPosition : "center") as DialogPosition["y"],
-  };
+    const animation = animationHelper[passedPosition];
 
-  const animation = animationHelper[passedPosition];
-
-  return (
-    <DialogContent
-      {...rest}
-      position={position}
-      animation={animation}
-      className={cn(sheetVariants(variants), className)}
-      ref={passedRef}
-    >
-      {children}
-    </DialogContent>
-  );
-});
+    return (
+      <DialogContent
+        {...rest}
+        position={position}
+        animation={animation}
+        className={cn(sheetVariants({ ...variants, position: passedPosition }), className)}
+        ref={passedRef}
+      >
+        {children}
+      </DialogContent>
+    );
+  }
+);
 
 const SheetHeader = DialogHeader;
 
