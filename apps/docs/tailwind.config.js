@@ -95,6 +95,10 @@ module.exports = {
           "0%": { translate: "0% 0%" },
         },
       },
+      zIndex: {
+        "dialog-backdrop": 1399, //Dialog overlay/backdrop. Also applies to Sheet comp.
+        dialog: 1400, //Dialog portal and the content inside it. Also applies to Sheet comp.
+      },
     },
   },
   plugins: [],

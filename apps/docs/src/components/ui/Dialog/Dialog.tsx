@@ -19,7 +19,7 @@ const DialogClose = RadixDialog.Close;
 
 const DialogPortal = ({ className, children, ...rest }: RadixDialog.DialogPortalProps) => {
   return (
-    <RadixDialog.Portal {...rest} className={cn("fixed inset-0 z-[1400]", className)}>
+    <RadixDialog.Portal {...rest} className={cn("fixed inset-0 z-dialog", className)}>
       {children}
     </RadixDialog.Portal>
   );
@@ -33,7 +33,7 @@ const DialogOverlay = React.forwardRef<
   <RadixDialog.Overlay
     {...rest}
     className={cn(
-      "fixed inset-0 z-[1399] w-full bg-background/10 backdrop-blur-[8px] transition-all duration-100",
+      "fixed inset-0 z-dialog-backdrop w-full bg-background/10 backdrop-blur-[8px] transition-all duration-100",
       className
     )}
     ref={passedRef}
@@ -61,7 +61,7 @@ const DialogContent = React.forwardRef<
         <RadixDialog.Content
           {...rest}
           className={cn(
-            "fixed z-[1400] w-full sm:max-w-lg max-w-[90vw] origin-top-left overflow-y-auto rounded bg-paper p-6 shadow shadow-black/20 flex flex-col gap-4",
+            "fixed z-dialog w-full sm:max-w-lg max-w-[90vw] origin-top-left overflow-y-auto rounded bg-paper p-6 shadow shadow-black/20 flex flex-col gap-4",
             dialogAnimationLookup[animation],
             dialogPositionLookup.x[position.x],
             dialogPositionLookup.y[position.y],
