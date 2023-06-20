@@ -2,9 +2,9 @@
 
 import * as React from "react";
 import * as RadixSelect from "@radix-ui/react-select";
-import * as ScrollArea from "@radix-ui/react-scroll-area";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
+import { ScrollAreaRoot, ScrollAreaViewport, ScrollBar } from "@/components/ui/ScrollArea";
 
 const Select = RadixSelect.Root;
 
@@ -48,23 +48,17 @@ const SelectContent = React.forwardRef<
         position={position}
         ref={passedRef}
       >
-        <ScrollArea.Root className="h-full w-full" type="auto">
+        <ScrollAreaRoot>
           <RadixSelect.Viewport
             asChild
             className={cn(isPopper && "min-w-[calc(var(--radix-select-trigger-width)+0.5rem)] max-h-56 w-full")}
           >
-            <ScrollArea.Viewport
-              className="h-full w-full"
-              //Fixes a radix ui bug where Select.Viewport sets overflow and Scrollarea.Viewport also sets overflow and this clashes as one uses shorthand other doesnt
-              style={{ overflowY: undefined }}
-            >
+            <ScrollAreaViewport>
               <RadixSelect.Group>{children}</RadixSelect.Group>
-            </ScrollArea.Viewport>
+            </ScrollAreaViewport>
           </RadixSelect.Viewport>
-          <ScrollArea.Scrollbar className="w-1 rounded bg-transparent">
-            <ScrollArea.Thumb className="rounded bg-scroll-thumb/50 hover:w-8 hover:bg-scroll-thumb" />
-          </ScrollArea.Scrollbar>
-        </ScrollArea.Root>
+          <ScrollBar />
+        </ScrollAreaRoot>
       </RadixSelect.Content>
     </RadixSelect.Portal>
   );
@@ -75,7 +69,7 @@ const SelectLabel = React.forwardRef<
   React.ElementRef<typeof RadixSelect.Label>,
   React.ComponentPropsWithoutRef<typeof RadixSelect.Label>
 >(({ className, ...rest }, passedRef) => (
-  <RadixSelect.Label {...rest} className={cn("px-2 py-1 font-semibold", className)} ref={passedRef} />
+  <RadixSelect.Label {...rest} className={cn("px-2 py-1 text-muted-text", className)} ref={passedRef} />
 ));
 SelectLabel.displayName = RadixSelect.Label.displayName;
 
@@ -100,9 +94,7 @@ SelectItem.displayName = RadixSelect.Item.displayName;
 const SelectSeparator = React.forwardRef<
   React.ElementRef<typeof RadixSelect.Separator>,
   React.ComponentPropsWithoutRef<typeof RadixSelect.Separator>
->(({ className, ...rest }, passedRef) => (
-  <RadixSelect.Separator {...rest} className={cn("", className)} ref={passedRef} />
-));
+>(({ className, ...rest }, passedRef) => <RadixSelect.Separator {...rest} className={cn(className)} ref={passedRef} />);
 SelectSeparator.displayName = RadixSelect.Separator.displayName;
 
 export { Select, SelectGroup, SelectValue, SelectTrigger, SelectContent, SelectLabel, SelectItem, SelectSeparator };

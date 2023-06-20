@@ -13,12 +13,14 @@ const ALL_BUTTON_VARIANTS = {
   },
   type: {
     primary: "bg-primary font-medium text-black border-none hover:bg-primary/80 focus-visible:bg-primary/80",
-    secondary: "bg-background border-border hover:bg-accent focus-visible:bg-accent",
+    secondary:
+      "bg-background border-border hover:bg-accent/50 dark:hover:bg-accent dark:focus-visible:bg-accent  focus-visible:bg-accent/50",
     danger:
       "bg-danger font-medium text-black border-none hover:bg-danger/80 focus-visible:bg-danger/80 focus-visible:ring-danger/75",
     "danger-secondary":
       "bg-background border-danger hover:bg-danger/50 focus-visible:bg-danger/50 focus-visible:ring-danger/75",
-    ghost: "bg-transparent border-none hover:bg-accent focus-visible:bg-accent",
+    ghost:
+      "bg-transparent border-none hover:bg-accent/50 dark:hover:bg-accent dark:focus-visible:bg-accent  focus-visible:bg-accent/50",
   },
 } as const;
 

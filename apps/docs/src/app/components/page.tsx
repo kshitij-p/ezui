@@ -1,4 +1,6 @@
+import DemoCommand from "@/components/demo/DemoCommand";
 import DemoPopover from "@/components/demo/DemoPopover";
+import DemoScrollArea from "@/components/demo/DemoScrollArea";
 import DemoSheet from "@/components/demo/DemoSheet";
 import {
   AlertDialog,
@@ -176,7 +178,9 @@ const page = () => {
             <Link href={"#"}>Link demo</Link>
           </Button>
         </div>
+        <DemoScrollArea />
         <DemoPopover />
+        <DemoCommand />
       </div>
     </div>
   );

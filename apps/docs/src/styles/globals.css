@@ -10,8 +10,12 @@
 
     --paper: 0 0% 100%; /*  Used for the bg colors of comps */
 
+    --muted-text: 220 6% 50%; /* Used for faint/disabled els text color */
+
     --primary: 175 80% 40%; /* Used for primary button and other primary variants */
-    --border: 175 84% 32%; /* Used for borders */
+    --border: 175 84% 32%; /* Used for primary bold borders i.e. bright and/or colorful */
+
+    --border-light: 0 0% 83%; /* Used for light faint borders */
 
     --ring: 175 84% 38%;
 
@@ -30,6 +34,10 @@
     --foreground: 213 31% 91%;
 
     --paper: 0 0% 9%;
+
+    --muted-text: 220 6% 55%; /* Used for faint/disabled els text color */
+
+    --border-light: 0 0% 24%; /* Used for light faint borders */
 
     --ring: 175 84% 24%;
 
