@@ -37,7 +37,7 @@ const DemoPopover = () => {
 
       <Popover>
         <PopoverTrigger asChild>
-          <Button className="max-w-max self-center">Open sheet</Button>
+          <Button className="max-w-max self-center">Open popover</Button>
         </PopoverTrigger>
         <PopoverContent side={position}>
           <Dialog>

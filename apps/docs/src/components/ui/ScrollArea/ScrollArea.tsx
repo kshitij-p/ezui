@@ -12,7 +12,7 @@ const ScrollAreaRoot = React.forwardRef<
     </RadixScrollArea.Root>
   );
 });
-ScrollAreaRoot.displayName = RadixScrollArea.Root.displayName;
+ScrollAreaRoot.displayName = "ScrollAreaRoot";
 
 const ScrollAreaViewport = React.forwardRef<
   React.ElementRef<typeof RadixScrollArea.Viewport>,
@@ -41,7 +41,7 @@ const ScrollArea = React.forwardRef<
     </ScrollAreaRoot>
   );
 });
-ScrollArea.displayName = ScrollAreaRoot.displayName;
+ScrollArea.displayName = RadixScrollArea.Root.displayName;
 
 const ScrollBar = React.forwardRef<
   React.ElementRef<typeof RadixScrollArea.ScrollAreaScrollbar>,
