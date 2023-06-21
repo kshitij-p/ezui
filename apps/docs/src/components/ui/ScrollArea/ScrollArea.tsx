@@ -17,12 +17,13 @@ ScrollAreaRoot.displayName = "ScrollAreaRoot";
 const ScrollAreaViewport = React.forwardRef<
   React.ElementRef<typeof RadixScrollArea.Viewport>,
   React.ComponentPropsWithoutRef<typeof RadixScrollArea.Viewport>
->(({ children, className }) => {
+>(({ children, className }, passedRef) => {
   return (
     <RadixScrollArea.Viewport
       className={cn("h-full w-full", className)}
       //Fixes a radix ui bug where Select.Viewport sets overflow and RadixScrollArea.Viewport also sets overflow and this clashes as one uses shorthand other doesnt
       style={{ overflowY: undefined }}
+      ref={passedRef}
     >
       {children}
     </RadixScrollArea.Viewport>

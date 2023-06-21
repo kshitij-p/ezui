@@ -1,3 +1,4 @@
+import DemoAutocomplete from "@/components/demo/DemoAutocomplete";
 import DemoCommand from "@/components/demo/DemoCommand";
 import DemoPopover from "@/components/demo/DemoPopover";
 import DemoScrollArea from "@/components/demo/DemoScrollArea";
@@ -181,6 +182,7 @@ const page = () => {
         <DemoScrollArea />
         <DemoPopover />
         <DemoCommand />
+        <DemoAutocomplete />
       </div>
     </div>
   );

@@ -39,8 +39,9 @@ const CommandDialog = ({ children, ...rest }: CommandDialogProps) => {
 const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
->(({ className, ...rest }, passedRef) => (
+>(({ children, className, ...rest }, passedRef) => (
   <div className="flex items-center border-b border-border-light px-3" cmdk-input-wrapper="">
+    {children}
     <CommandPrimitive.Input
       {...rest}
       ref={passedRef}
@@ -57,11 +58,15 @@ CommandInput.displayName = CommandPrimitive.Input.displayName;
 const CommandList = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.List>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>
->(({ className, ...rest }, passedRef) => {
+>(({ children, className, ...rest }, passedRef) => {
   return (
-    <ScrollArea type="always" className="h-[300px]">
-      <CommandPrimitive.List {...rest} className={cn("overflow-x-hidden p-1", className)} ref={passedRef} />
-    </ScrollArea>
+    <CommandPrimitive.List
+      {...rest}
+      className={cn("overflow-x-hidden [&_[cmdk-list-sizer]]:h-[300px] p-1", className)}
+      ref={passedRef}
+    >
+      <ScrollArea type="always">{children}</ScrollArea>
+    </CommandPrimitive.List>
   );
 });
 

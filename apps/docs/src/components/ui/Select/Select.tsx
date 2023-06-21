@@ -12,19 +12,16 @@ const SelectGroup = RadixSelect.Group;
 
 const SelectValue = RadixSelect.Value;
 
+//These classes are reused for Autocomplete
+const selectTriggerClasses =
+  "group flex items-center justify-center gap-2 rounded-md border-2 border-border bg-transparent py-1 pl-3 pr-2 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-paper aria-[invalid=true]:border-invalid aria-[invalid=true]:focus-visible:ring-invalid/75 data-[disabled]:opacity-50";
+
 const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof RadixSelect.Trigger>,
   React.ComponentPropsWithoutRef<typeof RadixSelect.Trigger>
 >(({ children, className, ...rest }, passedRef) => {
   return (
-    <RadixSelect.Trigger
-      {...rest}
-      className={cn(
-        "group flex items-center justify-center gap-2 rounded-md border-2 border-border bg-transparent py-1 pl-3 pr-2 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-paper aria-[invalid=true]:border-invalid aria-[invalid=true]:focus-visible:ring-invalid/75 data-[disabled]:opacity-50",
-        className
-      )}
-      ref={passedRef}
-    >
+    <RadixSelect.Trigger {...rest} className={cn(selectTriggerClasses, className)} ref={passedRef}>
       {children}
       <RadixSelect.Icon asChild>
         <ChevronDown className="ml-auto h-4 w-4 rotate-0 opacity-50 transition group-data-[state='open']:rotate-180" />
@@ -40,7 +37,7 @@ const SelectContent = React.forwardRef<
   const isPopper = position === "popper";
 
   return (
-    <RadixSelect.Portal className="animate-fadeIn">
+    <RadixSelect.Portal className="animate-zoomIn data-[state=closed]:animate-zoomOut">
       <RadixSelect.Content
         {...rest}
         sideOffset={8}
@@ -53,9 +50,7 @@ const SelectContent = React.forwardRef<
             asChild
             className={cn(isPopper && "min-w-[calc(var(--radix-select-trigger-width)+0.5rem)] max-h-56 w-full")}
           >
-            <ScrollAreaViewport>
-              <RadixSelect.Group>{children}</RadixSelect.Group>
-            </ScrollAreaViewport>
+            <ScrollAreaViewport>{children}</ScrollAreaViewport>
           </RadixSelect.Viewport>
           <ScrollBar />
         </ScrollAreaRoot>
@@ -97,4 +92,14 @@ const SelectSeparator = React.forwardRef<
 >(({ className, ...rest }, passedRef) => <RadixSelect.Separator {...rest} className={cn(className)} ref={passedRef} />);
 SelectSeparator.displayName = RadixSelect.Separator.displayName;
 
-export { Select, SelectGroup, SelectValue, SelectTrigger, SelectContent, SelectLabel, SelectItem, SelectSeparator };
+export {
+  Select,
+  SelectGroup,
+  SelectValue,
+  SelectTrigger,
+  SelectContent,
+  SelectLabel,
+  SelectItem,
+  SelectSeparator,
+  selectTriggerClasses,
+};

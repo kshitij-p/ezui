@@ -7,8 +7,8 @@ const DemoScrollArea = () => {
 
   return (
     <div className="w-full">
-      <ScrollArea className="h-[100px]" type="always">
-        <div>
+      <ScrollArea>
+        <div className="h-[100px]">
           {scrollAreaTestData.map((val) => (
             <div className="h-8" key={val}>
               {val}
