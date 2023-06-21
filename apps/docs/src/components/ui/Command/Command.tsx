@@ -14,7 +14,7 @@ const Command = React.forwardRef<
   <CommandPrimitive
     {...rest}
     className={cn(
-      "flex h-full w-full flex-col overflow-hidden rounded-md bg-paper border dark:border-none shadow-md",
+      "flex h-full w-full flex-col overflow-hidden rounded-md border bg-paper shadow-md dark:border-none",
       className
     )}
     ref={passedRef}
@@ -28,7 +28,7 @@ const CommandDialog = ({ children, ...rest }: CommandDialogProps) => {
   return (
     <Dialog {...rest}>
       <DialogContent className="overflow-hidden p-0 shadow-2xl">
-        <Command className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
+        <Command className="[&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
           {children}
         </Command>
       </DialogContent>
@@ -46,7 +46,7 @@ const CommandInput = React.forwardRef<
       {...rest}
       ref={passedRef}
       className={cn(
-        "flex h-11 w-full rounded-md bg-transparent py-3 text-base outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
+        "placeholder:text-muted-foreground flex h-11 w-full rounded-md bg-transparent py-3 text-base outline-none disabled:cursor-not-allowed disabled:opacity-50",
         className
       )}
     />
@@ -62,7 +62,7 @@ const CommandList = React.forwardRef<
   return (
     <CommandPrimitive.List
       {...rest}
-      className={cn("overflow-x-hidden [&_[cmdk-list-sizer]]:h-[300px] p-1", className)}
+      className={cn("overflow-x-hidden p-1 [&_[cmdk-list-sizer]]:h-[300px]", className)}
       ref={passedRef}
     >
       <ScrollArea type="always">{children}</ScrollArea>
@@ -101,7 +101,7 @@ const CommandSeparator = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>
 >(({ className, ...rest }, passedRef) => (
-  <CommandPrimitive.Separator {...rest} className={cn("-mx-1 h-px my-1 bg-border-light", className)} ref={passedRef} />
+  <CommandPrimitive.Separator {...rest} className={cn("-mx-1 my-1 h-px bg-border-light", className)} ref={passedRef} />
 ));
 CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 
@@ -112,7 +112,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     {...rest}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded px-2 py-1.5 text-base outline-none aria-selected:border-border border aria-selected:bg-accent/50 border-transparent data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex cursor-default select-none items-center rounded border border-transparent px-2 py-1.5 text-base outline-none aria-selected:border-border aria-selected:bg-accent/50 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className
     )}
     ref={passedRef}
@@ -122,7 +122,7 @@ const CommandItem = React.forwardRef<
 CommandItem.displayName = CommandPrimitive.Item.displayName;
 
 const CommandShortcut = ({ className, ...rest }: React.HTMLAttributes<HTMLSpanElement>) => {
-  return <span {...rest} className={cn("ml-auto text-xs tracking-widest text-muted-foreground", className)} />;
+  return <span {...rest} className={cn("text-muted-foreground ml-auto text-xs tracking-widest", className)} />;
 };
 CommandShortcut.displayName = "CommandShortcut";
 

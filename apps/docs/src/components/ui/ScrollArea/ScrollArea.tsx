@@ -7,7 +7,7 @@ const ScrollAreaRoot = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof RadixScrollArea.Root>
 >(({ children, className, type = "auto", ...rest }, passedRef) => {
   return (
-    <RadixScrollArea.Root {...rest} className={cn("h-full w-full relative", className)} type={type} ref={passedRef}>
+    <RadixScrollArea.Root {...rest} className={cn("relative h-full w-full", className)} type={type} ref={passedRef}>
       {children}
     </RadixScrollArea.Root>
   );
@@ -54,7 +54,7 @@ const ScrollBar = React.forwardRef<
     className={cn("w-1 rounded bg-transparent", className)}
     ref={passedRef}
   >
-    <RadixScrollArea.ScrollAreaThumb className="rounded bg-scroll-thumb/50 hover:w-8 focus-visible:bg-scroll-thumb hover:bg-scroll-thumb" />
+    <RadixScrollArea.ScrollAreaThumb className="rounded bg-scroll-thumb/50 hover:w-8 hover:bg-scroll-thumb focus-visible:bg-scroll-thumb" />
   </RadixScrollArea.ScrollAreaScrollbar>
 ));
 ScrollBar.displayName = RadixScrollArea.ScrollAreaScrollbar.displayName;

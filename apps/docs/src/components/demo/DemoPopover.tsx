@@ -20,7 +20,7 @@ const DemoPopover = () => {
   const [position, setPosition] = useState<SheetPosition>("right");
 
   return (
-    <div className="flex flex-col gap-[inherit] w-full">
+    <div className="flex w-full flex-col gap-[inherit]">
       <Select value={position} onValueChange={(newPos) => setPosition(newPos as SheetPosition)}>
         <SelectTrigger>
           <SelectValue placeholder="Select sheet position" />

@@ -40,7 +40,7 @@ import Link from "next/link";
 
 const page = () => {
   return (
-    <div className="p-8 flex flex-col gap-8 max-w-max">
+    <div className="flex max-w-max flex-col gap-8 p-8">
       <div className="flex flex-wrap gap-8">
         <div className="flex flex-col gap-8">
           <Dialog>
@@ -127,42 +127,42 @@ const page = () => {
           <Input variants={{ size: "lg" }} defaultValue={"The quicky brown fox"} />
           <Input variants={{ size: "xl" }} defaultValue={"The quicky brown fox"} />
         </div>
-        <div className="flex flex-col gap-8 items-center">
+        <div className="flex flex-col items-center gap-8">
           <Button variants={{ size: "xs" }}>Settings</Button>
           <Button variants={{ size: "sm" }}>Settings</Button>
           <Button variants={{ size: "md" }}>Settings</Button>
           <Button variants={{ size: "lg" }}>Settings</Button>
           <Button variants={{ size: "xl" }}>Settings</Button>
         </div>
-        <div className="flex flex-col gap-8 items-center">
+        <div className="flex flex-col items-center gap-8">
           <Button variants={{ size: "xs", type: "secondary" }}>Settings</Button>
           <Button variants={{ size: "sm", type: "secondary" }}>Settings</Button>
           <Button variants={{ size: "md", type: "secondary" }}>Settings</Button>
           <Button variants={{ size: "lg", type: "secondary" }}>Settings</Button>
           <Button variants={{ size: "xl", type: "secondary" }}>Settings</Button>
         </div>
-        <div className="flex flex-col gap-8 items-center">
+        <div className="flex flex-col items-center gap-8">
           <Button variants={{ size: "xs", type: "danger" }}>Settings</Button>
           <Button variants={{ size: "sm", type: "danger" }}>Settings</Button>
           <Button variants={{ size: "md", type: "danger" }}>Settings</Button>
           <Button variants={{ size: "lg", type: "danger" }}>Settings</Button>
           <Button variants={{ size: "xl", type: "danger" }}>Settings</Button>
         </div>
-        <div className="flex flex-col gap-8 items-center">
+        <div className="flex flex-col items-center gap-8">
           <Button variants={{ size: "xs", type: "danger-secondary" }}>Settings</Button>
           <Button variants={{ size: "sm", type: "danger-secondary" }}>Settings</Button>
           <Button variants={{ size: "md", type: "danger-secondary" }}>Settings</Button>
           <Button variants={{ size: "lg", type: "danger-secondary" }}>Settings</Button>
           <Button variants={{ size: "xl", type: "danger-secondary" }}>Settings</Button>
         </div>
-        <div className="flex flex-col gap-8 items-center">
+        <div className="flex flex-col items-center gap-8">
           <Button variants={{ size: "xs", type: "ghost" }}>Settings</Button>
           <Button variants={{ size: "sm", type: "ghost" }}>Settings</Button>
           <Button variants={{ size: "md", type: "ghost" }}>Settings</Button>
           <Button variants={{ size: "lg", type: "ghost" }}>Settings</Button>
           <Button variants={{ size: "xl", type: "ghost" }}>Settings</Button>
         </div>
-        <div className="flex flex-col gap-8 items-center">
+        <div className="flex flex-col items-center gap-8">
           <Button asChild variants={{ size: "xs", type: "primary" }}>
             <Link href={"#"}>Link demo</Link>
           </Button>

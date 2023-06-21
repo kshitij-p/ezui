@@ -12,7 +12,9 @@ const ALL_INPUT_VARIANTS = {
   },
 } as const;
 
-type InputVariants = { [k in keyof typeof ALL_INPUT_VARIANTS]: keyof typeof ALL_INPUT_VARIANTS[k] };
+type InputVariants = {
+  [k in keyof typeof ALL_INPUT_VARIANTS]: keyof (typeof ALL_INPUT_VARIANTS)[k];
+};
 
 const DEFAULT_VARIANTS = {
   size: "md",

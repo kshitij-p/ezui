@@ -24,7 +24,9 @@ const ALL_BUTTON_VARIANTS = {
   },
 } as const;
 
-type ButtonVariants = { [k in keyof typeof ALL_BUTTON_VARIANTS]: keyof typeof ALL_BUTTON_VARIANTS[k] };
+type ButtonVariants = {
+  [k in keyof typeof ALL_BUTTON_VARIANTS]: keyof (typeof ALL_BUTTON_VARIANTS)[k];
+};
 
 const DEFAULT_VARIANTS = {
   size: "md",

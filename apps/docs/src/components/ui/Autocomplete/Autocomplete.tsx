@@ -111,7 +111,9 @@ const AutocompleteValue = React.forwardRef(
       className,
       placeholder = "Select a value",
       ...rest
-    }: Omit<React.ComponentPropsWithoutRef<"span">, "children"> & { placeholder?: string },
+    }: Omit<React.ComponentPropsWithoutRef<"span">, "children"> & {
+      placeholder?: string;
+    },
     passedRef: ForwardedRef<HTMLSpanElement>
   ) => {
     const { value, label } = useContext(AutocompleteContext);

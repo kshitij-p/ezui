@@ -49,8 +49,8 @@ const works = frameworks.map((fw) => fw.label);
 
 const DemoAutocomplete = () => {
   return (
-    <div className="self-center w-full flex flex-col items-center">
-      <div className="flex items-center gap-2 justify-center">
+    <div className="flex w-full flex-col items-center self-center">
+      <div className="flex items-center justify-center gap-2">
         <Autocomplete options={frameworks} label="label">
           <AutocompleteTrigger>
             <AutocompleteValue />
@@ -86,7 +86,7 @@ const DemoAutocomplete = () => {
           <AutocompleteContent
             input={
               <AutocompleteInput placeholder="lallalala">
-                <Search className="inline mr-2 w-4 h-4 shrink-0 opacity-50" />
+                <Search className="mr-2 inline h-4 w-4 shrink-0 opacity-50" />
               </AutocompleteInput>
             }
           >

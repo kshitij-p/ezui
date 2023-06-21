@@ -35,7 +35,9 @@ const ALL_SHEET_VARIANTS = {
   },
 };
 
-type SheetVariants = { [k in keyof typeof ALL_SHEET_VARIANTS]: keyof typeof ALL_SHEET_VARIANTS[k] };
+type SheetVariants = {
+  [k in keyof typeof ALL_SHEET_VARIANTS]: keyof (typeof ALL_SHEET_VARIANTS)[k];
+};
 
 const DEFAULT_VARIANTS = {
   position: "right",
