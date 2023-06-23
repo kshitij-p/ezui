@@ -96,6 +96,8 @@ const AutocompleteTrigger = React.forwardRef<
     <PopoverTrigger
       {...rest}
       className={!asChild ? cn(selectTriggerClasses, className) : undefined}
+      data-disabled={disabled ? true : undefined}
+      disabled={disabled}
       asChild={asChild}
       ref={passedRef}
     >

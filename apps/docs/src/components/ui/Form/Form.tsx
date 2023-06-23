@@ -11,7 +11,7 @@ import {
   Controller,
   FieldPath,
   ControllerProps,
-  useFormContext,
+  useFormContext as useRHFFormContext,
   useForm as useRHFForm,
   UseFormProps,
 } from "react-hook-form";
@@ -64,7 +64,7 @@ FormItem.displayName = "FormItem";
 const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext);
   const itemContext = React.useContext(FormItemContext);
-  const { getFieldState, formState } = useFormContext();
+  const { getFieldState, formState } = useRHFFormContext();
 
   const fieldState = getFieldState(fieldContext.name, formState);
 
@@ -94,21 +94,27 @@ const FormLabel = React.forwardRef<
 });
 FormLabel.displayName = "FormLabel";
 
-const FormControl = React.forwardRef<React.ElementRef<typeof Slot>, React.ComponentPropsWithoutRef<typeof Slot>>(
-  (props, passedRef) => {
-    const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
-
-    return (
-      <Slot
-        id={formItemId}
-        aria-describedby={!error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`}
-        aria-invalid={!!error}
-        {...props}
-        ref={passedRef}
-      />
-    );
+const FormControl = React.forwardRef<
+  React.ElementRef<typeof Slot>,
+  React.ComponentPropsWithoutRef<typeof Slot> & {
+    disabled?: boolean;
   }
-);
+>((props, passedRef) => {
+  const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
+
+  const { disabled } = React.useContext(FormContext);
+
+  return (
+    <Slot
+      id={formItemId}
+      aria-describedby={!error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`}
+      aria-invalid={!!error}
+      disabled={disabled}
+      {...props}
+      ref={passedRef}
+    />
+  );
+});
 FormControl.displayName = "FormControl";
 
 const FormDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLParagraphElement>>(
@@ -154,19 +160,27 @@ const useForm = <TFormSchema extends Zod.Schema>({
   return form;
 };
 
+type FormContext = {
+  disabled: boolean;
+};
+
+const FormContext = React.createContext({} as FormContext);
+
 const Form = <T extends FieldValues>({
   children,
   form,
   disabled: passedDisabled = false,
+  disableWhileSubmitting = true,
   onSubmit,
   ...rest
 }: Omit<React.ComponentProps<"form">, "onSubmit"> & {
   form: UseFormReturn<T>;
   onSubmit?: SubmitHandler<T>;
   disabled?: boolean;
-  preventSubmitWhileDisabled?: boolean;
+  disableWhileSubmitting?: boolean;
 }) => {
-  const disabled = passedDisabled || form.formState.isSubmitting;
+  const disabledDueToSubmitting = form.formState.isSubmitting && disableWhileSubmitting;
+  const disabled = passedDisabled || disabledDueToSubmitting;
 
   const handleSubmit = form.handleSubmit((...args) => {
     if (disabled) {
@@ -179,9 +193,11 @@ const Form = <T extends FieldValues>({
 
   return (
     <FormProvider {...form}>
-      <form {...rest} onSubmit={handleSubmit}>
-        <fieldset disabled={disabled}>{children}</fieldset>
-      </form>
+      <FormContext.Provider value={{ disabled }}>
+        <form {...rest} onSubmit={handleSubmit}>
+          <fieldset disabled={disabled}>{children}</fieldset>
+        </form>
+      </FormContext.Provider>
     </FormProvider>
   );
 };

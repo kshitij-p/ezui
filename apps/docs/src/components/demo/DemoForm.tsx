@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, useForm } from "../ui/Form";
 import { z } from "zod";
 import { Input } from "../ui/Input";
@@ -44,9 +44,22 @@ const DemoForm = () => {
     },
   });
 
+  const [formDisabled, setFormDisabled] = useState(false);
+
   return (
     <div className="flex w-full flex-col items-center justify-center">
+      <label className="item-center flex gap-2">
+        Form disabled
+        <input
+          type="checkbox"
+          checked={formDisabled}
+          onChange={(e) => {
+            setFormDisabled(e.currentTarget.checked);
+          }}
+        />
+      </label>
       <Form
+        disabled={formDisabled}
         form={form}
         onSubmit={({ age, username, country, hobby, catBreed }) => {
           alert(
@@ -156,7 +169,8 @@ const DemoForm = () => {
                 <FormLabel className="text-md">What kinda cat you enjoy ? {field.value}</FormLabel>
 
                 <Select
-                  {...field}
+                  name={field.name}
+                  value={field.value}
                   onValueChange={(val) => {
                     field.onChange(val as any);
                   }}
