@@ -1,4 +1,5 @@
 import DemoAutocomplete from "@/components/demo/DemoAutocomplete";
+import DemoCheckbox from "@/components/demo/DemoCheckbox";
 import DemoCommand from "@/components/demo/DemoCommand";
 import DemoForm from "@/components/demo/DemoForm";
 import DemoPopover from "@/components/demo/DemoPopover";
@@ -180,6 +181,7 @@ const page = () => {
             <Link href={"#"}>Link demo</Link>
           </Button>
         </div>
+        <DemoCheckbox />
         <DemoScrollArea />
         <DemoPopover />
         <DemoCommand />
