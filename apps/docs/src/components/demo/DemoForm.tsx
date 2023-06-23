@@ -15,6 +15,7 @@ import {
 import { allCountries } from "./demoData";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "../ui/Select";
 import { Checkbox } from "../ui/Checkbox";
+import { Textarea } from "../ui/Textarea";
 
 const allHobbies = ["Programming", "Music", "Sleeping", "Looking at cats", "YES"] as const;
 
@@ -34,7 +35,12 @@ const formSchema = z.object({
     abbr: z.string(),
     code: z.string(),
   }),
+  longMessage: z
+    .string({ required_error: "Pls drop a message, I promise someone reads it" })
+    .min(10, { message: "Its too short" }),
   catBreed: z.enum(allCatBreeds, { required_error: "Hey this is a very important question >:(" }),
+
+  //.refines to check instead of .literal(true) so ts doesnt complain when passing changeHandlers and stuff
   agreesToServe: z.boolean().refine((val) => val === true, { message: "D: how can you not" }),
 });
 
@@ -191,6 +197,21 @@ const DemoForm = () => {
                   </SelectContent>
                 </Select>
 
+                <div>
+                  <FormMessage className="text-md" />
+                </div>
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="longMessage"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-md">Leave a super important message for someone</FormLabel>
+                <FormControl>
+                  <Textarea {...field} placeholder="A really cool message" />
+                </FormControl>
                 <div>
                   <FormMessage className="text-md" />
                 </div>

@@ -37,6 +37,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/Select";
+import { Textarea } from "@/components/ui/Textarea";
 
 import Link from "next/link";
 
@@ -128,6 +129,13 @@ const page = () => {
           <Input variants={{ size: "md" }} defaultValue={"The quicky brown fox"} />
           <Input variants={{ size: "lg" }} defaultValue={"The quicky brown fox"} />
           <Input variants={{ size: "xl" }} defaultValue={"The quicky brown fox"} />
+        </div>
+        <div className="flex flex-col gap-8">
+          <Textarea variants={{ size: "xs" }} defaultValue={"The quicky brown fox"} />
+          <Textarea variants={{ size: "sm" }} defaultValue={"The quicky brown fox"} />
+          <Textarea variants={{ size: "md" }} defaultValue={"The quicky brown fox"} />
+          <Textarea variants={{ size: "lg" }} defaultValue={"The quicky brown fox"} />
+          <Textarea variants={{ size: "xl" }} defaultValue={"The quicky brown fox"} />
         </div>
         <div className="flex flex-col items-center gap-8">
           <Button variants={{ size: "xs" }}>Settings</Button>

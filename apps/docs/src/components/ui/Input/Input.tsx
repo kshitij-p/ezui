@@ -4,11 +4,11 @@ import React, { ForwardedRef } from "react";
 
 const ALL_INPUT_VARIANTS = {
   size: {
-    xs: "h-7 rounded border px-2 text-xs focus-visible:ring-offset-2",
-    sm: "h-8 text-sm px-2.5 border rounded focus-visible:ring-offset-2",
-    md: "h-10 text-base px-3 border-2 rounded-md focus-visible:ring-offset-2",
-    lg: "h-11 text-lg px-3 border-2 rounded-md focus-visible:ring-offset-2",
-    xl: "h-14 text-xl px-4 border-2 rounded-lg focus-visible:ring-offset-2",
+    xs: "h-7 rounded border px-2 text-xs",
+    sm: "h-8 text-sm px-2.5 border rounded",
+    md: "h-10 text-base px-2.5 border-2 rounded-md",
+    lg: "h-11 text-lg px-3 border-2 rounded-md",
+    xl: "h-14 text-xl px-3 border-2 rounded-lg",
   },
 } as const;
 
@@ -21,7 +21,7 @@ const DEFAULT_VARIANTS = {
 } satisfies InputVariants;
 
 const inputVariants = cva(
-  "flex border border-border bg-transparent transition focus-visible:outline-0 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-paper focus-visible:hover:border-border disabled:opacity-50 aria-[invalid=true]:border-invalid aria-[invalid=true]:hover:border-invalid aria-[invalid=true]:focus-visible:ring-invalid/75",
+  "flex border border-border py-1 bg-transparent transition focus-visible:outline-0 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-paper focus-visible:hover:border-border disabled:opacity-50 aria-[invalid=true]:border-invalid aria-[invalid=true]:hover:border-invalid aria-[invalid=true]:focus-visible:ring-invalid/75 placeholder:text-foreground/50",
   {
     variants: ALL_INPUT_VARIANTS,
     defaultVariants: DEFAULT_VARIANTS,
