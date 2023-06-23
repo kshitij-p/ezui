@@ -9,7 +9,7 @@ const ALL_BUTTON_VARIANTS = {
     sm: "h-8 text-sm px-4 border rounded focus-visible:ring-offset-2",
     md: "h-10 text-base px-6 border-2 rounded focus-visible:ring-offset-2",
     lg: "h-11 text-lg px-6 border-2 rounded focus-visible:ring-offset-2",
-    xl: "h-14 text-xl px-8 border-2 rounded focus-visible:ring-offset-2",
+    xl: "h-14 text-xl px-7 border-2 rounded focus-visible:ring-offset-2",
   },
   type: {
     primary: "bg-primary font-medium text-black border-none hover:bg-primary/80 focus-visible:bg-primary/80",

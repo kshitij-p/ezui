@@ -8,7 +8,7 @@ const ALL_INPUT_VARIANTS = {
     sm: "h-8 text-sm px-2.5 border rounded",
     md: "h-10 text-base px-2.5 border-2 rounded-md",
     lg: "h-11 text-lg px-3 border-2 rounded-md",
-    xl: "h-14 text-xl px-3 border-2 rounded-lg",
+    xl: "h-[3.25rem] text-xl px-3 border-2 rounded-lg",
   },
 } as const;
 

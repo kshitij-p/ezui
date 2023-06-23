@@ -34,8 +34,8 @@ module.exports = {
         slideInLeft: "slideInLeft 0.25s ease-in-out forwards",
         slideOutLeft: "slideOutLeft 0.2s ease-in-out forwards",
 
-        slideInRight: "slideInRight 0.25s ease-in-out forwards",
-        slideOutRight: "slideOutRight 0.2s ease-in-out forwards",
+        slideInRight: "slideInRight 4s ease-in-out forwards",
+        slideOutRight: "slideOutRight 4s ease-in-out forwards",
 
         slideInTop: "slideInTop 0.25s ease-in-out forwards",
         slideOutTop: "slideOutTop 0.2s ease-in-out forwards",
