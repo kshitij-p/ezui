@@ -14,6 +14,7 @@ import {
 } from "../ui/Autocomplete";
 import { allCountries } from "./demoData";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "../ui/Select";
+import { Checkbox } from "../ui/Checkbox";
 
 const allHobbies = ["Programming", "Music", "Sleeping", "Looking at cats", "YES"] as const;
 
@@ -34,6 +35,7 @@ const formSchema = z.object({
     code: z.string(),
   }),
   catBreed: z.enum(allCatBreeds, { required_error: "Hey this is a very important question >:(" }),
+  agreesToServe: z.boolean().refine((val) => val === true, { message: "D: how can you not" }),
 });
 
 const DemoForm = () => {
@@ -48,14 +50,11 @@ const DemoForm = () => {
 
   return (
     <div className="flex w-full flex-col items-center justify-center">
-      <label className="item-center flex gap-2">
+      <label className="flex items-center gap-2">
         Form disabled
-        <input
-          type="checkbox"
+        <Checkbox
           checked={formDisabled}
-          onChange={(e) => {
-            setFormDisabled(e.currentTarget.checked);
-          }}
+          onCheckedChange={(val) => setFormDisabled(typeof val === "boolean" ? val : false)}
         />
       </label>
       <Form
@@ -198,6 +197,36 @@ const DemoForm = () => {
               </FormItem>
             )}
           />
+          <FormField
+            control={form.control}
+            name="agreesToServe"
+            render={({ field }) => (
+              <FormItem>
+                <div className="flex items-center gap-2">
+                  <FormLabel className="text-md">
+                    Do you agree to serve cats our lords and saviors ? {field.value}
+                  </FormLabel>
+
+                  <FormControl>
+                    <Checkbox
+                      name={field.name}
+                      onBlur={field.onBlur}
+                      onCheckedChange={(val) => {
+                        if (typeof val !== "boolean") return;
+                        field.onChange(val);
+                      }}
+                      checked={field.value}
+                    />
+                  </FormControl>
+                </div>
+
+                <div>
+                  <FormMessage className="text-md" />
+                </div>
+              </FormItem>
+            )}
+          />
+
           <Button type="submit">Submit</Button>
         </div>
       </Form>

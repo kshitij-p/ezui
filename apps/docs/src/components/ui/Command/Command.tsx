@@ -46,7 +46,7 @@ const CommandInput = React.forwardRef<
       {...rest}
       ref={passedRef}
       className={cn(
-        "placeholder:text-muted-foreground flex h-11 w-full rounded-md bg-transparent py-3 text-base outline-none disabled:cursor-not-allowed disabled:opacity-50",
+        "placeholder:text-muted-foreground flex h-11 w-full rounded-md bg-transparent py-3 text-base outline-none disabled:opacity-50",
         className
       )}
     />
