@@ -13,11 +13,11 @@ type AutocompleteOption = Record<string, unknown> | string;
 
 type AutocompleteContext = {
   open: boolean;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  onOpenChange: (open: boolean) => void;
   value: AutocompleteOption | null;
-  setValue: React.Dispatch<React.SetStateAction<AutocompleteOption>>;
+  onValueChange: (option: AutocompleteOption) => void;
   defaultValue?: AutocompleteOption;
-  options: Array<AutocompleteOption>;
+  options: Array<AutocompleteOption> | readonly string[];
   label: keyof AutocompleteOption | never;
 };
 
@@ -29,11 +29,10 @@ const getValue = <TOption extends AutocompleteOption>(option: TOption, label: ke
 };
 
 type AutocompleteBaseProps<TOption extends AutocompleteOption> = {
-  options: Array<TOption>;
-  open?: boolean;
-  setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  options: Array<TOption> | readonly string[];
+  open?: AutocompleteContext["open"];
   value?: TOption;
-  setValue?: React.Dispatch<React.SetStateAction<TOption>>;
+  onValueChange?: (option: TOption) => void;
   defaultValue?: TOption;
 };
 
@@ -50,19 +49,20 @@ const Autocomplete = <TOption extends string | Record<string, unknown>>({
   children,
   options,
   open: passedOpen,
-  setOpen: passedSetOpen,
+  onOpenChange,
   value: passedValue,
-  setValue: passedSetValue,
+  defaultOpen,
+  onValueChange,
   defaultValue,
   label = "label",
   ...rest
 }: React.ComponentPropsWithoutRef<typeof Popover> & AutocompleteProps<TOption>) => {
-  const [_open, _setOpen] = useState(false);
+  const [_open, _setOpen] = useState(defaultOpen ?? false);
   const open = passedOpen !== undefined ? passedOpen : _open;
-  const setOpen = passedSetOpen !== undefined ? passedSetOpen : _setOpen;
+  const setOpen = onOpenChange !== undefined ? onOpenChange : _setOpen;
   const [_value, _setValue] = React.useState<TOption | null>(defaultValue ?? null);
   const value = passedValue !== undefined ? passedValue : _value;
-  const setValue = passedSetValue !== undefined ? passedSetValue : _setValue;
+  const setValue = onValueChange !== undefined ? onValueChange : _setValue;
 
   //Todo make everything pass refs and respect asChild
   //Todo check and complete all todos
@@ -72,8 +72,8 @@ const Autocomplete = <TOption extends string | Record<string, unknown>>({
       value={{
         defaultValue,
         open,
-        setOpen,
-        setValue: setValue as React.Dispatch<React.SetStateAction<AutocompleteOption>>,
+        onOpenChange: setOpen,
+        onValueChange: setValue as (option: AutocompleteOption) => void,
         value,
         options,
         label: label as keyof AutocompleteOption | never,
@@ -89,8 +89,8 @@ const Autocomplete = <TOption extends string | Record<string, unknown>>({
 const AutocompleteTrigger = React.forwardRef<
   React.ElementRef<typeof PopoverTrigger>,
   React.ComponentPropsWithoutRef<typeof PopoverTrigger>
->(({ children, className, asChild, ...rest }, passedRef) => {
-  //Todo make this able to have asChild
+>(({ children, className, asChild, onClick, disabled, ...rest }, passedRef) => {
+  //To do make autocomplet support disabled
 
   return (
     <PopoverTrigger
@@ -160,15 +160,15 @@ const AutocompleteItem = React.forwardRef<
     value: AutocompleteOption;
   }
 >(({ children, className, value, ...rest }, passedRef) => {
-  const { setValue, setOpen } = useContext(AutocompleteContext);
+  const { onValueChange, onOpenChange } = useContext(AutocompleteContext);
 
   return (
     <CommandItem
       {...rest}
       className={className}
       onSelect={() => {
-        setValue(value);
-        setOpen(false);
+        onValueChange(value);
+        onOpenChange(false);
       }}
       ref={passedRef}
     >
