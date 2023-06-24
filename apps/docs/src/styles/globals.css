@@ -6,7 +6,7 @@
   /* Light Mode Vars */
   :root {
     --background: 0 0% 100%; /* Body's bg color */
-    --foreground: 222.2 47.4% 11.2%; /* Default text color */
+    --foreground: 222 47% 11%; /* Default text color */
 
     --paper: 0 0% 100%; /*  Used for the bg colors of comps */
 

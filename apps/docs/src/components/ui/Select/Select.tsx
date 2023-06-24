@@ -41,10 +41,7 @@ const SelectContent = React.forwardRef<
       <RadixSelect.Content
         {...rest}
         sideOffset={8}
-        className={cn(
-          "relative z-[1200] min-w-[8rem] rounded border bg-paper p-2 shadow-md",
-          className
-        )}
+        className={cn("relative z-[1200] min-w-[8rem] rounded border bg-paper p-2 shadow-md", className)}
         position={position}
         ref={passedRef}
       >
@@ -78,7 +75,7 @@ const SelectItem = React.forwardRef<
   <RadixSelect.Item
     {...rest}
     className={cn(
-      "my-2 flex w-full items-center rounded border border-transparent p-1 pl-2 transition duration-75 hover:border-border focus-visible:border-border/75 focus-visible:outline-none data-[disabled]:pointer-events-none data-[state='checked']:border-border data-[state='checked']:bg-accent/50 data-[disabled]:opacity-50 data-[state='checked']:hover:border-border/75 data-[state='checked']:hover:bg-accent/90 data-[state='checked']:focus-visible:border-border/75 data-[state='checked']:focus-visible:bg-accent/90",
+      "my-2 flex w-full cursor-default items-center rounded border border-transparent p-1 pl-2 transition duration-75 hover:border-border focus-visible:border-border/75 focus-visible:outline-none data-[disabled]:pointer-events-none data-[state='checked']:border-border data-[state='checked']:bg-accent/50 data-[disabled]:opacity-50 data-[state='checked']:hover:border-border/75 data-[state='checked']:hover:bg-accent/90 data-[state='checked']:focus-visible:border-border/75 data-[state='checked']:focus-visible:bg-accent/90",
 
       className
     )}

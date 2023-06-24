@@ -143,7 +143,7 @@ const AutocompleteContent = React.forwardRef<
         {input}
         <CommandEmpty>No framework found.</CommandEmpty>
         <ScrollAreaRoot>
-          <CommandGroup>
+          <CommandGroup className="py-2">
             <ScrollAreaViewport className="max-h-56">{children}</ScrollAreaViewport>
           </CommandGroup>
           <ScrollBar />
