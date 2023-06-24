@@ -54,7 +54,7 @@ const DemoNavigationMenu = () => {
   return (
     <div className="w-full">
       <NavigationMenu>
-        <NavigationMenuList>
+        <NavigationMenuList className="flex-wrap">
           <NavigationMenuIndicator />
           <NavigationMenuItem>
             <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
