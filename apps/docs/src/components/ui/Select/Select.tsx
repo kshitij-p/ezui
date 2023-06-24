@@ -41,7 +41,10 @@ const SelectContent = React.forwardRef<
       <RadixSelect.Content
         {...rest}
         sideOffset={8}
-        className={cn("relative z-[1200] min-w-[8rem] rounded border bg-paper p-2 shadow-md dark:border-0", className)}
+        className={cn(
+          "relative z-[1200] min-w-[8rem] rounded border bg-paper p-2 shadow-md",
+          className
+        )}
         position={position}
         ref={passedRef}
       >

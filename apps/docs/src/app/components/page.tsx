@@ -2,6 +2,7 @@ import DemoAutocomplete from "@/components/demo/DemoAutocomplete";
 import DemoCheckbox from "@/components/demo/DemoCheckbox";
 import DemoCommand from "@/components/demo/DemoCommand";
 import DemoForm from "@/components/demo/DemoForm";
+import DemoNavigationMenu from "@/components/demo/DemoNavigationMenu";
 import DemoPopover from "@/components/demo/DemoPopover";
 import DemoScrollArea from "@/components/demo/DemoScrollArea";
 import DemoSheet from "@/components/demo/DemoSheet";
@@ -43,7 +44,7 @@ import Link from "next/link";
 
 const page = () => {
   return (
-    <div className="flex max-w-max flex-col gap-8 p-8">
+    <div className="flex max-w-max flex-col gap-8 px-4 md:p-8">
       <div className="flex flex-wrap gap-8">
         <div className="flex flex-col gap-8">
           <Dialog>
@@ -192,6 +193,7 @@ const page = () => {
         <DemoCheckbox />
         <DemoScrollArea />
         <DemoPopover />
+        <DemoNavigationMenu />
         <DemoCommand />
         <DemoAutocomplete />
         <DemoForm />

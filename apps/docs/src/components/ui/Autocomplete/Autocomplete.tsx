@@ -90,8 +90,6 @@ const AutocompleteTrigger = React.forwardRef<
   React.ElementRef<typeof PopoverTrigger>,
   React.ComponentPropsWithoutRef<typeof PopoverTrigger>
 >(({ children, className, asChild, onClick, disabled, ...rest }, passedRef) => {
-  //To do make autocomplet support disabled
-
   return (
     <PopoverTrigger
       {...rest}
@@ -163,6 +161,8 @@ const AutocompleteItem = React.forwardRef<
   }
 >(({ children, className, value, ...rest }, passedRef) => {
   const { onValueChange, onOpenChange } = useContext(AutocompleteContext);
+
+  //To do make autocomplet support disabled for single items
 
   return (
     <CommandItem

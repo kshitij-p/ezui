@@ -58,7 +58,7 @@ const AlertDialogContent = React.forwardRef<
         <RadixAlertDialog.Content
           {...rest}
           className={cn(
-            "fixed z-dialog flex w-full max-w-[90vw] origin-top-left flex-col gap-4 overflow-y-auto rounded bg-paper p-6 shadow shadow-black/20 focus-visible:outline-none sm:max-w-lg",
+            "fixed z-dialog flex w-full max-w-[90vw] origin-top-left flex-col gap-4 overflow-y-auto rounded border bg-paper p-6 shadow shadow-black/20 focus-visible:outline-none sm:max-w-lg",
             dialogAnimationLookup[animation],
             dialogPositionLookup.x[position.x],
             dialogPositionLookup.y[position.y],

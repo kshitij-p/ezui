@@ -1,3 +1,5 @@
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -18,6 +20,7 @@ module.exports = {
         primary: "hsl(var(--primary))",
         border: "hsl(var(--border))",
         "border-light": "hsl(var(--border-light))",
+        separator: "hsl(var(--separator))",
         ring: "hsl(var(--ring))",
         accent: "hsl(var(--accent))",
         "scroll-thumb": "hsl(var(--scroll-thumb))",
@@ -34,8 +37,8 @@ module.exports = {
         slideInLeft: "slideInLeft 0.25s ease-in-out forwards",
         slideOutLeft: "slideOutLeft 0.2s ease-in-out forwards",
 
-        slideInRight: "slideInRight 4s ease-in-out forwards",
-        slideOutRight: "slideOutRight 4s ease-in-out forwards",
+        slideInRight: "slideInRight 0.25s ease-in-out forwards",
+        slideOutRight: "slideOutRight 0.2s ease-in-out forwards",
 
         slideInTop: "slideInTop 0.25s ease-in-out forwards",
         slideOutTop: "slideOutTop 0.2s ease-in-out forwards",
@@ -100,6 +103,9 @@ module.exports = {
       zIndex: {
         "dialog-backdrop": 49, //Dialog overlay/backdrop. Also applies to Sheet comp.
         dialog: 50, //Dialog portal and the content inside it. Also applies to Sheet comp.
+      },
+      fontFamily: {
+        sans: ["var(--font-sans)", ...fontFamily.sans],
       },
     },
   },

@@ -13,10 +13,7 @@ const Command = React.forwardRef<
 >(({ className, ...rest }, passedRef) => (
   <CommandPrimitive
     {...rest}
-    className={cn(
-      "flex h-full w-full flex-col overflow-hidden rounded-md border bg-paper shadow-md dark:border-none",
-      className
-    )}
+    className={cn("flex h-full w-full flex-col overflow-hidden rounded-md border bg-paper shadow-md", className)}
     ref={passedRef}
   />
 ));
@@ -40,7 +37,7 @@ const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ children, className, ...rest }, passedRef) => (
-  <div className="flex items-center border-b border-border-light px-3" cmdk-input-wrapper="">
+  <div className="flex items-center border-b border-separator px-3" cmdk-input-wrapper="">
     {children}
     <CommandPrimitive.Input
       {...rest}
@@ -101,7 +98,7 @@ const CommandSeparator = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>
 >(({ className, ...rest }, passedRef) => (
-  <CommandPrimitive.Separator {...rest} className={cn("-mx-1 my-1 h-px bg-border-light", className)} ref={passedRef} />
+  <CommandPrimitive.Separator {...rest} className={cn("-mx-1 my-1 h-px bg-separator", className)} ref={passedRef} />
 ));
 CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 
