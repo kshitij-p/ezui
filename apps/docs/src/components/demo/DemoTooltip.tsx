@@ -4,7 +4,7 @@ import { Button } from "../ui/Button";
 
 const DemoTooltip = () => {
   return (
-    <div className="flex w-full items-center gap-4">
+    <div className="flex w-full flex-wrap items-center gap-4">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>

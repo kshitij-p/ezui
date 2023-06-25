@@ -8,6 +8,7 @@ import DemoPopover from "@/components/demo/DemoPopover";
 import DemoRadioGroup from "@/components/demo/DemoRadioGroup";
 import DemoScrollArea from "@/components/demo/DemoScrollArea";
 import DemoSheet from "@/components/demo/DemoSheet";
+import DemoToast from "@/components/demo/DemoToast";
 import DemoTooltip from "@/components/demo/DemoTooltip";
 import {
   AlertDialog,
@@ -196,6 +197,7 @@ const page = () => {
         <DemoCheckbox />
         <DemoRadioGroup />
         <DemoScrollArea />
+        <DemoToast />
         <DemoPopover />
         <DemoTooltip />
         <DemoDropdownMenu />
