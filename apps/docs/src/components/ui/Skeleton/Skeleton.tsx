@@ -3,13 +3,7 @@ import { cn } from "@/lib/utils";
 
 const Skeleton = React.forwardRef(
   ({ className, ...rest }: React.HTMLAttributes<HTMLDivElement>, passedRef: ForwardedRef<HTMLDivElement>) => {
-    return (
-      <div
-        {...rest}
-        className={cn("animate-pulse rounded-md bg-neutral-300 dark:bg-neutral-800", className)}
-        ref={passedRef}
-      />
-    );
+    return <div {...rest} className={cn("animate-pulse rounded-md bg-muted", className)} ref={passedRef} />;
   }
 );
 

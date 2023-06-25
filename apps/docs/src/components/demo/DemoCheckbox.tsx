@@ -10,6 +10,7 @@ const DemoCheckbox = () => {
   return (
     <div className="flex w-full gap-2">
       <Checkbox />
+      <Checkbox aria-invalid />
       <Checkbox checked={checked} onCheckedChange={setChecked} />
       <button
         type="button"

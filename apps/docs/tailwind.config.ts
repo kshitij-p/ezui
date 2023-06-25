@@ -92,8 +92,7 @@ for (let direction of directions) {
   // For e.g. to make 15% do createSlideAnimation(direction.name, direction.start, direction.end, 0.15);
 }
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -108,6 +107,7 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         paper: "hsl(var(--paper))",
+        muted: "hsl(var(--muted))",
         "muted-text": "hsl(var(--muted-text))",
         primary: "hsl(var(--primary))",
         border: "hsl(var(--border))",

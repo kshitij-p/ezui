@@ -10,6 +10,7 @@
 
     --paper: 0 0% 100%; /*  Used for the bg colors of comps */
 
+    --muted: 240 5% 93%; /* Used for big/primary muted blocks */
     --muted-text: 220 6% 50%; /* Used for faint/disabled els text color */
 
     --primary: 175 80% 40%; /* Used for primary button and other primary variants */
@@ -37,6 +38,7 @@
 
     --paper: 180 4% 6%;
 
+    --muted: 240 4% 16%;
     --muted-text: 220 6% 55%; /* Used for faint/disabled els text color */
 
     --border-light: 175 4% 13%; /* Used for light faint borders */

@@ -18,6 +18,7 @@ import { Checkbox } from "../ui/Checkbox";
 import { Textarea } from "../ui/Textarea";
 import { RadioGroup, RadioGroupItem } from "../ui/RadioGroup";
 import { Label } from "../ui/Label";
+import { Switch } from "../ui/Switch";
 
 const allHobbies = ["Programming", "Music", "Sleeping", "Looking at cats", "YES"] as const;
 
@@ -45,6 +46,7 @@ const formSchema = z.object({
   catBreed: z.enum(allCatBreeds, { required_error: "Hey this is a very important question >:(" }),
   catName: z.enum(allCatNames, { required_error: "Please suggest a name" }),
   //.refines to check instead of .literal(true) so ts doesnt complain when passing changeHandlers and stuff
+  switch: z.boolean().refine((val) => val === true, { message: "Just press this pls" }),
   agreesToServe: z.boolean().refine((val) => val === true, { message: "D: how can you not" }),
 });
 
@@ -239,6 +241,32 @@ const DemoForm = () => {
                     })}
                   </RadioGroup>
                 </FormControl>
+                <div>
+                  <FormMessage className="text-md" />
+                </div>
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="switch"
+            render={({ field: { onChange, value, ...field } }) => (
+              <FormItem>
+                <div className="flex items-center gap-2">
+                  <FormLabel className="text-md">Do you agree to serve cats our lords and saviors ?</FormLabel>
+
+                  <FormControl>
+                    <Switch
+                      {...field}
+                      onCheckedChange={(val) => {
+                        if (typeof val !== "boolean") return;
+                        onChange(val);
+                      }}
+                      checked={value}
+                    />
+                  </FormControl>
+                </div>
+
                 <div>
                   <FormMessage className="text-md" />
                 </div>

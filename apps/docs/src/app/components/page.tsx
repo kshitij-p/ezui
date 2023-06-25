@@ -10,6 +10,7 @@ import DemoScrollArea from "@/components/demo/DemoScrollArea";
 import DemoSeparator from "@/components/demo/DemoSeparator";
 import DemoSheet from "@/components/demo/DemoSheet";
 import DemoSkeleton from "@/components/demo/DemoSkeleton";
+import DemoSwitch from "@/components/demo/DemoSwitch";
 import DemoToast from "@/components/demo/DemoToast";
 import DemoTooltip from "@/components/demo/DemoTooltip";
 import {
@@ -198,6 +199,7 @@ const page = () => {
         </div>
         <DemoSkeleton />
         <DemoSeparator />
+        <DemoSwitch />
         <DemoCheckbox />
         <DemoRadioGroup />
         <DemoScrollArea />
