@@ -8,6 +8,7 @@ import DemoPopover from "@/components/demo/DemoPopover";
 import DemoRadioGroup from "@/components/demo/DemoRadioGroup";
 import DemoScrollArea from "@/components/demo/DemoScrollArea";
 import DemoSheet from "@/components/demo/DemoSheet";
+import DemoSkeleton from "@/components/demo/DemoSkeleton";
 import DemoToast from "@/components/demo/DemoToast";
 import DemoTooltip from "@/components/demo/DemoTooltip";
 import {
@@ -194,6 +195,7 @@ const page = () => {
             <Link href={"#"}>Link demo</Link>
           </Button>
         </div>
+        <DemoSkeleton />
         <DemoCheckbox />
         <DemoRadioGroup />
         <DemoScrollArea />
