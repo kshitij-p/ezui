@@ -39,7 +39,7 @@ const RadioGroupItem = React.forwardRef<
     <RadioGroupPrimitive.Item
       {...rest}
       className={cn(
-        "aspect-square h-4 w-4 rounded-full border border-border text-border ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 disabled:opacity-50 aria-[invalid=true]:border-invalid aria-[invalid=true]:ring-invalid/75 enabled:data-[state=unchecked]:hover:bg-accent/50",
+        "aspect-square h-4 w-4 rounded-full border border-border text-border ring-offset-background transition focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 disabled:opacity-50 aria-[invalid=true]:border-invalid aria-[invalid=true]:ring-invalid/75 enabled:data-[state=unchecked]:hover:bg-accent/50",
         className
       )}
       aria-invalid={ariaInvalid ?? groupInvalid}
