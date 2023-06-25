@@ -43,6 +43,7 @@ const frameworks = [
     value: "vanillajs",
     label: "VanillaJs",
   },
+  { value: "php", label: "Php" },
 ];
 
 const works = frameworks.map((fw) => fw.label);
@@ -57,7 +58,7 @@ const DemoAutocomplete = () => {
           </AutocompleteTrigger>
           <AutocompleteContent>
             {frameworks.map((framework) => (
-              <AutocompleteItem key={framework.value} value={framework}>
+              <AutocompleteItem key={framework.value} value={framework} disabled={framework.value === "php"}>
                 {framework.label}
               </AutocompleteItem>
             ))}
@@ -70,7 +71,7 @@ const DemoAutocomplete = () => {
           </AutocompleteTrigger>
           <AutocompleteContent>
             {frameworks.map((framework) => (
-              <AutocompleteItem key={framework.value} value={framework}>
+              <AutocompleteItem key={framework.value} value={framework} disabled={framework.value === "php"}>
                 {framework.label}
               </AutocompleteItem>
             ))}
@@ -91,7 +92,7 @@ const DemoAutocomplete = () => {
             }
           >
             {frameworks.map((framework) => (
-              <AutocompleteItem key={framework.value} value={framework}>
+              <AutocompleteItem key={framework.value} value={framework} disabled={framework.value === "php"}>
                 {framework.label}
               </AutocompleteItem>
             ))}

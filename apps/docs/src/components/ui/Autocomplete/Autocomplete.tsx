@@ -39,6 +39,11 @@ type AutocompleteBaseProps<TOption extends AutocompleteOption> = {
 type AutocompleteProps<TOption extends string | Record<string, unknown>> = AutocompleteBaseProps<TOption> &
   (TOption extends Record<string, unknown>
     ? {
+        /**
+         * When values are objects, label tells which property to use as the text value for the trigger.
+         * E.g. {value: "cat", label: "Cats :D"} and label prop is set to "label", the trigger value will show
+         * Cats :D when the particular option is selected
+         */
         label: keyof TOption;
       }
     : {
@@ -63,9 +68,6 @@ const Autocomplete = <TOption extends string | Record<string, unknown>>({
   const [_value, _setValue] = React.useState<TOption | null>(defaultValue ?? null);
   const value = passedValue !== undefined ? passedValue : _value;
   const setValue = onValueChange !== undefined ? onValueChange : _setValue;
-
-  //Todo make everything pass refs and respect asChild
-  //Todo check and complete all todos
 
   return (
     <AutocompleteContext.Provider
@@ -161,8 +163,6 @@ const AutocompleteItem = React.forwardRef<
   }
 >(({ children, className, value, ...rest }, passedRef) => {
   const { onValueChange, onOpenChange } = useContext(AutocompleteContext);
-
-  //To do make autocomplet support disabled for single items
 
   return (
     <CommandItem

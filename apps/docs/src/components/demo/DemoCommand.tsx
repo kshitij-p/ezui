@@ -9,7 +9,7 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "../ui/Command";
-import { Calculator, Calendar, CreditCard, Settings, Smile, User } from "lucide-react";
+import { Calculator, Calendar, CreditCard, Settings, Smile, Trash, User } from "lucide-react";
 
 const DemoCommand = () => {
   return (
@@ -47,6 +47,10 @@ const DemoCommand = () => {
             <Settings className="mr-2 h-4 w-4" />
             <span>Settings</span>
             <CommandShortcut>⌘S</CommandShortcut>
+          </CommandItem>
+          <CommandItem disabled>
+            <Trash className="mr-2 h-4 w-4" />
+            <span>Delete everything</span>
           </CommandItem>
         </CommandGroup>
       </CommandList>
