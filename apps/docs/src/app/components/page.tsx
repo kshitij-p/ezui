@@ -7,6 +7,7 @@ import DemoNavigationMenu from "@/components/demo/DemoNavigationMenu";
 import DemoPopover from "@/components/demo/DemoPopover";
 import DemoRadioGroup from "@/components/demo/DemoRadioGroup";
 import DemoScrollArea from "@/components/demo/DemoScrollArea";
+import DemoSeparator from "@/components/demo/DemoSeparator";
 import DemoSheet from "@/components/demo/DemoSheet";
 import DemoSkeleton from "@/components/demo/DemoSkeleton";
 import DemoToast from "@/components/demo/DemoToast";
@@ -196,6 +197,7 @@ const page = () => {
           </Button>
         </div>
         <DemoSkeleton />
+        <DemoSeparator />
         <DemoCheckbox />
         <DemoRadioGroup />
         <DemoScrollArea />
