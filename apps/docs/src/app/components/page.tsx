@@ -5,6 +5,7 @@ import DemoDropdownMenu from "@/components/demo/DemoDropdownMenu";
 import DemoForm from "@/components/demo/DemoForm";
 import DemoNavigationMenu from "@/components/demo/DemoNavigationMenu";
 import DemoPopover from "@/components/demo/DemoPopover";
+import DemoRadioGroup from "@/components/demo/DemoRadioGroup";
 import DemoScrollArea from "@/components/demo/DemoScrollArea";
 import DemoSheet from "@/components/demo/DemoSheet";
 import {
@@ -192,6 +193,7 @@ const page = () => {
           </Button>
         </div>
         <DemoCheckbox />
+        <DemoRadioGroup />
         <DemoScrollArea />
         <DemoPopover />
         <DemoDropdownMenu />

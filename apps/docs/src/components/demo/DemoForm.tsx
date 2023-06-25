@@ -16,10 +16,14 @@ import { allCountries } from "./demoData";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "../ui/Select";
 import { Checkbox } from "../ui/Checkbox";
 import { Textarea } from "../ui/Textarea";
+import { RadioGroup, RadioGroupItem } from "../ui/RadioGroup";
+import { Label } from "../ui/Label";
 
 const allHobbies = ["Programming", "Music", "Sleeping", "Looking at cats", "YES"] as const;
 
 const allCatBreeds = ["Ragdoll", "Maine Coon", "Orang", "Eeepy", "YES"] as const;
+
+const allCatNames = ["Orang", "Sir moewsers", "Doug"] as const;
 
 const formSchema = z.object({
   username: z.string({ required_error: "Must be at least 2 characters." }).min(2, {
@@ -39,7 +43,7 @@ const formSchema = z.object({
     .string({ required_error: "Pls drop a message, I promise someone reads it" })
     .min(10, { message: "Its too short" }),
   catBreed: z.enum(allCatBreeds, { required_error: "Hey this is a very important question >:(" }),
-
+  catName: z.enum(allCatNames, { required_error: "Please suggest a name" }),
   //.refines to check instead of .literal(true) so ts doesnt complain when passing changeHandlers and stuff
   agreesToServe: z.boolean().refine((val) => val === true, { message: "D: how can you not" }),
 });
@@ -220,23 +224,43 @@ const DemoForm = () => {
           />
           <FormField
             control={form.control}
+            name="catName"
+            render={({ field: { onChange, ...field } }) => (
+              <FormItem>
+                <FormControl>
+                  <RadioGroup {...field} onValueChange={onChange as (val: string) => void}>
+                    {allCatNames.map((name) => {
+                      return (
+                        <div className="flex items-center gap-2" key={name}>
+                          <RadioGroupItem value={name} id={`pick-cat-radio-${name}`} />
+                          <Label htmlFor={`pick-cat-radio-${name}`}>{name}</Label>
+                        </div>
+                      );
+                    })}
+                  </RadioGroup>
+                </FormControl>
+                <div>
+                  <FormMessage className="text-md" />
+                </div>
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
             name="agreesToServe"
-            render={({ field }) => (
+            render={({ field: { onChange, value, ...field } }) => (
               <FormItem>
                 <div className="flex items-center gap-2">
-                  <FormLabel className="text-md">
-                    Do you agree to serve cats our lords and saviors ? {field.value}
-                  </FormLabel>
+                  <FormLabel className="text-md">Do you agree to serve cats our lords and saviors ?</FormLabel>
 
                   <FormControl>
                     <Checkbox
-                      name={field.name}
-                      onBlur={field.onBlur}
+                      {...field}
                       onCheckedChange={(val) => {
                         if (typeof val !== "boolean") return;
-                        field.onChange(val);
+                        onChange(val);
                       }}
-                      checked={field.value}
+                      checked={value}
                     />
                   </FormControl>
                 </div>
