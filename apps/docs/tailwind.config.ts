@@ -109,6 +109,8 @@ export default {
         paper: "hsl(var(--paper))",
         muted: "hsl(var(--muted))",
         "muted-text": "hsl(var(--muted-text))",
+        "light-text": "hsl(var(--light-text))",
+        card: "hsl(var(--card))",
         primary: "hsl(var(--primary))",
         border: "hsl(var(--border))",
         "border-light": "hsl(var(--border-light))",

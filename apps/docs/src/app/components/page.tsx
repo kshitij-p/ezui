@@ -1,4 +1,5 @@
 import DemoAutocomplete from "@/components/demo/DemoAutocomplete";
+import DemoCard from "@/components/demo/DemoCard";
 import DemoCheckbox from "@/components/demo/DemoCheckbox";
 import DemoCommand from "@/components/demo/DemoCommand";
 import DemoDropdownMenu from "@/components/demo/DemoDropdownMenu";
@@ -134,21 +135,21 @@ const page = () => {
 
           <DemoSheet />
         </div>
-        <div className="flex flex-col gap-8">
+        <div className="flex max-w-full flex-col gap-8">
           <Input variants={{ size: "xs" }} defaultValue={"The quicky brown fox"} />
           <Input variants={{ size: "sm" }} defaultValue={"The quicky brown fox"} />
           <Input variants={{ size: "md" }} defaultValue={"The quicky brown fox"} />
           <Input variants={{ size: "lg" }} defaultValue={"The quicky brown fox"} />
           <Input variants={{ size: "xl" }} defaultValue={"The quicky brown fox"} />
         </div>
-        <div className="flex flex-col gap-8">
+        <div className="flex max-w-full flex-col gap-8">
           <Textarea variants={{ size: "xs" }} defaultValue={"The quicky brown fox"} />
           <Textarea variants={{ size: "sm" }} defaultValue={"The quicky brown fox"} />
           <Textarea variants={{ size: "md" }} defaultValue={"The quicky brown fox"} />
           <Textarea variants={{ size: "lg" }} defaultValue={"The quicky brown fox"} />
           <Textarea variants={{ size: "xl" }} defaultValue={"The quicky brown fox"} />
         </div>
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex max-w-full flex-col items-center gap-8">
           <Button variants={{ size: "xs" }}>Settings</Button>
           <Button variants={{ size: "sm" }}>Settings</Button>
           <Button variants={{ size: "md" }}>Settings</Button>
@@ -205,6 +206,7 @@ const page = () => {
         <DemoSwitch />
         <DemoCheckbox />
         <DemoRadioGroup />
+        <DemoCard />
         <DemoToggle />
         <DemoToggleGroup />
         <DemoTabs />

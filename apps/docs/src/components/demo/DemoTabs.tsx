@@ -3,57 +3,62 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
 import { Label } from "../ui/Label";
 import { Input } from "../ui/Input";
 import { Button } from "../ui/Button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/Card";
 
 const DemoTabs = () => {
   return (
     //To do replace divs with Card
-    <div className="flex flex-col items-center">
-      <Tabs defaultValue="account" className="w-[400px]">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="account">Account</TabsTrigger>
-          <TabsTrigger value="password">Password</TabsTrigger>
+    <div className="flex w-full flex-col flex-wrap items-center">
+      <Tabs defaultValue="account" className="w-full max-w-[400px]">
+        <TabsList className="flex w-full flex-wrap items-center">
+          <TabsTrigger className="w-1/2" value="account">
+            Account
+          </TabsTrigger>
+          <TabsTrigger className="w-1/2" value="password">
+            Password
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="account">
-          <div>
-            <div>
-              <div>Account</div>
-              <div>Make changes to your account here. Click save when you're done.</div>
-            </div>
-            <div className="space-y-2">
+          <Card>
+            <CardHeader>
+              <CardTitle>Account</CardTitle>
+              <CardDescription>Make changes to your account here. Click save when you're done.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-2">
               <div className="space-y-1">
                 <Label htmlFor="name">Name</Label>
-                <Input id="name" defaultValue="Pedro Duarte" />
+                <Input className="max-w-full" id="name" defaultValue="Pedro Duarte" />
               </div>
               <div className="space-y-1">
                 <Label htmlFor="username">Username</Label>
-                <Input id="username" defaultValue="@peduarte" />
+                <Input className="max-w-full" id="username" defaultValue="@peduarte" />
               </div>
-            </div>
-            <div>
+            </CardContent>
+            <CardFooter>
               <Button>Save changes</Button>
-            </div>
-          </div>
+            </CardFooter>
+          </Card>
         </TabsContent>
         <TabsContent value="password">
-          <div>
-            <div>
-              <div>Password</div>
-              <div>Change your password here. After saving, you'll be logged out.</div>
-            </div>
-            <div className="space-y-2">
+          <Card>
+            <CardHeader>
+              <CardTitle>Password</CardTitle>
+              <CardDescription>Change your password here. After saving, you'll be logged out.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-2">
               <div className="space-y-1">
                 <Label htmlFor="current">Current password</Label>
-                <Input id="current" type="password" />
+                <Input className="max-w-full" id="current" type="password" />
               </div>
               <div className="space-y-1">
                 <Label htmlFor="new">New password</Label>
-                <Input id="new" type="password" />
+                <Input className="max-w-full" id="new" type="password" />
               </div>
-            </div>
-            <div>
+            </CardContent>
+            <CardFooter>
               <Button>Save password</Button>
-            </div>
-          </div>
+            </CardFooter>
+          </Card>
         </TabsContent>
       </Tabs>
     </div>

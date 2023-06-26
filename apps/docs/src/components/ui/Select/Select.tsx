@@ -41,15 +41,15 @@ const SelectContent = React.forwardRef<
       <RadixSelect.Content
         {...rest}
         sideOffset={8}
-        className={cn("relative z-[1200] min-w-[8rem] rounded border bg-paper p-2 shadow-md", className)}
+        className={cn(
+          "relative z-[1200] w-[var(--radix-select-trigger-width)] rounded border bg-paper p-2 shadow-md",
+          className
+        )}
         position={position}
         ref={passedRef}
       >
         <ScrollAreaRoot>
-          <RadixSelect.Viewport
-            asChild
-            className={cn(isPopper && "max-h-56 w-full min-w-[calc(var(--radix-select-trigger-width)+0.5rem)]")}
-          >
+          <RadixSelect.Viewport asChild className={cn(isPopper && "max-h-56 w-full")}>
             <ScrollAreaViewport>{children}</ScrollAreaViewport>
           </RadixSelect.Viewport>
           <ScrollBar />

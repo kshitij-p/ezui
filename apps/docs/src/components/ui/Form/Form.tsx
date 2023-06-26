@@ -102,7 +102,9 @@ const FormControl = React.forwardRef<
 >((props, passedRef) => {
   const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
 
-  const { disabled } = React.useContext(FormContext);
+  const { disabled: formDisabled } = React.useContext(FormContext);
+
+  const disabled = props.disabled || formDisabled;
 
   return (
     <Slot
@@ -193,7 +195,7 @@ const Form = <T extends FieldValues>({
     <FormProvider {...form}>
       <FormContext.Provider value={{ disabled }}>
         <form {...rest} onSubmit={handleSubmit}>
-          <fieldset disabled={disabled}>{children}</fieldset>
+          {children}
         </form>
       </FormContext.Provider>
     </FormProvider>

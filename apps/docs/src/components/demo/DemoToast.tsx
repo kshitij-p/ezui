@@ -8,7 +8,7 @@ const DemoToast = () => {
   const { toast } = useToast();
 
   return (
-    <div className="flex w-full items-center justify-center gap-2">
+    <div className="flex w-full flex-wrap items-center justify-center gap-2">
       <Button
         variants={{ type: "secondary" }}
         onClick={() => {
