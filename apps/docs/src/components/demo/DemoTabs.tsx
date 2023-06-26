@@ -7,7 +7,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 const DemoTabs = () => {
   return (
-    //To do replace divs with Card
     <div className="flex w-full flex-col flex-wrap items-center">
       <Tabs defaultValue="account" className="w-full max-w-[400px]">
         <TabsList className="flex w-full flex-wrap items-center">

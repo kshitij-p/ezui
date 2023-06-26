@@ -4,6 +4,7 @@ import DemoCheckbox from "@/components/demo/DemoCheckbox";
 import DemoCommand from "@/components/demo/DemoCommand";
 import DemoDropdownMenu from "@/components/demo/DemoDropdownMenu";
 import DemoForm from "@/components/demo/DemoForm";
+import DemoHoverCard from "@/components/demo/DemoHoverCard";
 import DemoNavigationMenu from "@/components/demo/DemoNavigationMenu";
 import DemoPopover from "@/components/demo/DemoPopover";
 import DemoRadioGroup from "@/components/demo/DemoRadioGroup";
@@ -214,6 +215,7 @@ const page = () => {
         <DemoToast />
         <DemoPopover />
         <DemoTooltip />
+        <DemoHoverCard />
         <DemoDropdownMenu />
         <DemoNavigationMenu />
         <DemoCommand />
