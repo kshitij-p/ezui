@@ -1,10 +1,10 @@
-"use cleint";
+"use client";
 
 import * as React from "react";
 
 import type { ToastActionElement, ToastProps } from "./Toast";
 
-const TOAST_LIMIT = 5;
+const TOAST_LIMIT = 3;
 const TOAST_REMOVE_DELAY_IN_MS = 1000000; //Used to wait for animation to finish before removing
 
 type ToasterToast = ToastProps & {
