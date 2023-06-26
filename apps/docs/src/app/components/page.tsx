@@ -13,6 +13,7 @@ import DemoSkeleton from "@/components/demo/DemoSkeleton";
 import DemoSwitch from "@/components/demo/DemoSwitch";
 import DemoToast from "@/components/demo/DemoToast";
 import DemoToggle from "@/components/demo/DemoToggle";
+import DemoToggleGroup from "@/components/demo/DemoToggleGroup";
 import DemoTooltip from "@/components/demo/DemoTooltip";
 import {
   AlertDialog,
@@ -204,6 +205,7 @@ const page = () => {
         <DemoCheckbox />
         <DemoRadioGroup />
         <DemoToggle />
+        <DemoToggleGroup />
         <DemoScrollArea />
         <DemoToast />
         <DemoPopover />
