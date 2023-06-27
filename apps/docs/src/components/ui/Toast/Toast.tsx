@@ -28,7 +28,7 @@ ToastViewport.displayName = RadixToast.Viewport.displayName;
 const ALL_TOAST_VARIANTS = {
   type: {
     default: "border bg-paper",
-    danger: "danger border-danger group border-danger bg-paper",
+    danger: "danger border-danger border-danger bg-paper",
   },
 } as const;
 
@@ -65,7 +65,7 @@ const ToastAction = React.forwardRef<
   <RadixToast.Action
     {...rest}
     className={cn(
-      "inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium ring-offset-background transition-colors hover:border-border hover:bg-accent/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-[.danger]:hover:border-danger/30 group-[.danger]:hover:bg-danger/50 group-[.danger]:focus:ring-danger/75",
+      "inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium ring-offset-background transition-colors hover:border-border hover:bg-accent/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus-visible:border-border focus-visible:bg-accent/50 disabled:pointer-events-none disabled:opacity-50 group-[.danger]:hover:border-danger/30 group-[.danger]:hover:bg-danger/50 group-[.danger]:focus:ring-danger/75 group-[.danger]:focus-visible:border-danger/30 group-[.danger]:focus-visible:bg-danger/50",
 
       className
     )}
@@ -81,7 +81,7 @@ const ToastClose = React.forwardRef<
   <RadixToast.Close
     {...rest}
     className={cn(
-      "absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.danger]:text-red-300 group-[.danger]:hover:text-danger group-[.danger]:focus:ring-danger/75",
+      "absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring/75 group-hover:opacity-100 group-[.danger]:text-red-300 group-[.danger]:hover:text-danger group-[.danger]:focus:ring-danger/75",
       className
     )}
     toast-close=""
