@@ -7,7 +7,7 @@ const DemoSeparator = () => {
       <div>
         <div className="space-y-1">
           <h4 className="text-sm font-medium leading-none">Ezui</h4>
-          <p className="text-muted-foreground text-sm">A comp lib made by a cat enjoyer.</p>
+          <p className="text-sm text-light-text">A comp lib made by a cat enjoyer.</p>
         </div>
         <Separator className="my-4" />
         <div className="flex h-5 items-center space-x-4 text-sm">

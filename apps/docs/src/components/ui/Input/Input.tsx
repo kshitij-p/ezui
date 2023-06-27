@@ -21,7 +21,7 @@ const DEFAULT_VARIANTS = {
 } satisfies InputVariants;
 
 const inputVariants = cva(
-  "flex border border-border py-1 bg-transparent transition focus-visible:outline-0 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-paper focus-visible:hover:border-border disabled:opacity-50 aria-[invalid=true]:border-invalid aria-[invalid=true]:hover:border-invalid aria-[invalid=true]:focus-visible:ring-invalid/75 placeholder:text-foreground/50",
+  "flex border border-border py-1 bg-transparent transition focus-visible:outline-0 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-paper focus-visible:hover:border-border disabled:opacity-50 aria-[invalid=true]:border-invalid aria-[invalid=true]:hover:border-invalid aria-[invalid=true]:focus-visible:ring-invalid/75 placeholder:text-light-text",
   {
     variants: ALL_INPUT_VARIANTS,
     defaultVariants: DEFAULT_VARIANTS,

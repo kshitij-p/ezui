@@ -26,7 +26,7 @@ const DemoToast = () => {
         onClick={() => {
           toast({
             title: "Cats on your way",
-            description: "A million cats are on your way!",
+            description: "A million cats are on their way to you!",
             action: <ToastAction altText="Goto schedule to undo">Undo</ToastAction>,
             //Sets the sensitivity - how screen readers and announcers shld prioritise the toast's msg
             //Basically foreground = important msg, background = not important msg

@@ -23,7 +23,7 @@ const DemoHoverCard = () => {
                 <p className="text-sm">The React Framework – created and maintained by @vercel.</p>
                 <div className="flex items-center pt-2">
                   <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
-                  <span className="text-muted-foreground text-xs">Joined December 2021</span>
+                  <span className="text-xs text-light-text">Joined December 2021</span>
                 </div>
               </div>
             </div>
@@ -44,7 +44,7 @@ const DemoHoverCard = () => {
                 <p className="text-sm">The React Framework – created and maintained by @vercel.</p>
                 <div className="flex items-center pt-2">
                   <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
-                  <span className="text-muted-foreground text-xs">Joined December 2021</span>
+                  <span className="text-xs text-light-text">Joined December 2021</span>
                 </div>
               </div>
             </div>
@@ -65,7 +65,7 @@ const DemoHoverCard = () => {
                 <p className="text-sm">The React Framework – created and maintained by @vercel.</p>
                 <div className="flex items-center pt-2">
                   <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
-                  <span className="text-muted-foreground text-xs">Joined December 2021</span>
+                  <span className="text-xs text-light-text">Joined December 2021</span>
                 </div>
               </div>
             </div>
@@ -86,7 +86,7 @@ const DemoHoverCard = () => {
                 <p className="text-sm">The React Framework – created and maintained by @vercel.</p>
                 <div className="flex items-center pt-2">
                   <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
-                  <span className="text-muted-foreground text-xs">Joined December 2021</span>
+                  <span className="text-xs text-light-text">Joined December 2021</span>
                 </div>
               </div>
             </div>
