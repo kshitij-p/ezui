@@ -1,4 +1,5 @@
 import DemoAutocomplete from "@/components/demo/DemoAutocomplete";
+import DemoAvatar from "@/components/demo/DemoAvatar";
 import DemoCard from "@/components/demo/DemoCard";
 import DemoCheckbox from "@/components/demo/DemoCheckbox";
 import DemoCommand from "@/components/demo/DemoCommand";
@@ -203,6 +204,7 @@ const page = () => {
           </Button>
         </div>
         <DemoSkeleton />
+        <DemoAvatar />
         <DemoSeparator />
         <DemoSwitch />
         <DemoCheckbox />

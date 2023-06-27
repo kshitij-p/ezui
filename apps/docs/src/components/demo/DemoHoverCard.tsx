@@ -2,6 +2,7 @@ import React from "react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/HoverCard";
 import { Button } from "../ui/Button";
 import { CalendarDays } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/Avatar";
 
 const DemoHoverCard = () => {
   return (
@@ -34,10 +35,10 @@ const DemoHoverCard = () => {
           </HoverCardTrigger>
           <HoverCardContent className="w-80" side="left">
             <div className="flex justify-between space-x-4">
-              {/* Todo replace div here with Avatar */}
-              <span className="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full">
-                <img className="aspect-square h-full w-full" src="https://github.com/vercel.png" />
-              </span>
+              <Avatar>
+                <AvatarImage src="https://github.com/vercel.png" />
+                <AvatarFallback>VC</AvatarFallback>
+              </Avatar>
               <div className="space-y-1">
                 <h4 className="text-sm font-semibold">@nextjs</h4>
                 <p className="text-sm">The React Framework – created and maintained by @vercel.</p>
