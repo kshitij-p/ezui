@@ -131,6 +131,7 @@ export default {
         accordionUp: "accordionUp 0.2s ease-in-out",
         collapsibleDown: "collapsibleDown 0.25s ease-in-out",
         collapsibleUp: "collapsibleUp 0.2s ease-in-out",
+        fadeOut0: "fadeOut 0s ease forwards",
         ...slideAnimations,
       },
       keyframes: {

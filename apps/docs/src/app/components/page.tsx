@@ -8,6 +8,7 @@ import DemoCommand from "@/components/demo/DemoCommand";
 import DemoDropdownMenu from "@/components/demo/DemoDropdownMenu";
 import DemoForm from "@/components/demo/DemoForm";
 import DemoHoverCard from "@/components/demo/DemoHoverCard";
+import DemoMenubar from "@/components/demo/DemoMenubar";
 import DemoNavigationMenu from "@/components/demo/DemoNavigationMenu";
 import DemoPopover from "@/components/demo/DemoPopover";
 import DemoRadioGroup from "@/components/demo/DemoRadioGroup";
@@ -226,6 +227,7 @@ const page = () => {
         <DemoHoverCard />
         <DemoDropdownMenu />
         <DemoNavigationMenu />
+        <DemoMenubar />
         <DemoCommand />
         <DemoAutocomplete />
         <DemoForm />
