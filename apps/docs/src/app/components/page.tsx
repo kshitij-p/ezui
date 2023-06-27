@@ -1,3 +1,4 @@
+import DemoAccordion from "@/components/demo/DemoAccordion";
 import DemoAutocomplete from "@/components/demo/DemoAutocomplete";
 import DemoAvatar from "@/components/demo/DemoAvatar";
 import DemoCard from "@/components/demo/DemoCard";
@@ -215,6 +216,7 @@ const page = () => {
         <DemoTabs />
         <DemoScrollArea />
         <DemoToast />
+        <DemoAccordion />
         <DemoPopover />
         <DemoTooltip />
         <DemoHoverCard />

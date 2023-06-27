@@ -127,7 +127,8 @@ export default {
         fadeOut: "fadeOut 0.2s ease-in-out forwards",
         zoomIn: "zoomIn 0.25s ease-in-out forwards",
         zoomOut: "zoomOut 0.2s ease-in-out forwards",
-
+        accordionDown: "accordionDown 0.2s ease-out",
+        accordionUp: "accordionUp 0.2s ease-out",
         ...slideAnimations,
       },
       keyframes: {
@@ -146,6 +147,14 @@ export default {
         zoomOut: {
           "100%": { opacity: "0", scale: "0.85" },
           "0%": { opacity: "1", scale: "1" },
+        },
+        accordionDown: {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        accordionUp: {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
         ...slideKeyframes,
       },
