@@ -127,8 +127,10 @@ export default {
         fadeOut: "fadeOut 0.2s ease-in-out forwards",
         zoomIn: "zoomIn 0.25s ease-in-out forwards",
         zoomOut: "zoomOut 0.2s ease-in-out forwards",
-        accordionDown: "accordionDown 0.2s ease-out",
-        accordionUp: "accordionUp 0.2s ease-out",
+        accordionDown: "accordionDown 0.25s ease-in-out",
+        accordionUp: "accordionUp 0.2s ease-in-out",
+        collapsibleDown: "collapsibleDown 0.25s ease-in-out",
+        collapsibleUp: "collapsibleUp 0.2s ease-in-out",
         ...slideAnimations,
       },
       keyframes: {
@@ -154,6 +156,14 @@ export default {
         },
         accordionUp: {
           from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        collapsibleDown: {
+          from: { height: "0" },
+          to: { height: "var(--radix-collapsible-content-height)" },
+        },
+        collapsibleUp: {
+          from: { height: "var(--radix-collapsible-content-height)" },
           to: { height: "0" },
         },
         ...slideKeyframes,

@@ -3,6 +3,7 @@ import DemoAutocomplete from "@/components/demo/DemoAutocomplete";
 import DemoAvatar from "@/components/demo/DemoAvatar";
 import DemoCard from "@/components/demo/DemoCard";
 import DemoCheckbox from "@/components/demo/DemoCheckbox";
+import DemoCollapsible from "@/components/demo/DemoCollapsible";
 import DemoCommand from "@/components/demo/DemoCommand";
 import DemoDropdownMenu from "@/components/demo/DemoDropdownMenu";
 import DemoForm from "@/components/demo/DemoForm";
@@ -216,6 +217,7 @@ const page = () => {
         <DemoTabs />
         <DemoScrollArea />
         <DemoToast />
+        <DemoCollapsible />
         <DemoAccordion />
         <DemoPopover />
         <DemoTooltip />
