@@ -12,6 +12,7 @@ import DemoHoverCard from "@/components/demo/DemoHoverCard";
 import DemoMenubar from "@/components/demo/DemoMenubar";
 import DemoNavigationMenu from "@/components/demo/DemoNavigationMenu";
 import DemoPopover from "@/components/demo/DemoPopover";
+import DemoProgress from "@/components/demo/DemoProgress";
 import DemoRadioGroup from "@/components/demo/DemoRadioGroup";
 import DemoScrollArea from "@/components/demo/DemoScrollArea";
 import DemoSeparator from "@/components/demo/DemoSeparator";
@@ -217,6 +218,7 @@ const page = () => {
         <DemoCheckbox />
         <DemoRadioGroup />
         <DemoSlider />
+        <DemoProgress />
         <DemoTable />
         <DemoCard />
         <DemoToggle />
