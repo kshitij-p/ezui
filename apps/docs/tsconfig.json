@@ -2,6 +2,7 @@
   "exclude": ["node_modules"],
   "extends": "@ezui/tsconfig/nextjs.json",
   "compilerOptions": {
+    "target": "ESNext",
     "outDir": "dist",
     "incremental": true,
     "plugins": [
