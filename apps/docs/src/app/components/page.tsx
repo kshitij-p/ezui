@@ -17,6 +17,7 @@ import DemoScrollArea from "@/components/demo/DemoScrollArea";
 import DemoSeparator from "@/components/demo/DemoSeparator";
 import DemoSheet from "@/components/demo/DemoSheet";
 import DemoSkeleton from "@/components/demo/DemoSkeleton";
+import DemoSlider from "@/components/demo/DemoSlider";
 import DemoSwitch from "@/components/demo/DemoSwitch";
 import DemoTable from "@/components/demo/DemoTable";
 import DemoTabs from "@/components/demo/DemoTabs";
@@ -215,6 +216,7 @@ const page = () => {
         <DemoSwitch />
         <DemoCheckbox />
         <DemoRadioGroup />
+        <DemoSlider />
         <DemoTable />
         <DemoCard />
         <DemoToggle />

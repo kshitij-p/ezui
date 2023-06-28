@@ -6,8 +6,6 @@
 
 ### Aspect Ratio
 
-### Badge
-
 ### Calendar
 
 ### Context Menu
@@ -17,5 +15,3 @@
 ### Date Picker
 
 ### Progress
-
-### Slider
