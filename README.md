@@ -4,8 +4,6 @@
 
 ### Alert
 
-### Aspect Ratio
-
 ### Calendar
 
 ### Context Menu

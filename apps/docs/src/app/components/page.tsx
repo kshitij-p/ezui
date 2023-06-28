@@ -1,9 +1,11 @@
 import DemoAccordion from "@/components/demo/DemoAccordion";
+import DemoAspectRatio from "@/components/demo/DemoAspectRatio";
 import DemoAutocomplete from "@/components/demo/DemoAutocomplete";
 import DemoAvatar from "@/components/demo/DemoAvatar";
 import DemoBadge from "@/components/demo/DemoBadge";
 import DemoCard from "@/components/demo/DemoCard";
 import DemoCheckbox from "@/components/demo/DemoCheckbox";
+import DemoCode from "@/components/demo/DemoCode";
 import DemoCollapsible from "@/components/demo/DemoCollapsible";
 import DemoCommand from "@/components/demo/DemoCommand";
 import DemoDropdownMenu from "@/components/demo/DemoDropdownMenu";
@@ -219,6 +221,8 @@ const page = () => {
         <DemoRadioGroup />
         <DemoSlider />
         <DemoProgress />
+        <DemoAspectRatio />
+        <DemoCode />
         <DemoTable />
         <DemoCard />
         <DemoToggle />
