@@ -34,7 +34,7 @@ const DEFAULT_VARIANTS = {
 } satisfies ButtonVariants;
 
 const buttonVariants = cva(
-  "bg-transparent inline-flex items-center justify-center transition focus-visible:outline-0 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-paper focus-visible:hover:border-border disabled:opacity-50",
+  "bg-transparent inline-flex items-center justify-center transition focus-visible:outline-0 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-background disabled:opacity-50",
   {
     variants: ALL_BUTTON_VARIANTS,
     defaultVariants: DEFAULT_VARIANTS,
@@ -53,7 +53,7 @@ const Button = React.forwardRef(
       variants?: Partial<ButtonVariants>;
       /**
        * If true, the immediate child of the button is rendered instead of the button but with the styling
-       * button. Useful for rendering Links as button.
+       * of the button. Useful for rendering Links as button.
        *
        * \<Button asChild>\<Link>A link\</Link>\</Button>
        */

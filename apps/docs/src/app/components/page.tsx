@@ -1,6 +1,7 @@
 import DemoAccordion from "@/components/demo/DemoAccordion";
 import DemoAutocomplete from "@/components/demo/DemoAutocomplete";
 import DemoAvatar from "@/components/demo/DemoAvatar";
+import DemoBadge from "@/components/demo/DemoBadge";
 import DemoCard from "@/components/demo/DemoCard";
 import DemoCheckbox from "@/components/demo/DemoCheckbox";
 import DemoCollapsible from "@/components/demo/DemoCollapsible";
@@ -207,6 +208,7 @@ const page = () => {
             <Link href={"#"}>Link demo</Link>
           </Button>
         </div>
+        <DemoBadge />
         <DemoSkeleton />
         <DemoAvatar />
         <DemoSeparator />
