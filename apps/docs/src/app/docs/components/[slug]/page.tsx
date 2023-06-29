@@ -1,4 +1,3 @@
-import { format, parseISO } from "date-fns";
 import { allComponents } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import { useMDXComponent } from "next-contentlayer/hooks";
@@ -29,15 +28,16 @@ const ComponentLayout = ({ params }: { params: { slug: string } }) => {
   const MDXContent = useMDXComponent(component.body.code);
 
   return (
-    <article className="mx-auto max-w-xl py-8">
-      <div className="mb-8 text-center">
-        <time dateTime={component.date} className="mb-1 text-xs text-gray-600">
-          {format(parseISO(component.date), "LLLL d, yyyy")}
-        </time>
-        <h1 className="text-3xl font-bold">{component.title}</h1>
+    <div className="flex w-full justify-center">
+      <div className="flex w-full flex-col items-center ">
+        <article className="flex w-full max-w-7xl flex-col items-center">
+          <div className="mb-8 text-center">
+            <h1 className="text-3xl font-bold">{component.title}</h1>
+          </div>
+          <MDXContent components={mdxComponents} />
+        </article>
       </div>
-      <MDXContent components={mdxComponents} />
-    </article>
+    </div>
   );
 };
 

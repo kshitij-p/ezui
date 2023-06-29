@@ -1,5 +1,6 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import { codeImport } from "remark-code-import";
+import rehypePrettyCode from "rehype-pretty-code";
 
 import { u } from "unist-builder";
 import { visit } from "unist-util-visit";
@@ -43,14 +44,13 @@ export const Component = defineDocumentType(() => ({
   contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
-    date: { type: "date", required: true },
   },
   computedFields: {
     url: { type: "string", resolve: (component) => `/docs/components/${component._raw.flattenedPath}` },
   },
 }));
 
-export function rehypeComponent() {
+export function rehypeGenerateCodeFromFile() {
   return async (tree: any) => {
     visit(tree, (node: any) => {
       const { value: src } = getNodeAttributeByName(node, "src") || {};
@@ -93,7 +93,7 @@ export function rehypeComponent() {
             })
           );
         } catch (error) {
-          console.error("Error", error);
+          console.error("Failed to generate code lines for ComponentDemo", error);
         }
       }
     });
@@ -109,6 +109,6 @@ export default makeSource({
   documentTypes: [Component],
   mdx: {
     remarkPlugins: [codeImport],
-    rehypePlugins: [rehypeComponent],
+    rehypePlugins: [rehypeGenerateCodeFromFile, () => rehypePrettyCode({ keepBackground: false })],
   },
 });

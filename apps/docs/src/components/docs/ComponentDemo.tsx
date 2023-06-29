@@ -1,6 +1,6 @@
 import React from "react";
-import DemoAccordion from "../demo/DemoAccordion";
 import { registryComponents } from "@/registry";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
 
 const ComponentDemo = ({
   children,
@@ -18,12 +18,24 @@ const ComponentDemo = ({
     return <comp.demoComponent />;
   }, []);
 
-  console.log(name);
-
   return (
     <>
-      {DemoComponent}
-      {CodeLines}
+      <Tabs className="w-full" defaultValue="preview">
+        <TabsList className="flex w-full flex-wrap items-center">
+          <TabsTrigger className="w-1/2" value="preview">
+            Preview
+          </TabsTrigger>
+          <TabsTrigger className="w-1/2" value="code">
+            Code
+          </TabsTrigger>
+        </TabsList>
+        <div className="mt-6 border px-4 py-6">
+          <TabsContent value="preview">{DemoComponent}</TabsContent>
+          <TabsContent className="overflow-y-auto" value="code">
+            {CodeLines}
+          </TabsContent>
+        </div>
+      </Tabs>
     </>
   );
 };

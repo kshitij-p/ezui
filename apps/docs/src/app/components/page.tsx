@@ -66,7 +66,7 @@ import Link from "next/link";
 
 const page = () => {
   return (
-    <div className="flex max-w-max flex-col gap-8 px-4 md:p-8">
+    <div className="flex w-full max-w-max flex-col gap-8">
       <div className="flex flex-wrap gap-8">
         <div className="flex flex-col gap-8">
           <Dialog>
