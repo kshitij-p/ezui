@@ -2,7 +2,10 @@ import { readdirSync } from "fs";
 import { readFile } from "fs/promises";
 import path from "path";
 
+export const DEMO_COMPS_PATH = path.resolve("./", "src", "components", "demo");
 export const COMPS_PATH = path.resolve("./", "src", "components", "ui");
+
+export const REGISTRY_PATH = path.resolve("./", "src", "registry", "index.tsx");
 export const COMPS_JSON_PATH = path.resolve("./", "src", "app", "api", "components", "components.json");
 
 export const checkForInconsistentImports = async () => {

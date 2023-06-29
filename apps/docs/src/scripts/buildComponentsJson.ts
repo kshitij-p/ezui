@@ -20,7 +20,7 @@ const validate = async () => {
 };
 
 const run = async () => {
-  if (!validate) {
+  if (!(await validate())) {
     return;
   }
 

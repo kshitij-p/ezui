@@ -9,7 +9,8 @@
     "lint": "next lint",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next",
     "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\"",
-    "buildComps": "ts-node-esm ./src/scripts/buildComponentsJson.ts"
+    "buildComps": "ts-node-esm ./src/scripts/buildComponentsJson.ts",
+    "buildRegistry": "ts-node-esm ./src/scripts/buildRegistry.ts"
   },
   "dependencies": {
     "@ezui/cli": "workspace:*",
@@ -43,13 +44,19 @@
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "cmdk": "^0.2.0",
+    "contentlayer": "^0.3.3",
+    "date-fns": "^2.30.0",
     "lucide-react": "^0.244.0",
     "next": "^13.4.7",
+    "next-contentlayer": "^0.3.3",
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.0",
+    "remark-code-import": "^1.2.0",
     "tailwind-merge": "^1.13.1",
+    "unist-builder": "^3.0.1",
+    "unist-util-visit": "^4.1.2",
     "zod": "^3.21.4"
   },
   "devDependencies": {
@@ -57,6 +64,7 @@
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
+    "@types/unist": "^2.0.6",
     "autoprefixer": "^10.4.14",
     "eslint-config-ezui": "workspace:*",
     "postcss": "^8.4.24",
