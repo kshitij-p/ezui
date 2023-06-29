@@ -9,9 +9,9 @@ description: Component's description <br />
 
 \<ComponentDemo name="componentName" />
 
-## Installation
+\## \<HeaderLink href="#installation">Installation\</HeaderLink>
 
-\<Steps>
+\<Steps id="installation">
 
 \<Step className="inline-flex items-center gap-2">
 Follow the
@@ -27,11 +27,11 @@ Getting Started
 
 \</Steps>
 
-## Usage
+\## \<HeaderLink href="#usage">Usage\</HeaderLink>
 
 ### A code block showing how to use the component. For e.g.
 
-<CodeBlock>
+\<CodeBlock id="usage">
 
 ```tsx
 <Accordion type="single" collapsible>
@@ -52,13 +52,13 @@ Getting Started
 </Accordion>
 ```
 
-</CodeBlock>
+\</CodeBlock>
 
-## Anatomy
+\## \<HeaderLink href="#anatomy">Anatomy\</HeaderLink>
 
 ### A code block showing the structure of the component. For e.g.
 
-<CodeBlock>
+\<CodeBlock id="anatomy">
 
 ```tsx
 <Accordion>
@@ -69,4 +69,4 @@ Getting Started
 </Accordion>
 ```
 
-</CodeBlock>
+\</CodeBlock>

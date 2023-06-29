@@ -148,6 +148,6 @@ export default makeSource({
   documentTypes: [Component],
   mdx: {
     remarkPlugins: [codeImport],
-    rehypePlugins: [rehypeGenerateCodeFromFile, () => rehypePrettyCode({ keepBackground: false })],
+    rehypePlugins: [rehypeGenerateCodeFromFile, () => rehypePrettyCode({ keepBackground: false, theme: "poimandres" })],
   },
 });

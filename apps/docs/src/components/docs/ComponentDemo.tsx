@@ -30,10 +30,12 @@ const ComponentDemo = ({
             Code
           </TabsTrigger>
         </TabsList>
-        <CodeBlock>
-          <TabsContent value="preview">{DemoComponent}</TabsContent>
-          <TabsContent value="code">{CodeLines}</TabsContent>
-        </CodeBlock>
+        <TabsContent value="preview">
+          <CodeBlock className="bg-background">{DemoComponent}</CodeBlock>
+        </TabsContent>
+        <TabsContent value="code">
+          <CodeBlock>{CodeLines}</CodeBlock>
+        </TabsContent>
       </Tabs>
     </>
   );

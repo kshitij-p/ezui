@@ -6,6 +6,17 @@ import ComponentSource from "./ComponentSource";
 import Link from "next/link";
 import CodeBlock from "./CodeBlock";
 import { Code } from "../ui/Code";
+import React from "react";
+
+const MdxLink = ({ className, ...rest }: React.ComponentPropsWithoutRef<typeof Link>) => (
+  <Link
+    {...rest}
+    className={cn(
+      "relative underline decoration-border underline-offset-4 transition hover:text-foreground/75",
+      className
+    )}
+  />
+);
 
 const mdxComponents = {
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -24,7 +35,16 @@ const mdxComponents = {
   ),
   ComponentDemo: ComponentDemo,
   ComponentSource: ComponentSource,
-  Link: Link,
+  Link: MdxLink,
+  HeaderLink: ({ className, ...rest }: React.ComponentPropsWithoutRef<typeof MdxLink>) => (
+    <MdxLink
+      {...rest}
+      className={cn(
+        "inset-0 before:absolute before:right-full before:mr-1 before:text-foreground/75 before:opacity-0 before:transition before:content-['#'] hover:before:opacity-100",
+        className
+      )}
+    />
+  ),
   Code: Code,
   CodeBlock: CodeBlock,
 } satisfies MDXComponents;

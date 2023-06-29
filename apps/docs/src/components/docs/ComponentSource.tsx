@@ -28,7 +28,7 @@ const ComponentSource = ({ children }: React.PropsWithChildren) => {
           }, 2000);
         }}
       >
-        <div className="absolute bottom-0 right-0 top-0 ml-4 mr-4 mt-4 h-6 w-6">
+        <div className="absolute bottom-0 right-0 top-0 ml-4 mr-4 mt-4 h-6 w-6 text-white">
           {copied ? <Check /> : <Clipboard />}
         </div>
         <p className="sr-only">Copy code to clipboard</p>
