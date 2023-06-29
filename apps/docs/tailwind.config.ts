@@ -49,9 +49,15 @@ const directions = [
   },
 ];
 
-const slideAnimations = {};
+const slideAnimations: Record<string, string> = {};
 
-const slideKeyframes = {};
+const slideKeyframes: Record<
+  string,
+  {
+    "0%": Record<string, string>;
+    "100%": Record<string, string>;
+  }
+> = {};
 
 type Position = { x: number; y: number };
 

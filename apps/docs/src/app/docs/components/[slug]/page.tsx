@@ -2,7 +2,8 @@ import { allComponents } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import React from "react";
-import ComponentDemo from "@/components/docs/ComponentDemo";
+
+import mdxComponents from "@/components/docs/mdxComponents";
 
 export const generateStaticParams = async () =>
   allComponents.map((component) => ({ slug: component._raw.flattenedPath }));
@@ -12,10 +13,6 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
   if (!component) throw new Error(`Component not found for slug: ${params.slug}`);
 
   return { title: component.title };
-};
-
-const mdxComponents = {
-  ComponentDemo: ComponentDemo,
 };
 
 const ComponentLayout = ({ params }: { params: { slug: string } }) => {
@@ -28,15 +25,14 @@ const ComponentLayout = ({ params }: { params: { slug: string } }) => {
   const MDXContent = useMDXComponent(component.body.code);
 
   return (
-    <div className="flex w-full justify-center">
-      <div className="flex w-full flex-col items-center ">
-        <article className="flex w-full max-w-7xl flex-col items-center">
-          <div className="mb-8 text-center">
-            <h1 className="text-3xl font-bold">{component.title}</h1>
-          </div>
-          <MDXContent components={mdxComponents} />
-        </article>
-      </div>
+    <div className="flex w-full flex-col ">
+      <article className="flex w-full max-w-4xl flex-col">
+        <div className="mb-8 flex flex-col gap-2">
+          <h1 className="text-3xl font-bold">{component.title}</h1>
+          <p className="text-light-text">{component.description}</p>
+        </div>
+        <MDXContent components={mdxComponents} />
+      </article>
     </div>
   );
 };

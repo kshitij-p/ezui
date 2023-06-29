@@ -7,7 +7,8 @@ const Code = React.forwardRef(
       children,
       className,
       block = false,
-    }: React.ComponentPropsWithoutRef<"pre"> & {
+      ...rest
+    }: React.HTMLAttributes<HTMLElement> & {
       block?: boolean;
     },
     passedRef: ForwardedRef<HTMLElement>
@@ -17,6 +18,7 @@ const Code = React.forwardRef(
     return (
       <Parent>
         <code
+          {...rest}
           className={cn("relative rounded border border-border-light bg-muted px-1.5 py-1", className)}
           ref={passedRef}
         >

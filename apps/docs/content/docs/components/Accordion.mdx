@@ -1,5 +1,60 @@
 ---
 title: Accordion
+description: A vertically stacked set of interactive headings that each reveal a section of content.
 ---
 
 <ComponentDemo name="Accordion" />
+
+## Installation
+
+<Steps>
+
+<Step className="inline-flex items-center gap-2">
+  Follow the
+  <Link className="inline-block underline decoration-primary" href={"/docs/getting-started"}>
+    Getting Started
+  </Link>
+  instructions to setup your project
+</Step>
+<Step>
+  Copy paste the following into <Code>Accordion.tsx</Code>
+</Step>
+<ComponentSource name="Accordion" />
+
+</Steps>
+
+## Usage
+
+<CodeBlock>
+  ```tsx
+  <Accordion type="single" collapsible>
+    <AccordionItem value="item-1">
+      <AccordionTrigger>Is it accessible?</AccordionTrigger>
+      <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="item-2">
+      <AccordionTrigger>Is it styled?</AccordionTrigger>
+      <AccordionContent>
+        Yes. It comes with default styles that matches the other components&apos; aesthetic.
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="item-3">
+      <AccordionTrigger>Is it animated?</AccordionTrigger>
+      <AccordionContent>Yes. It&apos;s animated by default, but you can disable it if you prefer.</AccordionContent>
+    </AccordionItem>
+  </Accordion>
+  ```
+</CodeBlock>
+
+## Anatomy
+
+<CodeBlock>
+  ```tsx
+  <Accordion>
+    <AccordionTrigger></AccordionTrigger>
+    <AccordionContent>
+      <AccordionItem></AccordionItem>
+    </AccordionContent>
+  </Accordion>
+  ```
+</CodeBlock>

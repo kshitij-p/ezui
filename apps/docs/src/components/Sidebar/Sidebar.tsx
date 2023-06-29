@@ -12,7 +12,7 @@ const SidebarContent = () => {
         {Object.keys(registryComponents).map((name) => {
           //Todo flip this prefetch to true when docs for all comps are ready
           return (
-            <Link className="text-zinc-400" prefetch={false} href={`/docs/components/${name}`}>
+            <Link className="text-zinc-400" prefetch={false} href={`/docs/components/${name}`} key={name}>
               {name}
             </Link>
           );
@@ -24,7 +24,7 @@ const SidebarContent = () => {
 
 const Sidebar = () => {
   return (
-    <aside className="sticky inset-0 hidden h-screen w-full max-w-[15rem] shrink-0 pl-4 pr-4 md:flex">
+    <aside className="sticky inset-0 hidden h-screen w-full shrink-0 pl-2 pr-4 md:flex md:max-w-[12rem] xl:max-w-[15rem] xl:pl-6">
       <ScrollList className="px-4">
         <SidebarContent />
       </ScrollList>
