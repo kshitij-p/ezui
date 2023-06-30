@@ -1,0 +1,75 @@
+---
+title: Alert Dialog
+description: A modal dialog that interrupts the user with important content and expects a response.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/alert-dialog#api-reference
+---
+
+<ComponentDemo name="AlertDialog" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>
+  Copy paste the following into <Code>AlertDialog.tsx</Code>
+</Step>
+<ComponentSource name="AlertDialog" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <AlertDialog>
+    <AlertDialogTrigger asChild>
+      <Button className="max-w-max" variants={{ type: "danger" }}>
+        Open Dialog
+      </Button>
+    </AlertDialogTrigger>
+    <AlertDialogContent>
+      <AlertDialogHeader>
+        <AlertDialogTitle className="text-xl">Alert Dialog Title?</AlertDialogTitle>
+        <AlertDialogDescription>Alert dialog description</AlertDialogDescription>
+      </AlertDialogHeader>
+      <AlertDialogFooter>
+        <AlertDialogCancel asChild>
+          <Button variants={{ size: "sm", type: "danger-secondary" }}>Decline</Button>
+        </AlertDialogCancel>
+        <AlertDialogAction asChild>
+          <Button variants={{ size: "sm", type: "danger" }}>Accept</Button>
+        </AlertDialogAction>
+      </AlertDialogFooter>
+    </AlertDialogContent>
+  </AlertDialog>
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <AlertDialog>
+    <AlertDialogTrigger></AlertDialogTrigger>
+    <AlertDialogContent>
+      <AlertDialogHeader>
+        <AlertDialogTitle></AlertDialogTitle>
+        <AlertDialogDescription></AlertDialogDescription>
+      </AlertDialogHeader>
+      <AlertDialogFooter>
+        <AlertDialogCancel>
+          <Button></Button>
+        </AlertDialogCancel>
+        <AlertDialogAction>
+          <Button></Button>
+        </AlertDialogAction>
+      </AlertDialogFooter>
+    </AlertDialogContent>
+  </AlertDialog>
+  ```
+</CodeBlock>
