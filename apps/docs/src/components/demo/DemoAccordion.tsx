@@ -31,7 +31,7 @@ const DemoAccordion = () => {
             </div>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-1">
+        <AccordionItem value="item-2">
           <AccordionTrigger>Wanna know a cat fact?</AccordionTrigger>
           <AccordionContent>
             There is a tower in Scotland which has been built in commemoration of a cat named Towser. The tower is a

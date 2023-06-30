@@ -6,18 +6,28 @@ import ScrollList from "./ScrollList";
 
 const SidebarContent = () => {
   return (
-    <div>
-      <h4 className="mb-2 text-lg font-semibold">Components</h4>
-      <nav className="flex flex-col gap-2">
-        {Object.keys(registryComponents).map((name) => {
-          //Todo flip this prefetch to true when docs for all comps are ready
-          return (
-            <Link className="text-zinc-400" prefetch={false} href={`/docs/components/${name}`} key={name}>
-              {name}
-            </Link>
-          );
-        })}
-      </nav>
+    <div className="flex flex-col gap-4">
+      <div>
+        <h4 className="mb-2 text-lg font-semibold">Getting Started</h4>
+        <nav className="flex flex-col gap-2">
+          <Link className="text-zinc-400" href={`/docs`}>
+            Introduction
+          </Link>
+        </nav>
+      </div>
+      <div>
+        <h4 className="mb-2 text-lg font-semibold">Components</h4>
+        <nav className="flex flex-col gap-2">
+          {Object.keys(registryComponents).map((name) => {
+            //Todo flip this prefetch to true when docs for all comps are ready
+            return (
+              <Link className="text-zinc-400" prefetch={false} href={`/docs/components/${name}`} key={name}>
+                {name}
+              </Link>
+            );
+          })}
+        </nav>
+      </div>
     </div>
   );
 };

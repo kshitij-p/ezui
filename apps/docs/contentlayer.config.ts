@@ -38,16 +38,40 @@ export interface NpmCommands {
   __pnpmCommand__?: string;
 }
 
+//Component docs file are made a diff type for distinction
 export const Component = defineDocumentType(() => ({
   name: "Component",
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `components/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
     description: { type: "string", required: true },
   },
   computedFields: {
-    url: { type: "string", resolve: (component) => `/docs/components/${component._raw.flattenedPath}` },
+    url: {
+      type: "string",
+      resolve: (component) => {
+        return `/docs/components/${component._raw.flattenedPath}`;
+      },
+    },
+  },
+}));
+
+export const Doc = defineDocumentType(() => ({
+  name: "Doc",
+  filePathPattern: `**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: { type: "string", required: true },
+    description: { type: "string", required: false },
+  },
+  computedFields: {
+    url: {
+      type: "string",
+      resolve: (component) => {
+        return `/docs/${component._raw.flattenedPath}`;
+      },
+    },
   },
 }));
 
@@ -144,8 +168,8 @@ function getNodeAttributeByName(node: UnistNode, name: string) {
 }
 
 export default makeSource({
-  contentDirPath: "content/docs/components",
-  documentTypes: [Component],
+  contentDirPath: "content/docs",
+  documentTypes: [Component, Doc],
   mdx: {
     remarkPlugins: [codeImport],
     rehypePlugins: [rehypeGenerateCodeFromFile, () => rehypePrettyCode({ keepBackground: false, theme: "poimandres" })],
