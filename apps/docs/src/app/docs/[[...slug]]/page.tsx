@@ -1,4 +1,4 @@
-import { Component, allComponents, allDocs } from "contentlayer/generated";
+import { Component, Doc, allComponents, allDocs } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import React from "react";
 import MDXComponents from "@/components/docs/MDXComponents";
@@ -35,6 +35,10 @@ export const generateMetadata = ({ params }: { params: { slug: string[] } }) => 
   return { title: doc.title };
 };
 
+const isComponent = (doc: Component | Doc | undefined): doc is Component => {
+  return doc?.type === "Component";
+};
+
 const ComponentLayout = ({ params }: { params: { slug: string[] } }) => {
   const doc = getDoc(params.slug);
 
@@ -47,15 +51,16 @@ const ComponentLayout = ({ params }: { params: { slug: string[] } }) => {
         <div className="mb-8 flex flex-col gap-2">
           <h1 className="mt-2 scroll-m-20 text-4xl font-bold">{doc.title}</h1>
           {doc.description && <p className="text-lg text-light-text">{doc.description}</p>}
-          {(doc as Component)?.radixApiReference && (
+          {isComponent(doc) && (doc.radixApiReference || doc.otherApiReference) && (
             <Badge className="max-w-max border-2" variants={{ type: "secondary" }}>
               <Link
                 className="inline-flex items-center gap-1"
-                href={(doc as Component).radixApiReference!}
+                href={(doc.radixApiReference ?? doc.otherApiReference)!}
                 target="_blank"
                 rel="noreferrer"
               >
-                <RadixLogo className="h-3 w-3" /> Radix API Reference
+                {doc.radixApiReference && <RadixLogo className="h-3 w-3" />}
+                {`${doc.radixApiReference ? "Radix " : ""}API Reference`}
               </Link>
             </Badge>
           )}

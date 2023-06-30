@@ -14,6 +14,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/Table";
 import CodeCopyBlock from "./CodeCopyBlock";
 import ComponentSource from "./ComponentSource";
+import { Badge } from "../ui/Badge";
 
 const MdxLink = ({ className, ...rest }: React.ComponentPropsWithoutRef<typeof Link>) => (
   <Link
@@ -94,6 +95,7 @@ const mdxComponents = {
   TableBody: TableBody,
   TableRow: TableRow,
   TableCell: TableCell,
+  Badge: Badge,
 } satisfies MDXComponents;
 
 const MDXComponents = ({ content }: { content: Parameters<typeof useMDXComponent>[0] }) => {

@@ -1,0 +1,93 @@
+---
+title: Command
+description: Fast, composable, unstyled command menu for React.
+otherApiReference: https://github.com/pacocoursey/cmdk#parts-and-styling
+---
+
+<ComponentDemo name="Command" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>Install the Command primitive by pacocoursey</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install cmdk</CodeCopyBlock>
+<Step>
+  Copy paste the following into <Code>Command.tsx</Code>
+</Step>
+<ComponentSource name="Command" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <Command>
+    <CommandInput placeholder="Type a command or search..." />
+    <CommandList>
+      <CommandEmpty>No results found.</CommandEmpty>
+      <CommandGroup heading="Suggestions">
+        <CommandItem>
+          <Calendar className="mr-2 h-4 w-4" />
+          <span>Calendar</span>
+        </CommandItem>
+        <CommandItem>
+          <Smile className="mr-2 h-4 w-4" />
+          <span>Search Emoji</span>
+        </CommandItem>
+        <CommandItem>
+          <Calculator className="mr-2 h-4 w-4" />
+          <span>Calculator</span>
+        </CommandItem>
+      </CommandGroup>
+      <CommandSeparator />
+      <CommandGroup heading="Settings">
+        <CommandItem>
+          <User className="mr-2 h-4 w-4" />
+          <span>Profile</span>
+          <CommandShortcut>⌘P</CommandShortcut>
+        </CommandItem>
+        <CommandItem>
+          <CreditCard className="mr-2 h-4 w-4" />
+          <span>Billing</span>
+          <CommandShortcut>⌘B</CommandShortcut>
+        </CommandItem>
+        <CommandItem>
+          <Settings className="mr-2 h-4 w-4" />
+          <span>Settings</span>
+          <CommandShortcut>⌘S</CommandShortcut>
+        </CommandItem>
+        <CommandItem disabled>
+          <Trash className="mr-2 h-4 w-4" />
+          <span>Delete everything</span>
+        </CommandItem>
+      </CommandGroup>
+    </CommandList>
+  </Command>
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <Command>
+    <CommandInput />
+    <CommandList>
+      <CommandEmpty></CommandEmpty>
+      <CommandGroup>
+        <CommandItem>
+          <CommandShortcut></CommandShortcut>
+        </CommandItem>
+      </CommandGroup>
+      <CommandSeparator />
+    </CommandList>
+  </Command>
+  ```
+</CodeBlock>
