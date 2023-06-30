@@ -28,6 +28,7 @@ const run = async () => {
   for (let comp of comps) {
     let demoFilePath = path.join(DEMO_COMPS_PATH, `Demo${comp}.tsx`);
     if (!existsSync(demoFilePath)) {
+      console.log(`Skipping ${comp} because a demo component for it doesn't exist`);
       continue;
     }
 
