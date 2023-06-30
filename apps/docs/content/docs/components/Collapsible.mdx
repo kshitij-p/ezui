@@ -1,0 +1,63 @@
+---
+title: Collapsible
+description: An interactive component which expands/collapses a panel.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/collapsible#api-reference
+---
+
+<ComponentDemo name="Collapsible" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>Install the Collapsible primitive from Radix UI</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install @radix-ui/react-collapsible</CodeCopyBlock>
+<Step>
+  Copy paste the following into <Code>Collapsible.tsx</Code>
+</Step>
+<ComponentSource name="Collapsible" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <Collapsible>
+    <div>
+      Some content here
+      <CollapsibleTrigger>
+        <button>{open ? <X /> : <ChevronsUpDown />}</button>
+      </CollapsibleTrigger>
+    </div>
+    <div>
+      <span>Content thats always visible</span>
+    </div>
+    <CollapsibleContent>
+      <div>
+        <span>Hidden Content</span>
+      </div>
+      <div>
+        <span>Hidden Content</span>
+      </div>
+    </CollapsibleContent>
+  </Collapsible>
+  ````
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+```tsx
+<Collapsible>
+    <CollapsibleTrigger></CollapsibleTrigger>
+    <CollapsibleContent></CollapsibleContent>
+</Collapsible>
+````
+
+</CodeBlock>
