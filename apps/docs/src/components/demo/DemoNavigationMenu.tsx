@@ -52,8 +52,8 @@ const components: { title: string; href: string; description: string }[] = [
 
 const DemoNavigationMenu = () => {
   return (
-    <div className="w-full">
-      <NavigationMenu>
+    <div className="flex min-h-[25rem] w-full justify-center">
+      <NavigationMenu className="h-max">
         <NavigationMenuList className="flex-wrap">
           <NavigationMenuIndicator />
           <NavigationMenuItem>
