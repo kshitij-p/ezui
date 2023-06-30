@@ -1,0 +1,48 @@
+---
+title: Avatar
+description: An image element with a fallback for representing the user.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/avatar#api-reference
+---
+
+<ComponentDemo name="Avatar" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>
+  Copy paste the following into <Code>Avatar.tsx</Code>
+</Step>
+<ComponentSource name="Avatar" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+<CodeBlock id="usage">
+  ```tsx
+  <Avatar>
+    <AvatarImage
+      src="https://cdn.discordapp.com/avatars/259725020534669313/b3378ac773b78f64ee4d2343d411f908.webp"
+      alt="@smolcheeld"
+    />
+    <AvatarFallback>Smol</AvatarFallback>
+  </Avatar>
+  ```
+</CodeBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <Avatar>
+    <AvatarImage />
+    <AvatarFallback></AvatarFallback>
+  </Avatar>
+  ```
+</CodeBlock>
