@@ -4,6 +4,7 @@ import React from "react";
 import MDXComponents from "@/components/docs/MDXComponents";
 import { Badge } from "@/components/ui/Badge";
 import Link from "next/link";
+import RadixLogo from "@/components/docs/RadixLogo";
 
 const getDoc = (slug: string[] | undefined) => {
   //When navigating to /docs the slug will be empty
@@ -40,8 +41,6 @@ const ComponentLayout = ({ params }: { params: { slug: string[] } }) => {
   // 404 if the component does not exist.
   if (!doc) notFound();
 
-  console.log({ doc });
-
   return (
     <div className="flex w-full flex-col ">
       <article className="flex w-full max-w-4xl flex-col">
@@ -50,8 +49,13 @@ const ComponentLayout = ({ params }: { params: { slug: string[] } }) => {
           {doc.description && <p className="text-lg text-light-text">{doc.description}</p>}
           {(doc as Component)?.radixApiReference && (
             <Badge className="max-w-max border-2" variants={{ type: "secondary" }}>
-              <Link href={(doc as Component).radixApiReference} target="_blank" rel="noreferrer">
-                Radix API Reference
+              <Link
+                className="inline-flex items-center"
+                href={(doc as Component).radixApiReference}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <RadixLogo className="h-3 w-3" /> Radix API Reference
               </Link>
             </Badge>
           )}
