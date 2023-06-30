@@ -1,0 +1,82 @@
+---
+title: Autocomplete
+description: Autocomplete input and command palette with a list of suggestions.
+---
+
+<ComponentDemo name="Autocomplete" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+<Step>
+Autocomplete is built using a composition of the <Code>\<Popover /></Code> and the <Code>\<Command /></Code> components.
+
+See installation instructions for the <Link href="/docs/components/Popover">Popover</Link> and the <Link href="/docs/components/Command">Command</Link> components.
+
+</Step>
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>
+  Copy paste the following into <Code>Autocomplete.tsx</Code>
+</Step>
+<ComponentSource name="Autocomplete" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+If options are **objects**
+
+<CodeBlock id="usage">
+  ```tsx
+  <Autocomplete options={options} label="label">
+    <AutocompleteTrigger>
+      <AutocompleteValue />
+    </AutocompleteTrigger>
+    <AutocompleteContent>
+      {frameworks.map((option) => (
+        <AutocompleteItem key={options.value} value={option}>
+          {framework.label}
+        </AutocompleteItem>
+      ))}
+    </AutocompleteContent>
+  </Autocomplete>
+  ```
+</CodeBlock>
+
+If options are **strings**
+
+<CodeBlock id="usage">
+  ```tsx
+  <Autocomplete options={options}>
+    <AutocompleteTrigger>
+      <AutocompleteValue />
+    </AutocompleteTrigger>
+    <AutocompleteContent>
+      {frameworks.map((option) => (
+        <AutocompleteItem key={options} value={option}>
+          {framework.label}
+        </AutocompleteItem>
+      ))}
+    </AutocompleteContent>
+  </Autocomplete>
+  ```
+</CodeBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <Autocomplete>
+    <AutocompleteTrigger>
+      <AutocompleteValue />
+    </AutocompleteTrigger>
+    <AutocompleteContent>
+      <AutocompleteItem></AutocompleteItem>
+    </AutocompleteContent>
+  </Autocomplete>
+  ```
+</CodeBlock>

@@ -41,12 +41,12 @@ export interface NpmCommands {
 //Component docs file are made a diff type for distinction
 export const Component = defineDocumentType(() => ({
   name: "Component",
-  filePathPattern: `components/**/*.mdx`,
+  filePathPattern: `components/*.mdx`,
   contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
     description: { type: "string", required: true },
-    radixApiReference: { type: "string", required: true },
+    radixApiReference: { type: "string", required: false },
   },
   computedFields: {
     url: {

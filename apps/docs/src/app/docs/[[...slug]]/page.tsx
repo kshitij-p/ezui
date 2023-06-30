@@ -18,6 +18,7 @@ const getDoc = (slug: string[] | undefined) => {
 
   if (slug[0] === "components") {
     return allComponents.find((component) => {
+      console.log(component._raw.flattenedPath, path);
       return component._raw.flattenedPath === path;
     });
   }
@@ -51,7 +52,7 @@ const ComponentLayout = ({ params }: { params: { slug: string[] } }) => {
             <Badge className="max-w-max border-2" variants={{ type: "secondary" }}>
               <Link
                 className="inline-flex items-center"
-                href={(doc as Component).radixApiReference}
+                href={(doc as Component).radixApiReference!}
                 target="_blank"
                 rel="noreferrer"
               >
