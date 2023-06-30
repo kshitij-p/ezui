@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/Badge";
 
 const DemoBadge = () => {
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex w-full flex-col items-center justify-center gap-4">
       <p>By default badges have no focus. For demo purposes, it has been added</p>
       <Badge tabIndex={0} variants={{ type: "primary" }}>
         Badge

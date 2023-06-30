@@ -35,11 +35,11 @@ interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   variants?: Partial<BadgeVariants>;
 }
 
-const Badge = (
-  { className, variants = DEFAULT_VARIANTS, ...rest }: BadgeProps,
-  passedRef: React.ForwardedRef<HTMLDivElement>
-) => {
-  return <div {...rest} className={cn(badgeVariants(variants), className)} ref={passedRef} />;
-};
+const Badge = React.forwardRef(
+  ({ className, variants = DEFAULT_VARIANTS, ...rest }: BadgeProps, passedRef: React.ForwardedRef<HTMLDivElement>) => {
+    return <div {...rest} className={cn(badgeVariants(variants), className)} ref={passedRef} />;
+  }
+);
+Badge.displayName = "Badge";
 
 export { Badge, badgeVariants, ALL_BADGE_VARIANTS, DEFAULT_VARIANTS, type BadgeVariants, type BadgeProps };
