@@ -60,7 +60,7 @@ const Navbar = () => {
 
   return (
     <header
-      className="group sticky inset-0 z-40 bg-slate-900/10 backdrop-blur-sm transition data-[scroll='0']:bg-background"
+      className="group sticky inset-0 z-40 border-b border-transparent bg-slate-900/10 backdrop-blur-sm transition data-[scroll='0']:border-border-light data-[scroll='0']:bg-background"
       data-scroll={"0"}
       ref={headerRef}
     >

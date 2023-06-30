@@ -1,7 +1,9 @@
-import { allComponents, allDocs } from "contentlayer/generated";
+import { Component, allComponents, allDocs } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import React from "react";
 import MDXComponents from "@/components/docs/MDXComponents";
+import { Badge } from "@/components/ui/Badge";
+import Link from "next/link";
 
 const getDoc = (slug: string[] | undefined) => {
   //When navigating to /docs the slug will be empty
@@ -38,12 +40,21 @@ const ComponentLayout = ({ params }: { params: { slug: string[] } }) => {
   // 404 if the component does not exist.
   if (!doc) notFound();
 
+  console.log({ doc });
+
   return (
     <div className="flex w-full flex-col ">
       <article className="flex w-full max-w-4xl flex-col">
         <div className="mb-8 flex flex-col gap-2">
           <h1 className="mt-2 scroll-m-20 text-4xl font-bold">{doc.title}</h1>
           {doc.description && <p className="text-lg text-light-text">{doc.description}</p>}
+          {(doc as Component)?.radixApiReference && (
+            <Badge className="max-w-max border-2" variants={{ type: "secondary" }}>
+              <Link href={(doc as Component).radixApiReference} target="_blank" rel="noreferrer">
+                Radix API Reference
+              </Link>
+            </Badge>
+          )}
         </div>
         <MDXComponents content={doc.body.code} />
       </article>

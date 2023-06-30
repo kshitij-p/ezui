@@ -46,6 +46,7 @@ export const Component = defineDocumentType(() => ({
   fields: {
     title: { type: "string", required: true },
     description: { type: "string", required: true },
+    radixApiReference: { type: "string", required: true },
   },
   computedFields: {
     url: {
