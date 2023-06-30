@@ -1,0 +1,47 @@
+---
+title: Hover Card
+description: For sighted users to preview content available behind a link.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/hover-card#api-reference
+---
+
+<ComponentDemo name="HoverCard" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>Install the Hover Card primitive from Radix UI</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install @radix-ui/react-hover-card</CodeCopyBlock>
+<Step>
+  Copy paste the following into <Code>HoverCard.tsx</Code>
+</Step>
+<ComponentSource name="HoverCard" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <HoverCard>
+    <HoverCardTrigger>Open Hover Card</HoverCardTrigger>
+    <HoverCardContent className="w-80">Hover card content</HoverCardContent>
+  </HoverCard>
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <HoverCard>
+    <HoverCardTrigger></HoverCardTrigger>
+    <HoverCardContent></HoverCardContent>
+  </HoverCard>
+  ```
+</CodeBlock>
