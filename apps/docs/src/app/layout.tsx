@@ -9,7 +9,7 @@ import { Sidebar } from "@/components/Sidebar";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={cn("font-sans", fontSans.variable)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />

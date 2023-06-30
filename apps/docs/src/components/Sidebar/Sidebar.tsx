@@ -37,7 +37,7 @@ const SidebarContent = () => {
 
 const Sidebar = () => {
   return (
-    <aside className="sticky inset-0 hidden h-screen w-full shrink-0 pl-2 pr-4 md:flex md:max-w-[12rem] xl:max-w-[15rem] xl:pl-6">
+    <aside className="sticky top-20 z-40 hidden h-screen w-full shrink-0 pl-2 pr-4 md:flex md:max-w-[12rem] xl:max-w-[15rem] xl:pl-6">
       <ScrollList className="px-4">
         <SidebarContent />
       </ScrollList>
