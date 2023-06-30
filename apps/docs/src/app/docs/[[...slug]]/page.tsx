@@ -50,7 +50,7 @@ const ComponentLayout = ({ params }: { params: { slug: string[] } }) => {
           {(doc as Component)?.radixApiReference && (
             <Badge className="max-w-max border-2" variants={{ type: "secondary" }}>
               <Link
-                className="inline-flex items-center"
+                className="inline-flex items-center gap-1"
                 href={(doc as Component).radixApiReference!}
                 target="_blank"
                 rel="noreferrer"

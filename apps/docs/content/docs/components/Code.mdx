@@ -1,0 +1,51 @@
+---
+title: Code
+description: An element for displaying code blocks.
+---
+
+<ComponentDemo name="Code" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>
+  Copy paste the following into <Code>Code.tsx</Code>
+</Step>
+<ComponentSource name="Code" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+For single lines
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <Code>look some real code</Code>
+  ```
+</CodeCopyBlock>
+
+For multiple lines — No need to wrap with <Code>\<pre /></Code>
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <Code className="flex w-full flex-col" block>
+    <span className="inline-block w-full">let x = d</span>
+    <span className="inline-block w-full">let 8 = d</span>
+  </Code>
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <Code />
+  ```
+</CodeBlock>
