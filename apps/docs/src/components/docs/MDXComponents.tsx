@@ -4,13 +4,15 @@ import { cn } from "@/lib/utils";
 import { MDXComponents } from "mdx/types";
 import ComponentDemo from "./ComponentDemo";
 
-import ComponentSource from "./ComponentSource";
 import Link from "next/link";
 import CodeBlock from "./CodeBlock";
 import { Code } from "../ui/Code";
 import React from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/Accordion";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
+import CodeCopyBlock from "./CodeCopyBlock";
+import ComponentSource from "./ComponentSource";
 
 const MdxLink = ({ className, ...rest }: React.ComponentPropsWithoutRef<typeof Link>) => (
   <Link
@@ -49,7 +51,19 @@ const mdxComponents = {
       <div className="[&>h3]:step mb-12 ml-4 border-l pl-8 [counter-reset:step]" {...rest} />
     </div>
   ),
+  CopyCodeBlock: CodeCopyBlock,
   ComponentDemo: ComponentDemo,
+  FileCode: ({
+    children,
+    copyable = false,
+  }: React.PropsWithChildren & {
+    name: string;
+    copyable?: boolean;
+  }) => {
+    const code = React.Children.toArray(children);
+
+    return copyable ? <CodeCopyBlock>{code}</CodeCopyBlock> : <CodeBlock>{code}</CodeBlock>;
+  },
   ComponentSource: ComponentSource,
   Link: MdxLink,
   HeaderLink: ({ className, ...rest }: React.ComponentPropsWithoutRef<typeof MdxLink>) => (
@@ -61,13 +75,17 @@ const mdxComponents = {
       )}
     />
   ),
-
   Code: Code,
   CodeBlock: CodeBlock,
+  CodeCopyBlock: CodeCopyBlock,
   Accordion,
   AccordionTrigger,
   AccordionContent,
   AccordionItem,
+  Tabs: Tabs,
+  TabsList: TabsList,
+  TabsTrigger: TabsTrigger,
+  TabsContent: TabsContent,
 } satisfies MDXComponents;
 
 const MDXComponents = ({ content }: { content: Parameters<typeof useMDXComponent>[0] }) => {

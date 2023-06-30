@@ -1,6 +1,6 @@
-# Format
+## Format for components
 
-Every single file in here should have:
+Every single component file in here should have:
 
 \--- <br />
 title: Component's title <br />

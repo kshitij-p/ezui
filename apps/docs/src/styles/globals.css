@@ -20,11 +20,11 @@
     --primary: 175 80% 40%; /* Used for primary button and other primary variants */
     --border: 175 84% 32%; /* Used for bold borders i.e. bright and/or colorful */
 
-    --border-light: 175 6% 90%; /* Used for faint borders */
+    --border-light: 175 6% 90%; /* Used for light borders */
 
     --separator: 0 0% 83%; /* Used for separators */
 
-    --ring: 175 84% 38%;
+    --ring: 175 84% 38%; /* Used for tailwind focus ring */
 
     --accent: 175 61% 34%; /* Used for selected states, hovered states */
 
@@ -37,27 +37,27 @@
 
   /* Dark Mode Vars */
   .dark {
-    --background: 180 4% 4%;
-    --foreground: 213 31% 91%;
+    --background: 180 4% 4%; /* Body's bg color */
+    --foreground: 213 31% 91%; /* Default text color */
 
-    --paper: 180 4% 6%;
+    --paper: 180 4% 6%; /*  Used for the bg colors of comps */
 
-    --muted: 240 4% 16%;
+    --muted: 240 4% 16%; /* Used for big/primary muted blocks */
     --muted-text: 220 6% 55%; /* Used for faint/disabled els text color */
 
     --light-text: 240 5% 65%; /* Used for light text such as descriptions */
 
     --card: 180 4% 4%; /* Used for cards */
 
-    --border-light: 175 4% 13%; /* Used for light faint borders */
+    --border-light: 175 4% 13%; /* Used for light borders */
 
     --separator: 0 0% 24%; /* Used for separators */
 
-    --ring: 175 84% 24%;
+    --ring: 175 84% 24%; /* Used for tailwind focus ring */
 
-    --accent: 175 61% 19%;
+    --accent: 175 61% 19%; /* Used for selected states, hovered states */
 
-    --scroll-thumb: 0 0% 45%;
+    --scroll-thumb: 0 0% 45%; /* Scrollbar thumb body color */
   }
 
   * {

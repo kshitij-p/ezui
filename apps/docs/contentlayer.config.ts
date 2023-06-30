@@ -75,11 +75,31 @@ export const Doc = defineDocumentType(() => ({
   },
 }));
 
+const generateCodeFromFile = (path: string, language = "tsx") => {
+  const source = readFileSync(path, "utf8");
+
+  return u("element", {
+    tagName: "pre",
+    children: [
+      u("element", {
+        tagName: "code",
+        properties: {
+          className: [`language-${language}`],
+        },
+        children: [
+          {
+            type: "text",
+            value: source,
+          },
+        ],
+      }),
+    ],
+  });
+};
+
 const rehypeGenerateCodeFromFile = () => {
   return async (tree: any) => {
     visit(tree, (node: any) => {
-      const { value: src } = getNodeAttributeByName(node, "src") || {};
-
       if (node.name === "ComponentDemo") {
         const name = getNodeAttributeByName(node, "name")?.value as string;
 
@@ -91,33 +111,9 @@ const rehypeGenerateCodeFromFile = () => {
         if (!component) return null;
 
         try {
-          const source = readFileSync(path.join(DEMO_COMPS_PATH, component.demoFileName), "utf8");
-
-          // Add code as children so that rehype can take over at build time.
-          node.children?.push(
-            u("element", {
-              tagName: "pre",
-              properties: {
-                __src__: src,
-              },
-              children: [
-                u("element", {
-                  tagName: "code",
-                  properties: {
-                    className: ["language-tsx"],
-                  },
-                  children: [
-                    {
-                      type: "text",
-                      value: source,
-                    },
-                  ],
-                }),
-              ],
-            })
-          );
+          node.children?.push(generateCodeFromFile(path.join(DEMO_COMPS_PATH, component.demoFileName)));
         } catch (error) {
-          console.error("Failed to generate code lines for ComponentDemo", error);
+          console.error(`Failed to generate code lines for ComponentDemo with name: ${name}`, error);
         }
       } else if (node.name === "ComponentSource") {
         const name = getNodeAttributeByName(node, "name")?.value as string;
@@ -130,33 +126,22 @@ const rehypeGenerateCodeFromFile = () => {
         if (!component) return null;
 
         try {
-          const source = readFileSync(path.join(COMPS_PATH, component.name, `${component.name}.tsx`), "utf8");
-
-          // Add code as children so that rehype can take over at build time.
-          node.children?.push(
-            u("element", {
-              tagName: "pre",
-              properties: {
-                __src__: src,
-              },
-              children: [
-                u("element", {
-                  tagName: "code",
-                  properties: {
-                    className: ["language-tsx"],
-                  },
-                  children: [
-                    {
-                      type: "text",
-                      value: source,
-                    },
-                  ],
-                }),
-              ],
-            })
-          );
+          node.children?.push(generateCodeFromFile(path.join(COMPS_PATH, component.name, `${component.name}.tsx`)));
         } catch (error) {
-          console.error("Failed to generate code lines for ComponentDemo", error);
+          console.error(`Failed to generate code lines for ComponentSource with name: ${name}`, error);
+        }
+      } else if (node.name === "FileCode") {
+        const name = getNodeAttributeByName(node, "name")?.value as string;
+        const language = getNodeAttributeByName(node, "language")?.value as string | undefined;
+
+        if (!name) {
+          return null;
+        }
+
+        try {
+          node.children?.push(generateCodeFromFile(path.resolve(name), language));
+        } catch (error) {
+          console.error(`Failed to generate code lines for FileCode with name: ${name}`, error);
         }
       }
     });

@@ -13,6 +13,9 @@ const SidebarContent = () => {
           <Link className="text-zinc-400" href={`/docs`}>
             Introduction
           </Link>
+          <Link className="text-zinc-400" href={`/docs/installation`}>
+            Installation
+          </Link>
         </nav>
       </div>
       <div>

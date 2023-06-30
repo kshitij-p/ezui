@@ -5,7 +5,7 @@ const CodeBlock = ({ children, className }: React.HTMLAttributes<HTMLDivElement>
   return (
     <div
       className={cn(
-        "relative mb-4 mt-6 max-h-[40rem] overflow-y-auto rounded border bg-[hsl(180_4%_6%)] px-4 py-6",
+        "relative mt-6 flex max-h-[40rem] overflow-y-auto rounded border bg-[hsl(180_4%_6%)] px-4 py-6",
         className
       )}
     >

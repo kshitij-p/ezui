@@ -1,0 +1,38 @@
+---
+title: Installation
+description: How to setup and structure your app.
+---
+
+<Steps>
+  <Step>Create a React project with your favorite scaffolding tool.</Step>
+  <Tabs className="mt-2" defaultValue="next">
+    <TabsList>
+      <TabsTrigger value="next">next</TabsTrigger>
+      <TabsTrigger value="t3">T3</TabsTrigger>
+      <TabsTrigger value="vite">vite</TabsTrigger>
+    </TabsList>
+    <TabsContent value="next">
+      <CodeCopyBlock className="m-0 py-4">npx create-next-app@latest --typescript --tailwind --eslint</CodeCopyBlock>
+    </TabsContent>
+    <TabsContent value="t3">
+      <CodeCopyBlock className="m-0 py-4">npm create t3-app@latest</CodeCopyBlock>
+    </TabsContent>
+    <TabsContent value="vite">
+      <CodeCopyBlock className="m-0 py-4">npm create vite@latest</CodeCopyBlock>
+    </TabsContent>
+  </Tabs>
+  <Step>
+    Install <Link href="https://tailwindcss.com/docs/installation/framework-guides">TailwindCSS</Link> if your
+    scaffolding tool doesn't do it
+  </Step>
+  <Step>
+    Copy paste the below content into <Code>styles/globals.css</Code>
+  </Step>
+  <FileCode language="css" copyable name="./src/styles/globals.css" />
+  <Step>
+    Copy paste the below content into <Code>tailwind.config.ts</Code>
+  </Step>
+  <FileCode copyable name="./tailwind.config.ts" />
+</Steps>
+
+That's it. You can now start adding components to your project by copy pasting them.
