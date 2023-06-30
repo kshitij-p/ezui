@@ -10,6 +10,7 @@ const DemoInput = () => {
         <Input variants={{ size: "md" }} defaultValue={"The quicky brown fox"} />
         <Input variants={{ size: "lg" }} defaultValue={"The quicky brown fox"} />
         <Input variants={{ size: "xl" }} defaultValue={"The quicky brown fox"} />
+        <Input aria-invalid variants={{ size: "xl" }} defaultValue={"The quicky brown fox"} />
       </div>
     </div>
   );
