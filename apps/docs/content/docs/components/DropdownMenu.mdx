@@ -1,0 +1,169 @@
+---
+title: Dropdown Menu
+description: Displays a menu to the user — such as a set of actions or functions — triggered by a button.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/dropdown-menu#api-reference
+---
+
+<ComponentDemo name="DropdownMenu" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>Install the Dropdown Menu primitive from Radix UI</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install @radix-ui/react-dropdown-menu</CodeCopyBlock>
+<Step>
+  Copy paste the following into <Code>DropdownMenu.tsx</Code>
+</Step>
+<ComponentSource name="DropdownMenu" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+      <Button variants={{ type: "secondary" }}>Open Dropdown Menu</Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent className="w-56">
+      <DropdownMenuLabel>My Account</DropdownMenuLabel>
+      <DropdownMenuSeparator />
+      <DropdownMenuGroup>
+        <DropdownMenuItem>
+          <User className="mr-2 h-4 w-4" />
+          <span>Profile</span>
+          <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+        </DropdownMenuItem>
+        <DropdownMenuCheckboxItem checked={likesCats} onCheckedChange={setLikesCats}>
+          <span>Do you like cats</span>
+        </DropdownMenuCheckboxItem>
+        <DropdownMenuItem>
+          <CreditCard className="mr-2 h-4 w-4" />
+          <span>Billing</span>
+          <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <Settings className="mr-2 h-4 w-4" />
+          <span>Settings</span>
+          <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <Keyboard className="mr-2 h-4 w-4" />
+          <span>Keyboard shortcuts</span>
+          <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+        </DropdownMenuItem>
+      </DropdownMenuGroup>
+      <DropdownMenuSeparator />
+      <DropdownMenuGroup>
+        <DropdownMenuLabel>What kinda cat you like</DropdownMenuLabel>
+        <DropdownMenuRadioGroup value={favCatBreed} onValueChange={setFavCatBreed}>
+          <DropdownMenuRadioItem value="ragdoll">
+            <span>Ragdoll</span>
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="Maine coon">
+            <span>maine coon</span>
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="Munchkin">
+            <span>Munchkin</span>
+          </DropdownMenuRadioItem>
+        </DropdownMenuRadioGroup>
+      </DropdownMenuGroup>
+      <DropdownMenuGroup>
+        <DropdownMenuItem>
+          <Users className="mr-2 h-4 w-4" />
+          <span>Team</span>
+        </DropdownMenuItem>
+        <DropdownMenuSub>
+          <DropdownMenuSubTrigger>
+            <UserPlus className="mr-2 h-4 w-4" />
+            <span>Invite users</span>
+          </DropdownMenuSubTrigger>
+          <DropdownMenuPortal>
+            <DropdownMenuSubContent>
+              <DropdownMenuItem>
+                <Mail className="mr-2 h-4 w-4" />
+                <span>Email</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <MessageSquare className="mr-2 h-4 w-4" />
+                <span>Message</span>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <PlusCircle className="mr-2 h-4 w-4" />
+                <span>More...</span>
+              </DropdownMenuItem>
+            </DropdownMenuSubContent>
+          </DropdownMenuPortal>
+        </DropdownMenuSub>
+        <DropdownMenuItem>
+          <Plus className="mr-2 h-4 w-4" />
+          <span>New Team</span>
+          <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+        </DropdownMenuItem>
+      </DropdownMenuGroup>
+      <DropdownMenuSeparator />
+      <DropdownMenuItem>
+        <Github className="mr-2 h-4 w-4" />
+        <span>GitHub</span>
+      </DropdownMenuItem>
+      <DropdownMenuItem>
+        <LifeBuoy className="mr-2 h-4 w-4" />
+        <span>Support</span>
+      </DropdownMenuItem>
+      <DropdownMenuItem disabled>
+        <Cloud className="mr-2 h-4 w-4" />
+        <span>API</span>
+      </DropdownMenuItem>
+      <DropdownMenuSeparator />
+      <DropdownMenuItem>
+        <LogOut className="mr-2 h-4 w-4" />
+        <span>Log out</span>
+        <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+      </DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <DropdownMenu>
+    <DropdownMenuTrigger></DropdownMenuTrigger>
+    <DropdownMenuContent>
+      <DropdownMenuLabel></DropdownMenuLabel>
+      <DropdownMenuSeparator />
+      <DropdownMenuGroup>
+        <DropdownMenuItem>
+          <DropdownMenuShortcut></DropdownMenuShortcut>
+        </DropdownMenuItem>
+        <DropdownMenuCheckboxItem></DropdownMenuCheckboxItem>
+      </DropdownMenuGroup>
+      <DropdownMenuSeparator />
+      <DropdownMenuRadioGroup>
+        <DropdownMenuRadioItem></DropdownMenuRadioItem>
+        <DropdownMenuRadioItem></DropdownMenuRadioItem>
+        <DropdownMenuRadioItem></DropdownMenuRadioItem>
+      </DropdownMenuRadioGroup>
+      <DropdownMenuSub>
+        <DropdownMenuSubTrigger>
+        </DropdownMenuSubTrigger>
+        <DropdownMenuPortal>
+          <DropdownMenuSubContent>
+            <DropdownMenuItem>
+            </DropdownMenuItem>
+          </DropdownMenuSubContent>
+        </DropdownMenuPortal>
+      </DropdownMenuSub>
+  </DropdownMenu>
+  ```
+</CodeBlock>
