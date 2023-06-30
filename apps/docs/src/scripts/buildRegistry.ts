@@ -32,13 +32,27 @@ const run = async () => {
       continue;
     }
 
+    let displayName = "";
+
+    for (let i = 0; i < comp.length; i++) {
+      let char = comp[i];
+      if (!char) continue;
+      if (i > 0 && char.toUpperCase() === char) {
+        displayName += ` ${char}`;
+      } else {
+        displayName += char;
+      }
+    }
+
     const data = {
       name: `"${comp}"`,
+      displayName: `"${displayName}"`,
       demoComponent: `React.lazy(() => import("@/components/demo/Demo${comp}"))`,
       demoFileName: `"Demo${comp}.tsx"`,
       depedencies: "[]",
     } satisfies {
       name: string;
+      displayName: string;
       depedencies: string;
       demoFileName: string;
       demoComponent: string;

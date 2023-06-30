@@ -27,7 +27,7 @@ const SidebarContent = () => {
       <div>
         <h4 className="mb-2 text-lg font-semibold">Components</h4>
         <nav className="flex flex-col gap-2">
-          {Object.keys(registryComponents).map((name) => {
+          {Object.values(registryComponents).map(({ name, displayName }) => {
             //Todo flip this prefetch to true when docs for all comps are ready
             return (
               <Link
@@ -36,7 +36,7 @@ const SidebarContent = () => {
                 href={`/docs/components/${name}`}
                 key={name}
               >
-                {name}
+                {displayName}
               </Link>
             );
           })}
@@ -48,8 +48,8 @@ const SidebarContent = () => {
 
 const Sidebar = () => {
   return (
-    <aside className="sticky top-20 z-40 hidden h-screen w-full shrink-0 pl-2 pr-4 md:flex md:max-w-[12rem] xl:max-w-[15rem] xl:pl-6">
-      <ScrollList className="px-4">
+    <aside className="sticky top-20 z-40 hidden h-[calc(100vh-5.75rem)] w-full shrink-0 pl-2 pr-4 md:flex md:max-w-[12rem] xl:max-w-[15rem] xl:pl-6">
+      <ScrollList className="px-4 pb-6">
         <SidebarContent />
       </ScrollList>
     </aside>
