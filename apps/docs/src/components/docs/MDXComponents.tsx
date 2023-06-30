@@ -11,6 +11,7 @@ import React from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/Accordion";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "../ui/Table";
 import CodeCopyBlock from "./CodeCopyBlock";
 import ComponentSource from "./ComponentSource";
 
@@ -86,6 +87,13 @@ const mdxComponents = {
   TabsList: TabsList,
   TabsTrigger: TabsTrigger,
   TabsContent: TabsContent,
+  Table: Table,
+  TableCaption: TableCaption,
+  TableHeader: TableHeader,
+  TableHead: TableHead,
+  TableBody: TableBody,
+  TableRow: TableRow,
+  TableCell: TableCell,
 } satisfies MDXComponents;
 
 const MDXComponents = ({ content }: { content: Parameters<typeof useMDXComponent>[0] }) => {
