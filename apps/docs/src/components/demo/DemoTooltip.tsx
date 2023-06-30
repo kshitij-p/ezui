@@ -1,6 +1,6 @@
 import React from "react";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/Tooltip";
-import { Button } from "../ui/Button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/Tooltip";
+import { Button } from "@/components/ui/Button";
 
 const DemoTooltip = () => {
   return (

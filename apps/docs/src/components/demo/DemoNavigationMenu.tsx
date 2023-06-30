@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "../ui/NavigationMenu";
+} from "@/components/ui/NavigationMenu";
 import { Cat } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";

@@ -1,5 +1,5 @@
 import React from "react";
-import { Separator } from "../ui/Separator";
+import { Separator } from "@/components/ui/Separator";
 
 const DemoSeparator = () => {
   return (

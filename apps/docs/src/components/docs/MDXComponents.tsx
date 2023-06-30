@@ -6,12 +6,12 @@ import ComponentDemo from "./ComponentDemo";
 
 import Link from "next/link";
 import CodeBlock from "./CodeBlock";
-import { Code } from "../ui/Code";
+import { Code } from "@/components/ui/Code";
 import React from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/Accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/Accordion";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "../ui/Table";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/Table";
 import CodeCopyBlock from "./CodeCopyBlock";
 import ComponentSource from "./ComponentSource";
 

@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/Select";
 import { SheetPosition } from "@/components/ui/Sheet";
-import { Button } from "../ui/Button";
-import { Input } from "../ui/Input";
+import { Button } from "@/components/ui/Button";
+import { Input } from "@/components/ui/Input";
 import {
   Dialog,
   DialogClose,
@@ -13,8 +13,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../ui/Dialog";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/Popover";
+} from "@/components/ui/Dialog";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/Popover";
 
 const DemoPopover = () => {
   const [position, setPosition] = useState<SheetPosition>("right");

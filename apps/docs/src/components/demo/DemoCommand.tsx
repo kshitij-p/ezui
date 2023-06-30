@@ -8,7 +8,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "../ui/Command";
+} from "@/components/ui/Command";
 import { Calculator, Calendar, CreditCard, Settings, Smile, Trash, User } from "lucide-react";
 
 const DemoCommand = () => {

@@ -1,8 +1,8 @@
 import React from "react";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/HoverCard";
-import { Button } from "../ui/Button";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/HoverCard";
+import { Button } from "@/components/ui/Button";
 import { CalendarDays } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/Avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
 
 const DemoHoverCard = () => {
   return (

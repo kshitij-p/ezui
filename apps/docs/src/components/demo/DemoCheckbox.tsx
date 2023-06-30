@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Checkbox } from "../ui/Checkbox";
+import { Checkbox } from "@/components/ui/Checkbox";
 import { CheckedState } from "@radix-ui/react-checkbox";
 
 const DemoCheckbox = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { ToggleGroup, ToggleGroupItem } from "../ui/ToggleGroup";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
 import { AlignCenter, AlignLeft, AlignRight } from "lucide-react";
 
 const DemoToggleGroup = () => {

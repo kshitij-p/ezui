@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { ScrollArea } from "../ui/ScrollArea";
+import { ScrollArea } from "@/components/ui/ScrollArea";
 
 const DemoScrollArea = () => {
   const [scrollAreaTestData] = useState(new Array(15).fill(undefined).map((_, idx) => `Item-${idx + 1}`));

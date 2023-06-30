@@ -1,24 +1,33 @@
 "use client";
 
 import React, { useState } from "react";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, useForm } from "../ui/Form";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  useForm,
+} from "@/components/ui/Form";
 import { z } from "zod";
-import { Input } from "../ui/Input";
-import { Button } from "../ui/Button";
+import { Input } from "@/components/ui/Input";
+import { Button } from "@/components/ui/Button";
 import {
   Autocomplete,
   AutocompleteContent,
   AutocompleteItem,
   AutocompleteTrigger,
   AutocompleteValue,
-} from "../ui/Autocomplete";
+} from "@/components/ui/Autocomplete";
 import { allCountries } from "./demoData";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "../ui/Select";
-import { Checkbox } from "../ui/Checkbox";
-import { Textarea } from "../ui/Textarea";
-import { RadioGroup, RadioGroupItem } from "../ui/RadioGroup";
-import { Label } from "../ui/Label";
-import { Switch } from "../ui/Switch";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/Select";
+import { Checkbox } from "@/components/ui/Checkbox";
+import { Textarea } from "@/components/ui/Textarea";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
+import { Label } from "@/components/ui/Label";
+import { Switch } from "@/components/ui/Switch";
 
 const allHobbies = ["Programming", "Music", "Sleeping", "Looking at cats", "YES"] as const;
 

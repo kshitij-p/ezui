@@ -1,5 +1,5 @@
 import React from "react";
-import { Toggle } from "../ui/Toggle";
+import { Toggle } from "@/components/ui/Toggle";
 import { Cat } from "lucide-react";
 
 const DemoToggle = () => {

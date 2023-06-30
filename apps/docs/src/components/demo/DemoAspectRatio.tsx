@@ -1,8 +1,8 @@
 import React from "react";
-import { AspectRatio } from "../ui/AspectRatio";
+import { AspectRatio } from "@/components/ui/AspectRatio";
 import Image from "next/image";
 import Cat from "../../../public/cat.jpg";
-import { Code } from "../ui/Code";
+import { Code } from "@/components/ui/Code";
 
 const DemoAspectRatio = () => {
   return (

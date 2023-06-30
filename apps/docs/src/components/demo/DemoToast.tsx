@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { Button } from "../ui/Button";
-import { useToast, ToastAction } from "../ui/Toast";
+import { Button } from "@/components/ui/Button";
+import { useToast, ToastAction } from "@/components/ui/Toast";
 
 const DemoToast = () => {
   const { toast } = useToast();

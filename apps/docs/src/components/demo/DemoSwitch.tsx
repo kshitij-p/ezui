@@ -1,6 +1,6 @@
 import React from "react";
-import { Switch } from "../ui/Switch";
-import { Label } from "../ui/Label";
+import { Switch } from "@/components/ui/Switch";
+import { Label } from "@/components/ui/Label";
 
 const DemoSwitch = () => {
   return (

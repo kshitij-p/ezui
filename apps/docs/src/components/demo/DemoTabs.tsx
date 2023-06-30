@@ -1,9 +1,9 @@
 import React from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
-import { Label } from "../ui/Label";
-import { Input } from "../ui/Input";
-import { Button } from "../ui/Button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/Card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
+import { Label } from "@/components/ui/Label";
+import { Input } from "@/components/ui/Input";
+import { Button } from "@/components/ui/Button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card";
 
 const DemoTabs = () => {
   return (

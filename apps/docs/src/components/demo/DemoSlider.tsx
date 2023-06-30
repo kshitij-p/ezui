@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { RangeSlider, Slider } from "../ui/Slider";
+import { RangeSlider, Slider } from "@/components/ui/Slider";
 
 const DemoSlider = () => {
   return (

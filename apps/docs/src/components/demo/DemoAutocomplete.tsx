@@ -6,8 +6,8 @@ import {
   AutocompleteItem,
   AutocompleteTrigger,
   AutocompleteValue,
-} from "../ui/Autocomplete";
-import { Button } from "../ui/Button";
+} from "@/components/ui/Autocomplete";
+import { Button } from "@/components/ui/Button";
 import { Search } from "lucide-react";
 
 const frameworks = [

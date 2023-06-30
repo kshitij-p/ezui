@@ -1,9 +1,9 @@
 import React from "react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/Card";
-import { Label } from "../ui/Label";
-import { Input } from "../ui/Input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/Select";
-import { Button } from "../ui/Button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card";
+import { Label } from "@/components/ui/Label";
+import { Input } from "@/components/ui/Input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/Select";
+import { Button } from "@/components/ui/Button";
 
 const DemoCard = () => {
   return (

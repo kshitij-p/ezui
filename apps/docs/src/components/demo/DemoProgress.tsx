@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useCallback, useEffect, useState } from "react";
-import { Progress } from "../ui/Progress";
-import { Button } from "../ui/Button";
+import { Progress } from "@/components/ui/Progress";
+import { Button } from "@/components/ui/Button";
 
 const DemoProgress = () => {
   const [timeoutRef, setTimeoutRef] = useState<ReturnType<typeof setTimeout> | null>(null);

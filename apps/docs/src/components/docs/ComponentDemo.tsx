@@ -1,6 +1,6 @@
 import React from "react";
 import { registryComponents } from "@/registry";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import CodeBlock from "./CodeBlock";
 
 const ComponentDemo = ({

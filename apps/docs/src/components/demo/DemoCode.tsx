@@ -1,5 +1,5 @@
 import React from "react";
-import { Code } from "../ui/Code/Code";
+import { Code } from "@/components/ui/Code/Code";
 
 const DemoCode = () => {
   return (

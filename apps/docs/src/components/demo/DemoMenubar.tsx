@@ -13,7 +13,7 @@ import {
   MenubarSubTrigger,
   MenubarSub,
   MenubarShortcut,
-} from "../ui/Menubar";
+} from "@/components/ui/Menubar";
 
 const DemoMenubar = () => {
   return (

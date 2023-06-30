@@ -1,6 +1,6 @@
 import React from "react";
-import { RadioGroup, RadioGroupItem } from "../ui/RadioGroup";
-import { Label } from "../ui/Label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
+import { Label } from "@/components/ui/Label";
 
 const DemoRadioGroup = () => {
   return (
