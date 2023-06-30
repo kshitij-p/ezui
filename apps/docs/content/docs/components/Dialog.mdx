@@ -1,0 +1,66 @@
+---
+title: Dialog
+description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/dialog#api-reference
+---
+
+<ComponentDemo name="Dialog" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>Install the Dialog primitive from Radix UI</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install @radix-ui/react-dialog</CodeCopyBlock>
+<Step>
+  Copy paste the following into <Code>Dialog.tsx</Code>
+</Step>
+<ComponentSource name="Dialog" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <Dialog>
+    <DialogTrigger>Open Dialog</DialogTrigger>
+    <DialogContent className="sm:max-w-[425px]">
+      <DialogHeader>
+        <DialogTitle className="text-xl">Dialog Title</DialogTitle>
+        <DialogDescription>Dialog Description</DialogDescription>
+      </DialogHeader>
+      Dialog Content
+      <DialogFooter>
+        <DialogClose>
+          <Button>Discard Changes</Button>
+        </DialogClose>
+        <Button type="submit">Save changes</Button>
+      </DialogFooter>
+    </DialogContent>
+  </Dialog>
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <Dialog>
+    <DialogTrigger></DialogTrigger>
+    <DialogContent>
+      <DialogClose></DialogClose>
+      <DialogHeader>
+        <DialogTitle></DialogTitle>
+        <DialogDescription></DialogDescription>
+      </DialogHeader>
+      <DialogFooter></DialogFooter>
+    </DialogContent>
+  </Dialog>
+  ```
+</CodeBlock>
