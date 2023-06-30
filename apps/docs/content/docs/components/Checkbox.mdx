@@ -1,0 +1,42 @@
+---
+title: Checkbox
+description: A control that allows the user to toggle between checked and not checked.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/checkbox#api-reference
+---
+
+<ComponentDemo name="Checkbox" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>
+  Copy paste the following into <Code>Checkbox.tsx</Code>
+</Step>
+<ComponentSource name="Checkbox" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+<CodeCopyBlock id="usage">
+  ```tsx
+import { CheckedState } from "@radix-ui/react-checkbox";
+const [checked, setChecked] = useState<CheckedState>(false);
+
+  <Checkbox checked={checked} onCheckedChange={setChecked} />
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <Checkbox />
+  ```
+</CodeBlock>

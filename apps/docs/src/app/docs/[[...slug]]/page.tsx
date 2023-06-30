@@ -18,7 +18,6 @@ const getDoc = (slug: string[] | undefined) => {
 
   if (slug[0] === "components") {
     return allComponents.find((component) => {
-      console.log(component._raw.flattenedPath, path);
       return component._raw.flattenedPath === path;
     });
   }
