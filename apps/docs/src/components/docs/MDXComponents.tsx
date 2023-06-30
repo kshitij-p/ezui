@@ -19,7 +19,7 @@ const MdxLink = ({ className, ...rest }: React.ComponentPropsWithoutRef<typeof L
   <Link
     {...rest}
     className={cn(
-      "relative underline decoration-border underline-offset-4 transition hover:text-foreground/75",
+      "relative underline decoration-border underline-offset-4 transition hover:text-foreground/75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/75 focus-visible:ring-offset-4 focus-visible:ring-offset-background",
       className
     )}
   />
@@ -71,7 +71,7 @@ const mdxComponents = {
     <MdxLink
       {...rest}
       className={cn(
-        "inset-0 before:absolute before:right-full before:mr-1 before:text-foreground/75 before:opacity-0 before:transition before:content-['#'] hover:before:opacity-100",
+        "inset-0 rounded-sm before:absolute before:right-full before:mr-1 before:text-foreground/75 before:opacity-0 before:outline-0 before:transition before:content-['#'] hover:before:opacity-100",
         className
       )}
     />

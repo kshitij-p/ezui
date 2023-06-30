@@ -10,10 +10,16 @@ const SidebarContent = () => {
       <div>
         <h4 className="mb-2 text-lg font-semibold">Getting Started</h4>
         <nav className="flex flex-col gap-2">
-          <Link className="text-zinc-400" href={`/docs`}>
+          <Link
+            className="text-zinc-500 decoration-primary underline-offset-4 hover:text-zinc-600 hover:underline focus:outline-none focus-visible:text-zinc-600 focus-visible:underline dark:text-zinc-400 dark:hover:text-zinc-300 dark:focus-visible:text-zinc-300"
+            href={`/docs`}
+          >
             Introduction
           </Link>
-          <Link className="text-zinc-400" href={`/docs/installation`}>
+          <Link
+            className="text-zinc-500 decoration-primary underline-offset-4 hover:text-zinc-600 hover:underline focus:outline-none focus-visible:text-zinc-600 focus-visible:underline dark:text-zinc-400 dark:hover:text-zinc-300 dark:focus-visible:text-zinc-300"
+            href={`/docs/installation`}
+          >
             Installation
           </Link>
         </nav>
@@ -24,7 +30,12 @@ const SidebarContent = () => {
           {Object.keys(registryComponents).map((name) => {
             //Todo flip this prefetch to true when docs for all comps are ready
             return (
-              <Link className="text-zinc-400" prefetch={false} href={`/docs/components/${name}`} key={name}>
+              <Link
+                className="text-zinc-500 decoration-primary underline-offset-4 hover:text-zinc-600 hover:underline focus:outline-none focus-visible:text-zinc-600 focus-visible:underline dark:text-zinc-400 dark:hover:text-zinc-300 dark:focus-visible:text-zinc-300"
+                prefetch={false}
+                href={`/docs/components/${name}`}
+                key={name}
+              >
                 {name}
               </Link>
             );
