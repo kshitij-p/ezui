@@ -1,0 +1,51 @@
+---
+title: Popover
+description: Displays rich content in a portal, triggered by a button.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/popover#api-reference
+---
+
+<ComponentDemo name="Popover" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>Install the Popover primitive from Radix UI</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install @radix-ui/react-popover</CodeCopyBlock>
+<Step>
+  Copy paste the following into <Code>Popover.tsx</Code>
+</Step>
+<ComponentSource name="Popover" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <Popover>
+    <PopoverTrigger asChild>
+      <Button variants={{ type: "secondary" }} className="max-w-max self-center">
+        Open {dir}
+      </Button>
+    </PopoverTrigger>
+    <PopoverContent side={dir}>Popover content</PopoverContent>
+  </Popover>
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <Popover>
+    <PopoverTrigger></PopoverTrigger>
+    <PopoverContent></PopoverContent>
+  </Popover>
+  ```
+</CodeBlock>

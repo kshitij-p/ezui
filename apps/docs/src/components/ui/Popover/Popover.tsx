@@ -11,7 +11,7 @@ const PopoverTrigger = RadixPopover.Trigger;
 const PopoverContent = React.forwardRef<
   React.ElementRef<typeof RadixPopover.Content>,
   React.ComponentPropsWithoutRef<typeof RadixPopover.Content>
->(({ className, align = "center", sideOffset = 4, ...rest }, passedRef) => (
+>(({ className, align = "center", sideOffset = 8, ...rest }, passedRef) => (
   <RadixPopover.Portal>
     <RadixPopover.Content
       {...rest}
