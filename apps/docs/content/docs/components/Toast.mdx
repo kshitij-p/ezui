@@ -1,0 +1,85 @@
+---
+title: Toast
+description: A succinct message that is displayed temporarily.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/toast#api-reference
+---
+
+<ComponentDemo name="Toast" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>Install the Toast primitive from Radix UI</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install @radix-ui/react-toast</CodeCopyBlock>
+<Step>
+  Copy paste the following into <Code>Toast.tsx</Code>
+</Step>
+<ComponentSource name="Toast" />
+<Step>
+  Copy paste the following into <Code>useToast.ts</Code> i.e. into the same folder where you created
+  <Code>Toast.tsx</Code>
+</Step>
+<FileCode language="ts" copyable name="./src/components/ui/Toast/useToast.ts" />
+<Step>
+
+Add <Code>\<Toaster /> </Code> exported from <Code>Toast.tsx</Code> to your app's root
+
+</Step>
+For e.g. in Next 13 app router's <Code>src/app/layout.tsx</Code>
+<CodeCopyBlock>
+  ```tsx
+  <html>
+    <body>
+      <Navbar />
+      {children}
+      <Toaster />
+    </body>
+  </html>
+  ```
+</CodeCopyBlock>
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+<CodeCopyBlock id="usage">
+  ```tsx
+const { toast } = useToast();
+
+<Button
+  variants={{ type: "secondary" }}
+  onClick={() => {
+    toast({
+      title: "Scheduled: Catch up ",
+      description: "Friday, February 10, 2023 at 5:57 PM",
+      action: <ToastAction altText="Goto schedule to undo">Undo</ToastAction>,
+    });
+  }}
+>
+  Make a toast
+</Button>
+````
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+```tsx
+<Toast.Provider>
+    <Toast.Root>
+      <Toast.Title />
+      <Toast.Description />
+      <Toast.Action />
+      <Toast.Close />
+    </Toast.Root>
+    <Toast.Viewport />
+  </Toast.Provider>
+````
+
+</CodeBlock>
