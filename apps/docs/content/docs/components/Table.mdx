@@ -1,0 +1,75 @@
+---
+title: Table
+description: A responsive table component.
+---
+
+<ComponentDemo name="Table" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>
+  Copy paste the following into <Code>Table.tsx</Code>
+</Step>
+<ComponentSource name="Table" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <Table>
+    <TableCaption>Absolute banger songs</TableCaption>
+    <TableHeader>
+      <TableRow>
+        <TableHead>Name</TableHead>
+        <TableHead className="max-w-[150px]">Artist</TableHead>
+        <TableHead>Album</TableHead>
+        <TableHead className="text-right">Duration</TableHead>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell className="font-medium">The Summoning</TableCell>
+        <TableCell>Sleep Token</TableCell>
+        <TableCell>Take Me Back To Eden</TableCell>
+        <TableCell className="text-right">6:36</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell className="font-medium">The Apparition</TableCell>
+        <TableCell>Sleep Token</TableCell>
+        <TableCell>Take Me Back To Eden</TableCell>
+        <TableCell className="text-right">4:28</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <Table>
+    <TableCaption></TableCaption>
+    <TableHeader>
+      <TableRow>
+        <TableHead></TableHead>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell></TableCell>
+      </TableRow>
+    </TableBody>
+    <TableFooter></TableFooter>
+  </Table>
+  ```
+</CodeBlock>
