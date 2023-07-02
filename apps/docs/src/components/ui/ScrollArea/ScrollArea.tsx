@@ -7,7 +7,12 @@ const ScrollAreaRoot = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof RadixScrollArea.Root>
 >(({ children, className, type = "auto", ...rest }, passedRef) => {
   return (
-    <RadixScrollArea.Root {...rest} className={cn("relative h-full w-full", className)} type={type} ref={passedRef}>
+    <RadixScrollArea.Root
+      {...rest}
+      className={cn("relative h-full w-full overflow-hidden", className)}
+      type={type}
+      ref={passedRef}
+    >
       {children}
     </RadixScrollArea.Root>
   );
@@ -20,7 +25,7 @@ const ScrollAreaViewport = React.forwardRef<
 >(({ children, className }, passedRef) => {
   return (
     <RadixScrollArea.Viewport
-      className={cn("h-full w-full", className)}
+      className={cn("h-full w-full rounded-[inherit]", className)}
       //Fixes a radix ui bug where Select.Viewport sets overflow and RadixScrollArea.Viewport also sets overflow and this clashes as one uses shorthand other doesnt
       style={{ overflowY: undefined }}
       ref={passedRef}
@@ -51,10 +56,15 @@ const ScrollBar = React.forwardRef<
   <RadixScrollArea.ScrollAreaScrollbar
     {...rest}
     orientation={orientation}
-    className={cn("w-1 rounded bg-transparent", className)}
+    className={cn(
+      "flex touch-none select-none bg-transparent transition-colors",
+      orientation === "vertical" && "h-full w-1 hover:w-[5px]",
+      orientation === "horizontal" && "h-1 w-full hover:h-[5px]",
+      className
+    )}
     ref={passedRef}
   >
-    <RadixScrollArea.ScrollAreaThumb className="rounded bg-scroll-thumb/50 hover:w-8 hover:bg-scroll-thumb focus-visible:bg-scroll-thumb" />
+    <RadixScrollArea.ScrollAreaThumb className="relative flex-1 rounded bg-scroll-thumb/50 hover:bg-scroll-thumb focus-visible:bg-scroll-thumb" />
   </RadixScrollArea.ScrollAreaScrollbar>
 ));
 ScrollBar.displayName = RadixScrollArea.ScrollAreaScrollbar.displayName;

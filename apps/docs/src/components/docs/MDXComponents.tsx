@@ -36,6 +36,9 @@ const mdxComponents = {
       className={cn("mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0", className)}
     />
   ),
+  h3: ({ className, ...rest }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h3 {...rest} className={cn("font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight", className)} />
+  ),
   p: ({ className, ...rest }: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p {...rest} className={cn("leading-7 [&:not(:first-child)]:mt-6", className)} />
   ),

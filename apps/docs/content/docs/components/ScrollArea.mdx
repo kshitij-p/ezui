@@ -1,0 +1,69 @@
+---
+title: Scroll Area
+description: Augments native scroll functionality for custom, cross-browser styling.For sighted users to preview content available behind a link.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/scroll-area#api-reference
+---
+
+<ComponentDemo name="ScrollArea" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>Install the Scroll Area primitive from Radix UI</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install @radix-ui/react-scroll-area</CodeCopyBlock>
+<Step>
+  Copy paste the following into <Code>ScrollArea.tsx</Code>
+</Step>
+<ComponentSource name="ScrollArea" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+### For simple cases
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <ScrollArea className="h-[200px] w-[350px] rounded-md border p-4">
+    Jokester began sneaking into the castle in the middle of the night and leaving jokes all over the place: under the
+    king's pillow, in his soup, even in the royal toilet. The king was furious, but he couldn't seem to stop Jokester.
+    And then, one day, the people of the kingdom discovered that the jokes left by Jokester were so funny that they
+    couldn't help but laugh. And once they started laughing, they couldn't stop.
+  </ScrollArea>
+  ```
+</CodeCopyBlock>
+
+### For when you need more control
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <ScrollAreaRoot className="h-[200px] w-[350px] rounded-md border p-4" type="always">
+    <ScrollAreaViewport>
+      So let's make trouble in the dream world Hijack heaven with another memory now I make the most of the turning tide
+      It just split what's left of the burning silence Don't wait, 'cause this could be the last time You turn up in the
+      reveries of my mind I wake up to a suicide frenzy Loaded dreams still leave me empty I believe Somewhere in the
+      past Something was between You and I my dear And it remains With me to this day No matter what I do This wound
+      will never heal Why are you never real? The shifting states you follow me through Unrevealed Just let me go or
+      take me with you
+    </ScrollAreaViewport>
+    <ScrollBar />
+  </ScrollAreaRoot>
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <HoverCard>
+    <HoverCardTrigger></HoverCardTrigger>
+    <HoverCardContent></HoverCardContent>
+  </HoverCard>
+  ```
+</CodeBlock>
