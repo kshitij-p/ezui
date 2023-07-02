@@ -1,0 +1,53 @@
+---
+title: Tabs
+description: A set of layered sections of content—known as tab panels—that are displayed one at a time.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/tabs#api-reference
+---
+
+<ComponentDemo name="Tabs" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>Install the Tabs primitive from Radix UI</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install @radix-ui/react-tabs</CodeCopyBlock>
+<Step>
+  Copy paste the following into <Code>Tabs.tsx</Code>
+</Step>
+<ComponentSource name="Tabs" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <Tabs defaultValue="account" className="w-[400px]">
+    <TabsList>
+      <TabsTrigger value="account">Account</TabsTrigger>
+      <TabsTrigger value="password">Password</TabsTrigger>
+    </TabsList>
+    <TabsContent value="account">Make changes to your account here.</TabsContent>
+    <TabsContent value="password">Change your password here.</TabsContent>
+  </Tabs>
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <Tabs>
+    <TabsList>
+      <TabsTrigger></TabsTrigger>
+    </TabsList>
+    <TabsContent></TabsContent>
+  </Tabs>
+  ```
+</CodeBlock>
