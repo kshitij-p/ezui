@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import CodeBlock from "./CodeBlock";
-import { Check, Clipboard, Copy } from "lucide-react";
+import { Check, Copy } from "lucide-react";
 
 const CodeCopyBlock = ({ children, ...rest }: React.ComponentPropsWithoutRef<typeof CodeBlock>) => {
   const codeRef = useRef<HTMLDivElement>(null);

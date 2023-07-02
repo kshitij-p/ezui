@@ -22,11 +22,8 @@ description: How to setup and structure your app.
     </TabsContent>
   </Tabs>
   <Step>
-    Install
-    <Link href="https://tailwindcss.com/docs/installation/framework-guides" target="_blank" rel="noreferrer">
-      TailwindCSS
-    </Link>
-    if your scaffolding tool doesn't do it
+    Install <Link href="https://tailwindcss.com/docs/installation/framework-guides" target="_blank" rel="noreferrer">TailwindCSS</Link> if your scaffolding tool doesn't do it
+
   </Step>
   <Step>
     Copy paste the below content into <Code>styles/globals.css</Code>
@@ -36,6 +33,27 @@ description: How to setup and structure your app.
     Copy paste the below content into <Code>tailwind.config.ts</Code>
   </Step>
   <FileCode copyable name="./tailwind.config.ts" />
+  <Step>
+    Install helper dependences
+  </Step>
+  <CodeCopyBlock className="py-4">npm install class-variance-authority clsx tailwind-merge</CodeCopyBlock>
+  <Step>
+    Copy paste the below content into <Code>lib/utils.ts</Code>
+  </Step>
+  <FileCode copyable name="./src/lib/utils.ts" />
+  <Step>Configure path aliases</Step>
+  <CodeCopyBlock>
+    ```json
+    {
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./*"]
+        }
+      }
+    }
+    ```
+  </CodeCopyBlock>
 </Steps>
 
 That's it. You can now start adding components to your project by copy pasting them.
