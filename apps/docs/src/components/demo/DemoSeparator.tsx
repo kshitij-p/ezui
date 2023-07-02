@@ -3,10 +3,10 @@ import { Separator } from "@/components/ui/Separator";
 
 const DemoSeparator = () => {
   return (
-    <div>
+    <div className="flex w-full flex-col items-center">
       <div>
         <div className="space-y-1">
-          <h4 className="text-sm font-medium leading-none">Ezui</h4>
+          <h4 className="text-sm font-bold leading-none">Ezui</h4>
           <p className="text-sm text-light-text">A comp lib made by a cat enjoyer.</p>
         </div>
         <Separator className="my-4" />
