@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/Label";
 
 const DemoRadioGroup = () => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex w-full flex-col items-center gap-2">
       <b>Pick a cat name</b>
       <RadioGroup>
         <div className="flex items-center gap-2">
