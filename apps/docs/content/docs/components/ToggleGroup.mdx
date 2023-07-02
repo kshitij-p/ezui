@@ -1,0 +1,81 @@
+---
+title: Toggle Group
+description: A set of two-state buttons that can be toggled on or off.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/toggle-group#api-reference
+---
+
+<ComponentDemo name="ToggleGroup" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>Install the Toggle Group primitive from Radix UI</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install @radix-ui/react-toggle-group</CodeCopyBlock>
+<Step>
+Toggle Group is built using some shared variables created in <Code>
+  \<Toggle />
+</Code> component.
+
+So install it by following the instructions for the <Link href="/docs/components/Toggle">Toggle</Link> component.
+
+</Step>
+<Step>
+  Copy paste the following into <Code>ToggleGroup.tsx</Code>
+</Step>
+<ComponentSource name="ToggleGroup" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+### For single select type
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <ToggleGroup type="single" defaultValue="center" aria-label="Text alignment" autoAdjustBorders={true}>
+    <ToggleGroupItem value="left" aria-label="Left aligned">
+      <AlignLeft className="h-4 w-4" />
+    </ToggleGroupItem>
+    <ToggleGroupItem value="center" aria-label="Center aligned">
+      <AlignCenter className="h-4 w-4" />
+    </ToggleGroupItem>
+    <ToggleGroupItem value="right" aria-label="Right aligned">
+      <AlignRight className="h-4 w-4" />
+    </ToggleGroupItem>
+  </ToggleGroup>
+  ```
+</CodeCopyBlock>
+
+### For multiple select type
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <ToggleGroup type="multiple" defaultValue="center" aria-label="Text alignment" autoAdjustBorders={true}>
+    <ToggleGroupItem value="left" aria-label="Left aligned">
+      Left
+    </ToggleGroupItem>
+    <ToggleGroupItem value="center" aria-label="Center aligned">
+      Center
+    </ToggleGroupItem>
+    <ToggleGroupItem value="right" aria-label="Right aligned">
+      Right
+    </ToggleGroupItem>
+  </ToggleGroup>
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <ToggleGroup>
+    <ToggleGroupItem></ToggleGroupItem>
+  </ToggleGroup>
+  ```
+</CodeBlock>
