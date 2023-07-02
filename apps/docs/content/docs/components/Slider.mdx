@@ -1,0 +1,71 @@
+---
+title: Slider
+description: An input where the user selects a value from within a given range.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/slider#api-reference
+---
+
+<ComponentDemo name="Slider" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>Install the Slider primitive from Radix UI</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install @radix-ui/react-slider</CodeCopyBlock>
+<Step>
+  Copy paste the following into <Code>Slider.tsx</Code>
+</Step>
+<ComponentSource name="Slider" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+### For simple cases
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <Slider defaultValue={[50]} max={100} step={1} />
+  //Range Slider
+  <RangeSlider defaultValue={[25, 50]} max={100} step={1} />
+  ```
+</CodeCopyBlock>
+
+### For when you need more control
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <SliderRoot defaultValue={[50]} max={100} step={1}>
+    <SliderTrack>
+      <SliderRange />
+    </SliderTrack>
+    <SliderThumb />
+  </SliderRoot>
+  //Range Slider
+  <SliderRoot defaultValue={[25, 50]} max={100} step={1}>
+    <SliderTrack>
+      <SliderRange />
+    </SliderTrack>
+    <SliderThumb />
+    <SliderThumb />
+  </SliderRoot>
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <SliderRoot>
+    <SliderTrack>
+      <SliderRange />
+    </SliderTrack>
+    <SliderThumb />
+  </SliderRoot>
+  ```
+</CodeBlock>
