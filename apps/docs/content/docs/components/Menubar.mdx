@@ -1,0 +1,79 @@
+---
+title: Menubar
+description: A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/menubar#api-reference
+---
+
+<ComponentDemo name="Menubar" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>Install the Hover Card primitive from Radix UI</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install @radix-ui/react-menubar</CodeCopyBlock>
+<Step>
+  Copy paste the following into <Code>Menubar.tsx</Code>
+</Step>
+<ComponentSource name="Menubar" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <Menubar>
+    <MenubarMenu>
+      <MenubarTrigger>File</MenubarTrigger>
+      <MenubarContent>
+        <MenubarItem>
+          New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+        </MenubarItem>
+        <MenubarItem>New Window</MenubarItem>
+        <MenubarSeparator />
+        <MenubarItem>Share</MenubarItem>
+        <MenubarSeparator />
+        <MenubarItem>Print</MenubarItem>
+      </MenubarContent>
+    </MenubarMenu>
+  </Menubar>
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <Menubar>
+    <MenubarMenu>
+      <MenubarTrigger></MenubarTrigger>
+      <MenubarContent>
+        <MenubarItem>
+          <MenubarShortcut></MenubarShortcut>
+        </MenubarItem>
+        <MenubarSeparator />
+        <MenubarSub>
+          <MenubarSubTrigger></MenubarSubTrigger>
+          <MenubarSubContent>
+            <MenubarItem></MenubarItem>
+            <MenubarItem></MenubarItem>
+            <MenubarItem></MenubarItem>
+          </MenubarSubContent>
+        </MenubarSub>
+        <MenubarCheckboxItem></MenubarCheckboxItem>
+        <MenubarRadioGroup>
+          <MenubarRadioItem></MenubarRadioItem>
+          <MenubarRadioItem></MenubarRadioItem>
+          <MenubarRadioItem></MenubarRadioItem>
+        </MenubarRadioGroup>
+      </MenubarContent>
+    </MenubarMenu>
+  </Menubar>
+  ```
+</CodeBlock>
