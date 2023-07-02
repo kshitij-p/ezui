@@ -1,0 +1,67 @@
+---
+title: Select
+description: Displays a list of options for the user to pick from—triggered by a button.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/select#api-reference
+---
+
+<ComponentDemo name="Select" />
+
+## <HeaderLink href="#installation">Installation</HeaderLink>
+
+<Steps id="installation">
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>Install the Select primitive from Radix UI</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install @radix-ui/react-select</CodeCopyBlock>
+<Step>
+  Copy paste the following into <Code>Select.tsx</Code>
+</Step>
+<ComponentSource name="Select" />
+
+</Steps>
+
+## <HeaderLink href="#usage">Usage</HeaderLink>
+
+<CodeCopyBlock id="usage">
+  ```tsx
+  <Select>
+    <SelectTrigger>
+      <SelectValue placeholder="Select a fruit" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectGroup>
+        <SelectLabel className="">Fruits</SelectLabel>
+        <SelectItem value="apple">Apple</SelectItem>
+        <SelectItem value="banana">Banana</SelectItem>
+        <SelectItem value="blueberry">Blueberry</SelectItem>
+        <SelectItem value="grapes">Grapes</SelectItem>
+        <SelectItem disabled value="pineapple">
+          Pineapple
+        </SelectItem>
+      </SelectGroup>
+    </SelectContent>
+  </Select>
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy">Anatomy</HeaderLink>
+
+<CodeBlock id="anatomy">
+  ```tsx
+  <Select>
+    <SelectTrigger>
+      <SelectValue />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectGroup>
+        <SelectLabel></SelectLabel>
+        <SelectItem></SelectItem>
+      </SelectGroup>
+    </SelectContent>
+  </Select>
+  ```
+</CodeBlock>
