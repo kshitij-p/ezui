@@ -5,7 +5,6 @@ import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import "@/styles/docs.css";
-import { Sidebar } from "@/components/Sidebar";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -14,7 +13,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <div className="flex px-6 py-8 md:gap-2 xl:gap-6">
-            <Sidebar />
             {children}
             <Toaster />
           </div>
