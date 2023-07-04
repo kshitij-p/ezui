@@ -42,7 +42,7 @@ const SelectContent = React.forwardRef<
         {...rest}
         sideOffset={8}
         className={cn(
-          "relative z-[1200] w-[var(--radix-select-trigger-width)] rounded border bg-paper p-2 shadow-md",
+          "relative z-[1200] min-w-[var(--radix-select-trigger-width)] rounded border bg-paper p-2 shadow-md",
           className
         )}
         position={position}

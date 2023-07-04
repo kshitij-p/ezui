@@ -192,7 +192,7 @@ const DemoForm = () => {
                 name={field.name}
                 value={field.value}
                 onValueChange={(val) => {
-                  field.onChange(val as any);
+                  field.onChange(val as (typeof allCatBreeds)[number]);
                 }}
               >
                 <FormControl>
