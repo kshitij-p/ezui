@@ -1058,10 +1058,14 @@ export default function Home() {
           distinctio aliquid debitis beatae illo non alias molestias eligendi vel nobis labore voluptates velit
           quibusdam laudantium!
         </p>
-        <div className="flex w-full flex-col gap-2">
-          <Button className="mt-2">Get Started</Button>
-          <Button asChild className="mt-2" variants={{ type: "secondary" }}>
-            <Link href={"/docs"}>Documentation</Link>
+        <div className="grid w-full grid-cols-1 gap-2 md:grid-cols-2">
+          <Button asChild>
+            <Link disabled={false} href={"/docs"}>
+              Get Started
+            </Link>
+          </Button>
+          <Button asChild variants={{ type: "secondary" }}>
+            <Link href={"/docs/components/Accordion"}>Documentation</Link>
           </Button>
         </div>
       </div>

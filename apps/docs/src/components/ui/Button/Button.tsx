@@ -12,15 +12,15 @@ const ALL_BUTTON_VARIANTS = {
     xl: "h-14 text-xl px-7 border-2 rounded focus-visible:ring-offset-2",
   },
   type: {
-    primary: "bg-primary font-medium text-black border-none enabled:hover:bg-primary/80 focus-visible:bg-primary/80",
+    primary: "bg-primary font-medium text-black border-none hover:bg-primary/80 focus-visible:bg-primary/80",
     secondary:
-      "bg-background border-border enabled:hover:bg-accent/50 dark:enabled:hover:bg-accent dark:focus-visible:bg-accent  focus-visible:bg-accent/50",
+      "bg-background border-border hover:bg-accent/50 dark:hover:bg-accent dark:focus-visible:bg-accent  focus-visible:bg-accent/50",
     danger:
-      "bg-danger font-medium text-black border-none enabled:hover:bg-danger/80 focus-visible:bg-danger/80 focus-visible:ring-danger/75",
+      "bg-danger font-medium text-black border-none hover:bg-danger/80 focus-visible:bg-danger/80 focus-visible:ring-danger/75",
     "danger-secondary":
-      "bg-background border-danger enabled:hover:bg-danger/50 focus-visible:bg-danger/50 focus-visible:ring-danger/75",
+      "bg-background border-danger hover:bg-danger/50 focus-visible:bg-danger/50 focus-visible:ring-danger/75",
     ghost:
-      "bg-transparent border-none enabled:hover:bg-accent/50 dark:enabled:hover:bg-accent dark:focus-visible:bg-accent  focus-visible:bg-accent/50",
+      "bg-transparent border-none hover:bg-accent/50 dark:hover:bg-accent dark:focus-visible:bg-accent  focus-visible:bg-accent/50",
   },
 } as const;
 
