@@ -10,8 +10,6 @@ import Cards from "./examples/Cards";
 import Forms from "./examples/Forms";
 
 const Home = () => {
-  //Todo refactor client components to their own folder - remove use client at the top to figure out which are client comps
-
   return (
     <div className="container mx-auto flex w-full flex-col py-8 xl:max-w-[1400px]">
       <div className="flex flex-col items-center gap-4">
