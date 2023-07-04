@@ -1,8 +1,7 @@
-"use client";
 import React from "react";
 import { registryComponents } from "@/registry";
 import Link from "next/link";
-import ScrollList from "./ScrollList";
+import { ScrollArea } from "../ui/ScrollArea";
 
 const SidebarContent = () => {
   return (
@@ -49,9 +48,9 @@ const SidebarContent = () => {
 const Sidebar = () => {
   return (
     <aside className="sticky top-20 z-40 hidden h-[calc(100vh-5.75rem)] w-full shrink-0 pl-2 pr-4 md:flex md:max-w-[12rem] xl:max-w-[15rem] xl:pl-6">
-      <ScrollList className="px-4 pb-6">
+      <ScrollArea className="px-4 pb-6">
         <SidebarContent />
-      </ScrollList>
+      </ScrollArea>
     </aside>
   );
 };
