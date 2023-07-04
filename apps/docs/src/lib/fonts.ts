@@ -1,9 +1,10 @@
-import { JetBrains_Mono as FontMono, Inter as FontSans } from "next/font/google";
+import { JetBrains_Mono as FontMono } from "next/font/google";
+import FontSans from "next/font/local";
 
 //Todo add this installation to introduction
 export const fontSans = FontSans({
-  subsets: ["latin"],
   variable: "--font-sans",
+  src: "../../public/fonts/InterVariable.ttf",
 });
 
 export const fontMono = FontMono({
