@@ -7,7 +7,7 @@ const NoiseFilter = React.forwardRef(
       <svg
         {...rest}
         aria-hidden="true"
-        className={cn("pointer-events-none fixed inset-0 isolate z-50", className)}
+        className={cn("pointer-events-none absolute inset-0 z-50", className)}
         width="100%"
         height="100%"
         ref={passedRef}
