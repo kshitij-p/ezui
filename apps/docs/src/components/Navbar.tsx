@@ -64,7 +64,7 @@ const Navbar = () => {
       data-scroll={"0"}
       ref={headerRef}
     >
-      <NoiseFilter className="will-change-opacity opacity-25 mix-blend-soft-light transition-opacity group-data-[scroll='0']:opacity-0" />
+      <NoiseFilter className="will-change-opacity h-full w-full opacity-25 mix-blend-soft-light transition-opacity group-data-[scroll='0']:opacity-0" />
       <nav className="flex items-center justify-between px-8 py-4 text-lg md:justify-evenly md:text-xl [&>*]:shrink-0">
         <Link href={"/"}>
           <b>Ezui</b>
