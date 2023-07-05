@@ -9,8 +9,8 @@ const MakeToastBtn = () => {
 
   return (
     <Button
-      variants={{ type: "secondary", size: "lg" }}
-      className="max-w-max shrink-0 bg-transparent"
+      variants={{ type: "secondary", size: "md" }}
+      className="bg-transparent"
       onClick={() => {
         toast({
           title: "Cheers you made a toast",

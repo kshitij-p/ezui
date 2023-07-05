@@ -41,7 +41,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="hidden h-full w-full grid-cols-[300px_minmax(0,1fr)] place-content-center place-items-center gap-6 rounded-lg bg-paper px-6 py-8 lg:grid xl:grid-cols-[380px_minmax(0,1fr)]">
+        <div className="hidden h-full w-full grid-cols-[minmax(270px,1fr)_1fr] place-content-center place-items-center gap-6 rounded-lg bg-paper px-6 py-8 lg:grid">
           <div className="flex flex-col gap-6">
             <Card className="border-border/50 bg-gradient-to-b from-accent/10 to-accent/20">
               <CardHeader>
@@ -70,8 +70,8 @@ const Home = () => {
                 </Button>
               </CardFooter>
             </Card>
-            <div className="flex items-start gap-4 rounded-md border bg-gradient-to-b from-paper to-muted/50 p-4 xl:gap-5">
-              <div className="relative max-w-[95px] overflow-hidden rounded-sm shadow xl:max-w-[124px]">
+            <div className="flex items-start gap-4 rounded-md border bg-gradient-to-b from-paper to-muted/50 p-4">
+              <div className="relative max-w-[95px] overflow-hidden rounded-sm shadow">
                 <Image
                   src={"/examples/music/stSundowning.jpeg"}
                   alt="A cover image of the song Bloodsport by Sleep Token"
@@ -80,39 +80,43 @@ const Home = () => {
                   className="aspect-square h-auto w-auto border dark:border-0"
                 />
               </div>
-              <div className="space-y-4 py-1 xl:py-3">
+              <div className="space-y-1 py-1 xl:space-y-2 2xl:space-y-4">
                 <div>
-                  <b>Bloodsport</b>
-                  <div className="flex items-center gap-1 whitespace-pre text-xs text-light-text xl:text-sm">
+                  <b className="2xl:text-lg">Bloodsport</b>
+                  <div className="flex items-center gap-1 whitespace-pre text-xs text-light-text 2xl:text-sm">
                     Sleep Token
                     <Circle className="h-1 w-1 fill-light-text text-light-text" />
                     Sundowning
                   </div>
                 </div>
-                <div className="flex items-center gap-1 xl:gap-2">
+                <div className="flex items-center gap-1 xl:gap-1.5">
                   <Button
                     variants={{ type: "secondary", size: "xs" }}
                     disabled
                     className="h-auto rounded-full px-2 py-2"
                   >
-                    <Rewind className="h-3 w-3 fill-accent/50 text-border xl:h-4 xl:w-4" />
+                    <Rewind className="h-2.5 w-2.5 fill-accent/50 text-border xl:h-3 xl:w-3 2xl:h-4 2xl:w-4" />
                   </Button>
                   <Button variants={{ type: "secondary", size: "xs" }} className="h-auto rounded-full px-2 py-2">
-                    <Play className="h-3 w-3 fill-accent/50 text-border xl:h-4 xl:w-4" />
+                    <Play className="h-2.5 w-2.5 fill-accent/50 text-border xl:h-3 xl:w-3 2xl:h-4 2xl:w-4" />
                   </Button>
                   <Button
                     disabled
                     variants={{ type: "secondary", size: "xs" }}
                     className="h-auto rounded-full px-2 py-2"
                   >
-                    <FastForward className="h-3 w-3 fill-accent/50 text-border xl:h-4 xl:w-4" />
+                    <FastForward className="h-2.5 w-2.5 fill-accent/50 text-border xl:h-3 xl:w-3 2xl:h-4 2xl:w-4" />
                   </Button>
                 </div>
               </div>
             </div>
           </div>
-          <div className="flex h-full w-full flex-col gap-6 overflow-hidden">
-            <ToggleGroup className="flex items-center [&>*]:shrink-0" type="single" defaultValue="react">
+          <div className="flex h-full w-full flex-col gap-4 overflow-hidden">
+            <ToggleGroup
+              className="hidden flex-wrap-reverse items-center [@media(min-width:1200px)]:flex"
+              type="single"
+              defaultValue="react"
+            >
               <ToggleGroupItem className="p-4 text-base" value="react">
                 React
               </ToggleGroupItem>
@@ -124,27 +128,27 @@ const Home = () => {
               </ToggleGroupItem>
             </ToggleGroup>
             <Accordion
-              className="min-w-max rounded-md border bg-gradient-to-b from-muted/10 to-muted/50"
+              className="rounded-md border bg-gradient-to-b from-muted/10 to-muted/50"
               collapsible
               type="single"
               defaultValue="readme"
             >
               <AccordionItem className="rounded-md border-0 px-6 pb-2 pt-4" value="readme">
-                <AccordionTrigger className="border-separator text-left hover:no-underline data-[state=open]:border-b data-[state=open]:text-foreground data-[state=open]:no-underline">
-                  <div className="flex items-center gap-5">
+                <AccordionTrigger className="border-separator text-left hover:no-underline data-[state=open]:border-b data-[state=open]:text-foreground data-[state=open]:no-underline [&>svg]:hidden xl:[&>svg]:inline">
+                  <div className="flex flex-col gap-4 xl:flex-row  xl:items-center xl:gap-5">
                     <Folder className="fill-foreground" />
                     <div className="flex flex-col gap-1">
-                      <p className="text-xl font-normal leading-none">Readme.md</p>
-                      <p className="text-sm font-light text-light-text">A short description of Ezui</p>
+                      <p className="truncate text-xl font-normal leading-none">Readme.md</p>
+                      <p className="hyphens-auto text-sm font-light text-light-text">A short description of Ezui</p>
                     </div>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="w-[27em] pt-4 text-base font-light leading-7">
-                  Ezui is a simple, composable and reusable component library made with Radix UI and TailwindCSS.
+                <AccordionContent className="max-w-[27em] pt-4 text-base font-light leading-7">
+                  Ezui is a simple, composable and reusable component library.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <div className="flex items-center gap-6">
+            <div className="hidden flex-col items-start gap-3 [@media(min-width:1200px)]:flex">
               <Tabs defaultValue="metal">
                 <TabsList>
                   <TabsTrigger className="text-base" value="metal">
