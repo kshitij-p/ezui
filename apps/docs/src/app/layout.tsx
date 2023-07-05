@@ -12,10 +12,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body className={cn("font-sans", fontSans.variable)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <div className="flex px-6 py-8 md:gap-2 xl:gap-6">
-            {children}
-            <Toaster />
-          </div>
+          {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
