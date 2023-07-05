@@ -34,7 +34,7 @@ const DEFAULT_VARIANTS = {
 } satisfies ButtonVariants;
 
 const buttonVariants = cva(
-  "bg-transparent inline-flex items-center justify-center transition focus-visible:outline-0 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-background disabled:opacity-50",
+  "bg-transparent inline-flex items-center justify-center transition focus-visible:outline-0 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none",
   {
     variants: ALL_BUTTON_VARIANTS,
     defaultVariants: DEFAULT_VARIANTS,

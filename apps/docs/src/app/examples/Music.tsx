@@ -313,7 +313,7 @@ const Music = () => {
                           },
                           {
                             image: "/examples/music/stTheSummoning.webp",
-                            name: "Granite",
+                            name: "The Summoning",
                             artist: "Sleep Token",
                           },
                           {

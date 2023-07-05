@@ -10,6 +10,12 @@ import Cards from "./examples/Cards";
 import Forms from "./examples/Forms";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card";
+import Image from "next/image";
+import { Circle, FastForward, Folder, Rewind } from "lucide-react";
+import { Play } from "lucide-react";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/Accordion";
+import MakeToastBtn from "./docs/hero/MakeToastBtn";
 
 const Home = () => {
   return (
@@ -21,9 +27,9 @@ const Home = () => {
               Beautiful customizable UI made <b className="font-black text-primary">Easy</b>
             </h1>
             <p className="text-center lg:text-left">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ex commodi sunt provident, officiis
-              distinctio aliquid debitis beatae illo non alias molestias eligendi vel nobis labore voluptates velit
-              quibusdam laudantium!
+              Fully own your ui and build beautiful interfaces with components that you can fully customize to match
+              your design system. Streamline your development process by making one-off changes not feel unnecessarily
+              hard.
             </p>
             <div className="mt-2 grid w-full grid-cols-1 gap-4 md:grid-cols-2">
               <Button className="w-full" asChild>
@@ -35,30 +41,126 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="hidden h-full w-full rounded-lg bg-paper lg:flex lg:flex-col lg:px-6 lg:py-8">
-          <Card className="border-border/50 bg-gradient-to-b from-accent/10 to-accent/20">
-            <CardHeader>
-              <CardTitle>Check out ezui component library and read the docs</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex items-center gap-3">
-                <Avatar className="rounded-xl">
-                  <AvatarImage
-                    src="https://cdn.discordapp.com/avatars/259725020534669313/b3378ac773b78f64ee4d2343d411f908.webp"
-                    alt="@smolcheeld"
-                  />
-                  <AvatarFallback>SC</AvatarFallback>
-                </Avatar>
-                <div className="space-y-2">
-                  <p className="text-xs leading-3 text-light-text">Assigned to</p>
-                  <b>You</b>
+        <div className="hidden h-full w-full grid-cols-[300px_minmax(0,1fr)] place-content-center place-items-center gap-6 rounded-lg bg-paper px-6 py-8 lg:grid xl:grid-cols-[380px_minmax(0,1fr)]">
+          <div className="flex flex-col gap-6">
+            <Card className="border-border/50 bg-gradient-to-b from-accent/10 to-accent/20">
+              <CardHeader>
+                <CardTitle className="text-lg xl:text-2xl">
+                  Check out Ezui component library and read the docs
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pb-4">
+                <div className="flex items-start gap-2 xl:gap-3">
+                  <Avatar className="h-10 w-10 rounded-xl xl:h-14 xl:w-14">
+                    <AvatarImage
+                      src="https://cdn.discordapp.com/avatars/259725020534669313/b3378ac773b78f64ee4d2343d411f908.webp"
+                      alt="@smolcheeld"
+                    />
+                    <AvatarFallback>SC</AvatarFallback>
+                  </Avatar>
+                  <div className="space-y-2 py-[0.1rem] xl:py-2">
+                    <p className="text-xs leading-3 text-light-text xl:text-sm">Assigned to</p>
+                    <b className="text-base xl:text-lg">You</b>
+                  </div>
+                </div>
+              </CardContent>
+              <CardFooter className="flex-row-reverse">
+                <Button className="text-xs xl:text-sm" variants={{ size: "sm", type: "secondary" }}>
+                  Mark as done
+                </Button>
+              </CardFooter>
+            </Card>
+            <div className="flex items-start gap-4 rounded-md border bg-gradient-to-b from-paper to-muted/50 p-4 xl:gap-5">
+              <div className="relative max-w-[95px] overflow-hidden rounded-sm shadow xl:max-w-[124px]">
+                <Image
+                  src={"/examples/music/stSundowning.jpeg"}
+                  alt="A cover image of the song Bloodsport by Sleep Token"
+                  width={640}
+                  height={640}
+                  className="aspect-square h-auto w-auto border dark:border-0"
+                />
+              </div>
+              <div className="space-y-4 py-1 xl:py-3">
+                <div>
+                  <b>Bloodsport</b>
+                  <div className="flex items-center gap-1 whitespace-pre text-xs text-light-text xl:text-sm">
+                    Sleep Token
+                    <Circle className="h-1 w-1 fill-light-text text-light-text" />
+                    Sundowning
+                  </div>
+                </div>
+                <div className="flex items-center gap-1 xl:gap-2">
+                  <Button
+                    variants={{ type: "secondary", size: "xs" }}
+                    disabled
+                    className="h-auto rounded-full px-2 py-2"
+                  >
+                    <Rewind className="h-3 w-3 fill-accent/50 text-border xl:h-4 xl:w-4" />
+                  </Button>
+                  <Button variants={{ type: "secondary", size: "xs" }} className="h-auto rounded-full px-2 py-2">
+                    <Play className="h-3 w-3 fill-accent/50 text-border xl:h-4 xl:w-4" />
+                  </Button>
+                  <Button
+                    disabled
+                    variants={{ type: "secondary", size: "xs" }}
+                    className="h-auto rounded-full px-2 py-2"
+                  >
+                    <FastForward className="h-3 w-3 fill-accent/50 text-border xl:h-4 xl:w-4" />
+                  </Button>
                 </div>
               </div>
-            </CardContent>
-            <CardFooter>
-              <Button variants={{ size: "sm", type: "secondary" }}>Mark as done</Button>
-            </CardFooter>
-          </Card>
+            </div>
+          </div>
+          <div className="flex h-full w-full flex-col gap-6 overflow-hidden">
+            <ToggleGroup className="flex items-center [&>*]:shrink-0" type="single" defaultValue="react">
+              <ToggleGroupItem className="p-4 text-base" value="react">
+                React
+              </ToggleGroupItem>
+              <ToggleGroupItem className="p-4 text-base" value="vue">
+                Vue
+              </ToggleGroupItem>
+              <ToggleGroupItem className="p-4 text-base" value="svelte">
+                Svelte
+              </ToggleGroupItem>
+            </ToggleGroup>
+            <Accordion
+              className="min-w-max rounded-md border bg-gradient-to-b from-muted/10 to-muted/50"
+              collapsible
+              type="single"
+              defaultValue="readme"
+            >
+              <AccordionItem className="rounded-md border-0 px-6 pb-2 pt-4" value="readme">
+                <AccordionTrigger className="border-separator text-left hover:no-underline data-[state=open]:border-b data-[state=open]:text-foreground data-[state=open]:no-underline">
+                  <div className="flex items-center gap-5">
+                    <Folder className="fill-foreground" />
+                    <div className="flex flex-col gap-1">
+                      <p className="text-xl font-normal leading-none">Readme.md</p>
+                      <p className="text-sm font-light text-light-text">A short description of Ezui</p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="w-[27em] pt-4 text-base font-light leading-7">
+                  Ezui is a simple, composable and reusable component library made with Radix UI and TailwindCSS.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <div className="flex items-center gap-6">
+              <Tabs defaultValue="metal">
+                <TabsList>
+                  <TabsTrigger className="text-base" value="metal">
+                    Metal
+                  </TabsTrigger>
+                  <TabsTrigger className="text-base" value="rock">
+                    Rock
+                  </TabsTrigger>
+                  <TabsTrigger className="text-base" value="punk">
+                    Punk
+                  </TabsTrigger>
+                </TabsList>
+              </Tabs>
+              <MakeToastBtn />
+            </div>
+          </div>
         </div>
       </div>
       <div className="container mx-auto flex w-full flex-col px-6 py-8 xl:max-w-[1400px]">
