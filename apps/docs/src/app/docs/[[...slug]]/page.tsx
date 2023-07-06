@@ -50,7 +50,7 @@ const ComponentLayout = async ({ params }: { params: { slug: string[] } }) => {
   const toc = await getTableOfContents(doc.body.raw);
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,max-content)_300px]">
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,max-content)_300px]">
       <div className="flex w-full flex-col ">
         <article className="flex w-full max-w-4xl flex-col">
           <div className="mb-8 flex flex-col gap-2">
