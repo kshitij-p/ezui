@@ -16,6 +16,12 @@ import { Play } from "lucide-react";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/Accordion";
 import MakeToastBtn from "./docs/hero/MakeToastBtn";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ezui",
+  description: "A simple, composable and reusable component library made with Radix UI and TailwindCSS.",
+};
 
 const Home = () => {
   return (
@@ -80,7 +86,7 @@ const Home = () => {
                   className="aspect-square h-auto w-auto border dark:border-0"
                 />
               </div>
-              <div className="space-y-1 py-1 xl:space-y-2 2xl:space-y-4">
+              <div className="space-y-1 py-1 xl:space-y-2 2xl:space-y-2.5">
                 <div>
                   <b className="2xl:text-lg">Bloodsport</b>
                   <div className="flex items-center gap-1 whitespace-pre text-xs text-light-text 2xl:text-sm">
@@ -134,7 +140,7 @@ const Home = () => {
               defaultValue="readme"
             >
               <AccordionItem className="rounded-md border-0 px-6 pb-2 pt-4" value="readme">
-                <AccordionTrigger className="border-separator text-left hover:no-underline data-[state=open]:border-b data-[state=open]:text-foreground data-[state=open]:no-underline [&>svg]:hidden xl:[&>svg]:inline">
+                <AccordionTrigger className="border-b border-transparent text-left hover:no-underline data-[state=open]:border-separator data-[state=open]:text-foreground data-[state=open]:no-underline [&>svg]:hidden xl:[&>svg]:inline">
                   <div className="flex flex-col gap-4 xl:flex-row  xl:items-center xl:gap-5">
                     <Folder className="fill-foreground" />
                     <div className="flex flex-col gap-1">
