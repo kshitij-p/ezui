@@ -1,7 +1,29 @@
-import React from "react";
+import React, { ForwardedRef } from "react";
 import { registryComponents } from "@/registry";
 import Link from "next/link";
 import { ScrollArea } from "../ui/ScrollArea";
+import { cn } from "@/lib/utils";
+
+const SidebarLink = React.forwardRef(
+  (
+    { children, className, ...rest }: React.ComponentPropsWithoutRef<typeof Link>,
+    passedRef: ForwardedRef<HTMLAnchorElement>
+  ) => {
+    return (
+      <Link
+        {...rest}
+        className={cn(
+          "underline-teal-anim max-w-max text-sm text-zinc-500 decoration-primary hover:text-primary focus-visible:text-primary focus-visible:outline-none dark:text-zinc-400 dark:hover:text-primary dark:focus-visible:text-primary xl:text-base",
+          className
+        )}
+        ref={passedRef}
+      >
+        {children}
+      </Link>
+    );
+  }
+);
+SidebarLink.displayName = "SidebarLink";
 
 const SidebarContent = () => {
   return (
@@ -9,18 +31,8 @@ const SidebarContent = () => {
       <div>
         <h4 className="mb-2 text-base font-semibold xl:text-lg">Getting Started</h4>
         <nav className="flex flex-col gap-2">
-          <Link
-            className="text-sm text-zinc-500 decoration-primary underline-offset-4 hover:text-zinc-600 hover:underline focus:outline-none focus-visible:text-zinc-600 focus-visible:underline dark:text-zinc-400 dark:hover:text-zinc-300 dark:focus-visible:text-zinc-300 xl:text-base"
-            href={`/docs`}
-          >
-            Introduction
-          </Link>
-          <Link
-            className="text-sm text-zinc-500 decoration-primary underline-offset-4 hover:text-zinc-600 hover:underline focus:outline-none focus-visible:text-zinc-600 focus-visible:underline dark:text-zinc-400 dark:hover:text-zinc-300 dark:focus-visible:text-zinc-300 xl:text-base"
-            href={`/docs/installation`}
-          >
-            Installation
-          </Link>
+          <SidebarLink href={`/docs`}>Introduction</SidebarLink>
+          <SidebarLink href={`/docs/installation`}>Installation</SidebarLink>
         </nav>
       </div>
       <div>
@@ -29,15 +41,9 @@ const SidebarContent = () => {
           {Object.values(registryComponents).map(({ name, displayName }) => {
             //Todo flip this prefetch to true when docs for all comps are ready
             return (
-              <Link
-                className="text-sm text-zinc-500
-                decoration-primary underline-offset-4 hover:text-zinc-600 hover:underline focus:outline-none focus-visible:text-zinc-600 focus-visible:underline dark:text-zinc-400 dark:hover:text-zinc-300 dark:focus-visible:text-zinc-300 xl:text-base"
-                prefetch={false}
-                href={`/docs/components/${name}`}
-                key={name}
-              >
+              <SidebarLink prefetch={false} href={`/docs/components/${name}`} key={name}>
                 {displayName}
-              </Link>
+              </SidebarLink>
             );
           })}
         </nav>

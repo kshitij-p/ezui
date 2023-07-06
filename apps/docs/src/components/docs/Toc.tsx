@@ -2,17 +2,43 @@
 
 import { cn } from "@/lib/utils";
 import { Items } from "@/utils/toc";
-import { useEffect, useState } from "react";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
 
-const Tree = ({ toc, activeId }: { toc?: Items; activeId: string | null }) => {
+const Tree = ({
+  toc,
+  activeId,
+  level = 0,
+  setActiveId,
+}: {
+  toc?: Items;
+  activeId: string | null;
+  level?: number;
+  setActiveId: React.Dispatch<React.SetStateAction<string | null>>;
+}) => {
   if (!toc?.items) return null;
 
   return (
     <>
       {toc.items.map((item) => (
-        <div className="flex flex-col pl-4" key={item.title}>
-          <span className={cn(activeId === item.id && "font-bold")}>{item.title}</span>
-          {item.items !== undefined && <Tree toc={{ items: item.items }} activeId={activeId} />}
+        <div className={cn("flex flex-col", level > 0 && "pl-2")} key={item.title}>
+          <Link
+            className={cn(
+              "max-w-max rounded-sm p-0.5 text-light-text transition hover:text-primary focus-visible:text-primary focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-primary",
+              activeId === item.id
+                ? "font-semibold text-foreground underline decoration-primary underline-offset-4"
+                : "underline-teal-anim"
+            )}
+            onClick={() => {
+              setActiveId(item.id);
+            }}
+            href={`#${item.id}`}
+          >
+            {item.title}
+          </Link>
+          {item.items !== undefined && (
+            <Tree toc={{ items: item.items }} activeId={activeId} setActiveId={setActiveId} level={level + 1} />
+          )}
         </div>
       ))}
     </>
@@ -31,14 +57,13 @@ const tocNodeToSelector = (toc: Items | undefined, res = [] as string[]) => {
 const Toc = ({ toc }: { toc: Items }) => {
   const [activeId, setActiveId] = useState<string | null>(null);
 
-  console.log(activeId);
-
   useEffect(() => {
     if (!toc.items?.length) return;
 
     let res: string[] = [];
     tocNodeToSelector(toc, res);
 
+    //Todo improve this detection method - while scrolling up, active link doesnt go from anatomy to usage
     let observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry) return;
@@ -63,8 +88,11 @@ const Toc = ({ toc }: { toc: Items }) => {
   }, [toc]);
 
   return (
-    <div className="sticky top-20">
-      <Tree toc={toc} activeId={activeId} />
+    <div className="sticky top-20 grid gap-4">
+      <p className="text-lg font-semibold">On This Page</p>
+      <div className="space-y-1">
+        <Tree toc={toc} activeId={activeId} setActiveId={setActiveId} />
+      </div>
     </div>
   );
 };
