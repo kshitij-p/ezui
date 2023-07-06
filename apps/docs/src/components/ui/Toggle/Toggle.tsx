@@ -26,7 +26,7 @@ const DEFAULT_VARIANTS = {
 } satisfies ToggleVariants;
 
 const toggleVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors enabled:hover:bg-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent/50 bg-paper",
+  "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors enabled:hover:bg-accent/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent/50 bg-paper",
   {
     variants: ALL_TOGGLE_VARIANTS,
     defaultVariants: DEFAULT_VARIANTS,

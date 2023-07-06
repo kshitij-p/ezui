@@ -24,7 +24,7 @@ const AccordionTrigger = React.forwardRef<
     <RadixAccordion.Trigger
       {...rest}
       className={cn(
-        "group flex flex-1 items-center justify-between rounded-sm py-4 font-medium decoration-primary underline-offset-4 transition hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/75 focus-visible:ring-offset-0 focus-visible:ring-offset-background data-[state=open]:text-primary data-[state=open]:underline",
+        "group flex flex-1 items-center justify-between rounded-sm py-4 font-medium decoration-primary underline-offset-4 transition hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/75 focus-visible:ring-offset-0 focus-visible:ring-offset-background data-[state=open]:text-primary data-[state=open]:underline",
         className
       )}
       ref={passedRef}

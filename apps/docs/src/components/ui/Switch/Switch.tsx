@@ -12,7 +12,7 @@ const Switch = React.forwardRef<
   <RadixSwitch.Root
     {...rest}
     className={cn(
-      "group peer inline-flex h-[24px] w-[44px] shrink-0 items-center rounded-full border border-border/50 bg-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/75 focus-visible:ring-offset-2 focus-visible:ring-offset-background enabled:cursor-pointer disabled:opacity-50 aria-[invalid=true]:border-invalid/50 aria-[invalid=true]:ring-invalid/75 data-[state=checked]:border-border enabled:data-[state=unchecked]:hover:bg-accent/50 aria-[invalid=true]:data-[state=checked]:border-invalid",
+      "group peer inline-flex h-[24px] w-[44px] shrink-0 items-center rounded-full border border-border/50 bg-transparent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/75 focus-visible:ring-offset-2 focus-visible:ring-offset-background enabled:cursor-pointer disabled:opacity-50 aria-[invalid=true]:border-invalid/50 aria-[invalid=true]:ring-invalid/75 data-[state=checked]:border-border enabled:data-[state=unchecked]:hover:bg-accent/50 aria-[invalid=true]:data-[state=checked]:border-invalid",
       className
     )}
     ref={passedRef}

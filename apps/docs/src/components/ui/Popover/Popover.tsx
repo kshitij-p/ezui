@@ -18,7 +18,7 @@ const PopoverContent = React.forwardRef<
       align={align}
       sideOffset={sideOffset}
       className={cn(
-        "z-50 animate-zoomIn rounded-md border bg-paper p-4 shadow-md focus-visible:outline-none data-[state=closed]:animate-zoomOut",
+        "z-50 animate-zoomIn rounded-md border bg-paper p-4 shadow-md focus:outline-none data-[state=closed]:animate-zoomOut",
         className
       )}
       ref={passedRef}

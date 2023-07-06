@@ -13,7 +13,7 @@ const SidebarLink = React.forwardRef(
       <Link
         {...rest}
         className={cn(
-          "underline-teal-anim max-w-max text-sm text-zinc-500 decoration-primary hover:text-primary focus-visible:text-primary focus-visible:outline-none dark:text-zinc-400 dark:hover:text-primary dark:focus-visible:text-primary xl:text-base",
+          "underline-teal-anim max-w-max text-sm text-zinc-500 decoration-primary hover:text-primary focus:outline-none focus-visible:text-primary dark:text-zinc-400 dark:hover:text-primary dark:focus-visible:text-primary xl:text-base",
           className
         )}
         ref={passedRef}

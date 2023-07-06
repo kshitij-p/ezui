@@ -24,7 +24,7 @@ const DEFAULT_VARIANTS = {
 } satisfies BadgeVariants;
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus-visible:outline-0 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-background focus-visible:ring-offset-2",
+  "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-0 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-background focus-visible:ring-offset-2",
   {
     variants: ALL_BADGE_VARIANTS,
     defaultVariants: DEFAULT_VARIANTS,

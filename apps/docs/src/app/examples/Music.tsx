@@ -273,7 +273,7 @@ const Music = () => {
                   {group.items.map((item) => (
                     <button
                       className={cn(
-                        "inline-flex w-full items-center rounded-md border border-transparent px-3 py-2 text-sm hover:bg-accent/50 focus-visible:border-ring focus-visible:outline-0",
+                        "inline-flex w-full items-center rounded-md border border-transparent px-3 py-2 text-sm hover:bg-accent/50 focus:outline-0 focus-visible:border-ring",
                         item.active && "border-border bg-accent/50"
                       )}
                     >
