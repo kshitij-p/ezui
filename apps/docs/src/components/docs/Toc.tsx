@@ -25,14 +25,14 @@ const Tree = ({
           <Link
             className={cn(
               "max-w-max rounded-sm p-0.5 text-light-text transition hover:text-primary focus-visible:text-primary focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-primary",
-              activeId === item.id
+              activeId === item.url
                 ? "font-semibold text-foreground underline decoration-primary underline-offset-4"
                 : "underline-teal-anim"
             )}
             onClick={() => {
-              setActiveId(item.id);
+              setActiveId(item.url);
             }}
-            href={`#${item.id}`}
+            href={`#${item.url}`}
           >
             {item.title}
           </Link>
@@ -49,7 +49,7 @@ const tocNodeToSelector = (toc: Items | undefined, res = [] as string[]) => {
   if (!toc?.items) return;
 
   for (let item of toc.items) {
-    res.push(`#${item.id}`);
+    res.push(`#${item.url}`);
     tocNodeToSelector({ items: item.items }, res);
   }
 };
@@ -77,9 +77,13 @@ const Toc = ({ toc }: { toc: Items }) => {
     );
 
     for (let item of res) {
-      let el = document.querySelector(item);
-      if (!el) continue;
-      observer.observe(el);
+      try {
+        let el = document.querySelector(item);
+        if (!el) continue;
+        observer.observe(el);
+      } catch (e) {
+        continue;
+      }
     }
 
     return function cleanup() {

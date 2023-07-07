@@ -16,7 +16,6 @@ function flattenNode(node: { value: string; type: string }) {
 
 export interface Item {
   title: string;
-  id: string;
   url: string;
   items?: Item[];
 }
@@ -33,6 +32,14 @@ type RemarkNode = {
   value: string;
 };
 
+// Expected to get a url like #headerlink-hrefwhy-idwhy-why-to-choose-a-copy-paste-library-headerlink
+// and expected to return "why"
+const getUrl = (text: string) => {
+  let href = text.split("href")?.pop()?.split("-").shift();
+
+  return href ? href : text;
+};
+
 const getItems = (node: RemarkNode | undefined, current: Item): Items => {
   if (!node) {
     return {};
@@ -41,14 +48,12 @@ const getItems = (node: RemarkNode | undefined, current: Item): Items => {
   if (node.type === "paragraph") {
     visit(node, (item) => {
       if (item.type === "link") {
-        current.url = item.url;
+        current.url = getUrl(item.url);
         current.title = flattenNode(node);
-        current.id = current.title.toLowerCase();
       }
 
       if (item.type === "text") {
         current.title = flattenNode(node);
-        current.id = current.title.toLowerCase();
       }
     });
 
