@@ -14,7 +14,9 @@ import {
 } from "@/components/ui/Select";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 
-import { DollarSign, Download } from "lucide-react";
+import { CreditCard, DollarSign, Download, Users } from "lucide-react";
+import Chart from "./Chart";
+import { UserPlus } from "lucide-react";
 
 const Dashboard = () => {
   return (
@@ -54,10 +56,7 @@ const Dashboard = () => {
             />
           </div>
           <Avatar>
-            <AvatarImage
-              src="https://cdn.discordapp.com/avatars/259725020534669313/b3378ac773b78f64ee4d2343d411f908.webp"
-              alt="@smolcheeld"
-            />
+            <AvatarImage src="/me.webp" alt="@smolcheeld" />
             <AvatarFallback>SC</AvatarFallback>
           </Avatar>
         </div>
@@ -87,15 +86,15 @@ const Dashboard = () => {
         </Tabs>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {[
-            { title: "Total Revenue", value: "$45,231.89", subtext: "+20.1% from last month" },
-            { title: "Total Revenue", value: "$45,231.89", subtext: "+20.1% from last month" },
-            { title: "Total Revenue", value: "$45,231.89", subtext: "+20.1% from last month" },
-            { title: "Total Revenue", value: "$45,231.89", subtext: "+20.1% from last month" },
+            { title: "Total Revenue", value: "$45,231.89", subtext: "+20.1% from last month", icon: DollarSign },
+            { title: "Sales", value: "+2500", subtext: "+10.7% from last month", icon: CreditCard },
+            { title: "Active Users", value: "+500", subtext: "+7.6% from last month", icon: Users },
+            { title: "New Users", value: "+200", subtext: "-0.5% from last month", icon: UserPlus },
           ].map((card) => (
-            <Card className="rounded-xl">
+            <Card className="rounded-xl" key={card.title}>
               <CardHeader className="flex-row items-center justify-between pb-2">
                 <CardTitle className="text-sm">{card.title}</CardTitle>
-                <DollarSign className="h-4 w-4 text-light-text" />
+                <card.icon className="h-4 w-4 text-light-text" />
               </CardHeader>
               <CardContent className="flex flex-col">
                 <b className="bold text-2xl">{card.value}</b>
@@ -104,8 +103,10 @@ const Dashboard = () => {
             </Card>
           ))}
         </div>
-        <div className="grid md:grid-cols-2 xl:grid-cols-7">
-          <div className="col-span-4">A chart here</div>
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-7">
+          <div className="col-span-4 grid place-items-end rounded-md border">
+            <Chart />
+          </div>
           <div className="col-span-3">
             <Card>
               <CardHeader>
@@ -115,19 +116,46 @@ const Dashboard = () => {
               <CardContent>
                 <ul className="flex flex-col gap-6">
                   {[
-                    { name: "Olivia Martin", email: "olivia.martin@gmail.com", sales: "1999" },
-                    { name: "Sir Meowsers", email: "olivia.martin@gmail.com", sales: "1999" },
-                    { name: "Meowsalott", email: "olivia.martin@gmail.com", sales: "1999" },
-                    { name: "Orang Cat", email: "olivia.martin@gmail.com", sales: "1999" },
-                    { name: "El Catto", email: "olivia.martin@gmail.com", sales: "1999" },
+                    {
+                      name: "Olivia Martin",
+                      email: "olivia.martin@gmail.com",
+                      sales: "1999",
+                      image: "/cat.jpg",
+                      fallback: "OM",
+                    },
+                    {
+                      name: "Sir Meowsers",
+                      email: "olivia.martin@gmail.com",
+                      sales: "1999",
+                      image: "/cat2.png",
+                      fallback: "SM",
+                    },
+                    {
+                      name: "Meowsalott",
+                      email: "olivia.martin@gmail.com",
+                      sales: "1999",
+                      image: "/cat3.png",
+                      fallback: "MT",
+                    },
+                    {
+                      name: "Orang Cat",
+                      email: "olivia.martin@gmail.com",
+                      sales: "1999",
+                      image: "/cat4.png",
+                      fallback: "OC",
+                    },
+                    {
+                      name: "El Catto",
+                      email: "olivia.martin@gmail.com",
+                      sales: "1999",
+                      image: "/cat5.png",
+                      fallback: "EC",
+                    },
                   ].map((item) => (
                     <li className="flex items-center gap-2" key={item.name}>
                       <Avatar>
-                        <AvatarImage
-                          src="https://cdn.discordapp.com/avatars/259725020534669313/b3378ac773b78f64ee4d2343d411f908.webp"
-                          alt="@smolcheeld"
-                        />
-                        <AvatarFallback>SC</AvatarFallback>
+                        <AvatarImage className="object-cover" src={item.image} alt={`@${item.name}`} />
+                        <AvatarFallback>{item.fallback}</AvatarFallback>
                       </Avatar>
                       <div className="flex flex-col text-sm">
                         <b className="font-medium leading-none">{item.name}</b>

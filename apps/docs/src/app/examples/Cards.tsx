@@ -116,17 +116,14 @@ const Cards = () => {
           <CardContent className="grid gap-6">
             {(
               [
-                { name: "Sofia Davis", email: "m@example.com", role: "Owner" },
-                { name: "Sir Meowsers", email: "s@example.com", role: "Developer" },
+                { name: "Sir Moewsers", email: "m@example.com", role: "Owner", image: "cat4.png", fallback: "SM" },
+                { name: "Meowsalott", email: "s@example.com", role: "Developer", image: "cat5.png", fallback: "MT" },
               ] as const
             ).map((person) => (
               <div className="flex items-center gap-4">
                 <Avatar>
-                  <AvatarImage
-                    src="https://cdn.discordapp.com/avatars/259725020534669313/b3378ac773b78f64ee4d2343d411f908.webp"
-                    alt="@smolcheeld"
-                  />
-                  <AvatarFallback>SC</AvatarFallback>
+                  <AvatarImage className="object-cover" src={person.image} alt={`@${person.name}`} />
+                  <AvatarFallback>{person.fallback}</AvatarFallback>
                 </Avatar>
                 <div className="text-sm">
                   <b className="font-medium leading-none">{person.name}</b>
@@ -188,16 +185,13 @@ const Cards = () => {
               <h4 className="text-sm font-medium">People with access</h4>
               <div className="flex w-full flex-col items-center gap-4">
                 {[
-                  { name: "Sir Meowsers", email: "m@example.com" },
-                  { name: "Meowsalott", email: "m@example.com" },
+                  { name: "Sir Moewsers", email: "m@example.com", image: "cat2.png", fallback: "SM" },
+                  { name: "Meowsalott", email: "s@example.com", image: "cat3.png", fallback: "MT" },
                 ].map((person) => (
                   <div className="flex w-full items-center gap-4">
                     <Avatar>
-                      <AvatarImage
-                        src="https://cdn.discordapp.com/avatars/259725020534669313/b3378ac773b78f64ee4d2343d411f908.webp"
-                        alt="@smolcheeld"
-                      />
-                      <AvatarFallback>SC</AvatarFallback>
+                      <AvatarImage className="object-cover" src={person.image} alt={`@${person.name}`} />
+                      <AvatarFallback>{person.fallback}</AvatarFallback>
                     </Avatar>
                     <div className="text-sm">
                       <p className="font-medium leading-none">{person.name}</p>
@@ -277,7 +271,7 @@ const Cards = () => {
               <div className="grid gap-2">
                 <Label htmlFor="cards-sec">Security Level</Label>
                 <Select defaultValue="s-1">
-                  <SelectTrigger id="cards-sec" className="text-sm">
+                  <SelectTrigger className="whitespace-pre text-sm" id="cards-sec">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent className="text-sm">

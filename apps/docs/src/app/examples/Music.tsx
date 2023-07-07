@@ -49,7 +49,7 @@ const MusicArtwork = ({
   aspectRatio?: "portrait" | "3/4";
 }) => {
   return (
-    <div {...rest} className={cn("group max-w-[250px] shrink-0 cursor-pointer space-y-3", className)} key={song.name}>
+    <div {...rest} className={cn("group w-[250px] shrink-0 cursor-pointer space-y-3", className)} key={song.name}>
       <div className="overflow-hidden rounded-md">
         {/* Todo add a context menu here */}
         <Image
@@ -383,7 +383,7 @@ const Music = () => {
                             artist: "The Weeknd",
                           },
                         ].map((song) => (
-                          <MusicArtwork className="max-w-[150px]" song={song} aspectRatio="3/4" />
+                          <MusicArtwork className="w-[150px]" song={song} aspectRatio="3/4" />
                         ))}
                         <ScrollBar className="h-2 hover:h-2.5" orientation="horizontal" />
                       </div>

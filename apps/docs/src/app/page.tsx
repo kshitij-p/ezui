@@ -58,10 +58,7 @@ const Home = () => {
               <CardContent className="pb-4">
                 <div className="flex items-start gap-2 xl:gap-3">
                   <Avatar className="h-10 w-10 rounded-xl xl:h-14 xl:w-14">
-                    <AvatarImage
-                      src="https://cdn.discordapp.com/avatars/259725020534669313/b3378ac773b78f64ee4d2343d411f908.webp"
-                      alt="@smolcheeld"
-                    />
+                    <AvatarImage src="/me.webp" alt="@smolcheeld" />
                     <AvatarFallback>SC</AvatarFallback>
                   </Avatar>
                   <div className="space-y-2 py-[0.1rem] xl:py-2">
