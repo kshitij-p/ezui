@@ -70,7 +70,7 @@ const DemoForm = () => {
   const [formDisabled, setFormDisabled] = useState(false);
 
   return (
-    <div className="flex w-full flex-col items-center justify-center">
+    <div className="flex w-full flex-col items-center">
       <label className="flex items-center gap-2">
         Form disabled
         <Checkbox

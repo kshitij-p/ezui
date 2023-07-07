@@ -1,0 +1,148 @@
+---
+title: Form
+description: Fully typesafe and flexible forms with React Hook Form + Zod
+---
+
+Forms are **unnecessarily hard**. There are a lot of things worry about such as
+
+- Validating different fields
+- Client-side and server-side error handling
+- Accessibility
+- Design consistency and coherency
+
+The pieces provided by <Code>react-hook-form</Code> and <Code>zod</Code> make this much easier though. The abstraction we came up with using
+these two libraries makes solving the above challenges trivial **foolproof**. Below is an example of a form which should cover most use cases.
+
+<br />
+
+<ComponentDemo name="Form" />
+
+## <HeaderLink href="#installation" id="installation">Installation</HeaderLink>
+
+<Steps>
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>Install React Hook Form and Zod</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install react-hook-form @hookform/resolvers zod</CodeCopyBlock>
+<Step>
+  Copy paste the following into <Code>Form.tsx</Code>
+</Step>
+<ComponentSource name="Form" />
+
+</Steps>
+
+## <HeaderLink href="#usage" id="usage">Usage</HeaderLink>
+
+<CodeCopyBlock>
+    ```tsx
+
+    //Declare a zod schema
+    const schema = z.object({username: z.string()})
+
+    const MyForm = ()=>{
+        const form = useForm({
+            schema: schema
+        })
+
+        return (
+            <Form form={form}>
+            <FormField
+             control={form.control}
+             name="username"
+             render={({ field }) => (
+                <FormItem>
+                <FormLabel className="text-md">Username</FormLabel>
+                <FormControl>
+                    <Input className="max-w-full" variants={{ size: "lg" }} placeholder="A cool username" {...field} />
+                </FormControl>
+                <div>
+                    <FormDescription>This is your public display name.</FormDescription>
+                    <FormMessage className="text-md" />
+                </div>
+                </FormItem>
+            )}
+            />
+            </Form>
+        )
+
+    }
+    ```
+
+</CodeCopyBlock>
+
+- <Code>FormItem</Code> — Context wrapper used to provide information to other pieces.
+- <Code>FormLabel</Code> — A label that targets the <Code>FormControl</Code>. No need to provide your own ids or for
+  nesting.
+- <Code>FormControl</Code> — This is the element that should be targeted by <Code>FormLabel</Code> i.e. the trigger element.
+- <Code>FormDescription</Code> — For providing extra info about the input - Optional
+- <Code>FormMessage</Code> — Provides error information, hides and shows on its own - Optional
+
+For more examples and use cases refer the Demo
+
+## <HeaderLink href="#tips" id="tips">Tips</HeaderLink>
+
+Some tips for building forms:
+
+### <HeaderLink href="betterschemas" id="betterschemas">Writing better schemas</HeaderLink>
+
+Lets say you always want a field to be true. You could write it as:
+
+<Code className="mt-2">```z.literal(true)```</Code>
+
+Instead you should do this
+
+<Code className="mt-2">```z.boolean().refine((val) => val === true)```</Code>
+
+This is because if we directly checked for true, typescript would complain
+if we tried to provide boolean values.
+
+Also prefer <Code>enums</Code> over strings when you know all the possible values.
+
+The Demo provides most usecases with the optimal schema for the situation.
+
+### <HeaderLink href="defaultvalues" id="defaultvalues">Default values</HeaderLink>
+
+For primitives like <Code>Input</Code> and <Code>Textarea</Code>, you should provide a default value as shown in the
+Demo.
+
+This solves the error React throws saying <Code>An uncontrolled component switched to being a controlled component</Code>.
+
+### <HeaderLink href="extendinginputs" id="extendinginputs">Extending inputs</HeaderLink>
+
+For creating inputs that support this component, all you need to do is make it accept state value prop and an onChange prop.
+
+For styling the invalid state target the <Code>aria-invalid</Code> property. In tailwind you can do this by using <br /> <Code>`aria-invalid:`</Code>
+
+## <HeaderLink href="#anatomy" id="anatomy">Anatomy</HeaderLink>
+
+<CodeBlock>
+```tsx
+<Form>
+  <FormField
+    render={(field) => (
+        <FormItem>
+            <FormLabel></FormLabel>
+            <FormControl>
+                <Input />
+            </FormControl>
+            <FormMessage />
+        </FormItem>
+    )}
+/>
+</Form>
+````
+
+</CodeBlock>
+
+## <HeaderLink href="#credits" id="credits">Credits</HeaderLink>
+
+- <Link href="https://www.brendonovich.dev/blog/the-ultimate-form-abstraction">
+    Brendonovich's post for the Form and useForm abstractions
+  </Link>
+- <Link href="https://www.brendonovich.dev/blog/the-ultimate-form-abstraction">
+    Shadcn for a very major chunk of the FormItem, FormLabel, FormDescription and FormMessage code
+  </Link>

@@ -21,7 +21,7 @@ const Tree = ({
   return (
     <>
       {toc.items.map((item) => (
-        <div className={cn("flex flex-col", level > 0 && "pl-2")} key={item.title}>
+        <div className={cn("flex flex-col", level > 0 && "pl-4")} key={item.title}>
           <Link
             className={cn(
               "max-w-max rounded-sm p-0.5 text-light-text transition hover:text-primary focus-visible:text-primary focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-primary",
