@@ -131,7 +131,7 @@ const Navbar = () => {
           </Link>
           <Link
             className="underline-teal-anim hidden items-center justify-center focus:outline-2 focus-visible:outline-dashed focus-visible:outline-primary md:inline-flex"
-            href={"/docs/components/Accordion"}
+            href={"/#examples"}
           >
             Examples
           </Link>

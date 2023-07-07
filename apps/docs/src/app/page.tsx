@@ -170,7 +170,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto flex w-full flex-col px-6 py-8 xl:max-w-[1400px]">
+      <div id="examples" className="container mx-auto flex w-full flex-col px-6 py-8 xl:max-w-[1400px]">
         <div className="mt-10 lg:mt-20">
           <Tabs defaultValue="dashboard">
             <TabsList className="max-w-full justify-normal overflow-y-auto">
