@@ -47,7 +47,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="hidden h-full w-full grid-cols-[minmax(270px,1fr)_1fr] place-content-center place-items-center gap-6 rounded-lg bg-paper px-6 py-8 lg:grid">
+        <div className="hidden h-full w-full grid-cols-[minmax(270px,1fr)_1fr] place-content-center place-items-center gap-6 rounded-md bg-paper px-6 py-8 lg:grid">
           <div className="flex flex-col gap-6">
             <Card className="border-border/50 bg-gradient-to-b from-accent/10 to-accent/20">
               <CardHeader>
