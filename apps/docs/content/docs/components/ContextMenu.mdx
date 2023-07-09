@@ -1,0 +1,75 @@
+---
+title: Context Menu
+description: Displays a menu to the user — such as a set of actions or functions — triggered by a button.
+radixApiReference: https://www.radix-ui.com/docs/primitives/components/context-menu#api-reference
+---
+
+<ComponentDemo name="ContextMenu" />
+
+## <HeaderLink href="#installation" id="installation">Installation</HeaderLink>
+
+<Steps>
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>Install the Hover Card primitive from Radix UI</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install @radix-ui/react-context-menu</CodeCopyBlock>
+<Step>
+  Copy paste the following into <Code>ContextMenu.tsx</Code>
+</Step>
+<ComponentSource name="ContextMenu" />
+
+</Steps>
+
+## <HeaderLink href="#usage" id="usage">Usage</HeaderLink>
+
+<CodeCopyBlock>
+  ```tsx
+  <ContextMenu>
+    <ContextMenuTrigger>Right click</ContextMenuTrigger>
+    <ContextMenuContent>
+      <ContextMenuItem>Profile</ContextMenuItem>
+      <ContextMenuItem>Billing</ContextMenuItem>
+      <ContextMenuItem>Team</ContextMenuItem>
+      <ContextMenuItem>Subscription</ContextMenuItem>
+    </ContextMenuContent>
+  </ContextMenu>
+  ```
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy" id="anatomy">Anatomy</HeaderLink>
+
+<CodeBlock>
+  ```tsx
+  <ContextMenu>
+    <ContextMenuTrigger></ContextMenuTrigger>
+    <ContextMenuContent>
+      <ContextMenuItem>
+        <ContextMenuShortcut></ContextMenuShortcut>
+      </ContextMenuItem>
+      <ContextMenuSub>
+        <ContextMenuSubTrigger></ContextMenuSubTrigger>
+        <ContextMenuSubContent>
+          <ContextMenuItem>
+            <ContextMenuShortcut></ContextMenuShortcut>
+          </ContextMenuItem>
+          <ContextMenuSeparator />
+        </ContextMenuSubContent>
+      </ContextMenuSub>
+      <ContextMenuSeparator />
+      <ContextMenuCheckboxItem checked>
+        <ContextMenuShortcut></ContextMenuShortcut>
+      </ContextMenuCheckboxItem>
+      <ContextMenuSeparator />
+      <ContextMenuRadioGroup>
+        <ContextMenuLabel>People</ContextMenuLabel>
+        <ContextMenuSeparator />
+        <ContextMenuRadioItem></ContextMenuRadioItem>
+      </ContextMenuRadioGroup>
+    </ContextMenuContent>
+  </ContextMenu>
+  ```
+</CodeBlock>

@@ -35,6 +35,7 @@ import DemoTooltip from "@/components/demo/DemoTooltip";
 import DemoTextarea from "@/components/demo/DemoTextarea";
 
 import DemoButton from "@/components/demo/DemoButton";
+import DemoContextMenu from "@/components/demo/DemoContextMenu";
 
 const page = () => {
   return (
@@ -77,6 +78,7 @@ const page = () => {
         <DemoDropdownMenu />
         <DemoNavigationMenu />
         <DemoMenubar />
+        <DemoContextMenu />
         <DemoCommand />
         <DemoAutocomplete />
         <DemoForm />

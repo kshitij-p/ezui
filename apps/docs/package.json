@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "pnpm buildAll && next build",
     "start": "next start ",
     "dev": "next dev -p 3002",
     "lint": "next lint",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next",
     "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\"",
     "buildComps": "ts-node-esm ./src/scripts/buildComponentsJson.ts",
-    "buildRegistry": "ts-node-esm ./src/scripts/buildRegistry.ts"
+    "buildRegistry": "ts-node-esm ./src/scripts/buildRegistry.ts",
+    "buildAll": "pnpm buildComps && pnpm buildRegistry"
   },
   "dependencies": {
     "@ezui/cli": "workspace:*",
@@ -21,6 +22,7 @@
     "@radix-ui/react-avatar": "^1.0.3",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-collapsible": "^1.0.3",
+    "@radix-ui/react-context-menu": "^2.1.4",
     "@radix-ui/react-dialog": "^1.0.4",
     "@radix-ui/react-dropdown-menu": "^2.0.5",
     "@radix-ui/react-hover-card": "^1.0.6",
