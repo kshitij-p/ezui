@@ -87,12 +87,12 @@ const MusicArtwork = ({
 }) => {
   return (
     <ContextMenu>
-      <ContextMenuTrigger>
+      <ContextMenuTrigger asChild>
         <div {...rest} className={cn("group w-[250px] shrink-0 cursor-pointer space-y-3", className)} key={song.name}>
-          <div className="overflow-hidden rounded-md">
+          <div className="w-full overflow-hidden rounded-md">
             <Image
               className={cn(
-                "h-auto w-auto scale-100 object-cover transition ease-in hover:scale-105",
+                "h-auto w-full scale-100 object-cover transition ease-in hover:scale-105",
                 aspectRatio === "portrait" ? "aspect-[3/4]" : "aspect-square"
               )}
               width={364}
@@ -432,8 +432,8 @@ const Music = () => {
                               image: "/examples/music/stTmbte.jpeg",
                               name: "Take Me Back To Eden",
                               artist: "Sleep Token",
-                              width: 225,
-                              height: 225,
+                              width: 640,
+                              height: 640,
                             },
                             {
                               image: "/examples/music/badOmensDotm.webp",
