@@ -1,4 +1,14 @@
 import { Button } from "@/components/ui/Button";
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuSeparator,
+  ContextMenuSub,
+  ContextMenuSubContent,
+  ContextMenuSubTrigger,
+  ContextMenuTrigger,
+} from "@/components/ui/ContextMenu";
 
 import {
   Dialog,
@@ -32,8 +42,35 @@ import { ScrollArea, ScrollBar } from "@/components/ui/ScrollArea";
 import { Separator } from "@/components/ui/Separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import { cn } from "@/lib/utils";
-import { Globe, Grid, Library, ListMusic, Mic, Music2, PlayCircle, Podcast, Radio, User2 } from "lucide-react";
+import {
+  Globe,
+  Grid,
+  Library,
+  ListMusic,
+  Mic,
+  Music2,
+  PlayCircle,
+  PlusCircle,
+  Podcast,
+  Radio,
+  User2,
+} from "lucide-react";
 import Image from "next/image";
+
+const playlists = [
+  { text: "Metal and Rock", icon: PlayCircle, active: false },
+  { text: "Pop Punk", icon: ListMusic },
+  { text: "Random", icon: ListMusic },
+  { text: "Recently Added", icon: ListMusic },
+  { text: "Top Songs", icon: ListMusic },
+  { text: "Top Artists", icon: ListMusic },
+  { text: "Top Albums", icon: ListMusic },
+  { text: "Take Me Back To Eden", icon: ListMusic },
+  { text: "Sleep Token Discography", icon: ListMusic },
+  { text: "Lorna Shore Discography", icon: ListMusic },
+  { text: "Top of the Core", icon: ListMusic },
+  { text: "Top All Time", icon: ListMusic },
+];
 
 const MusicArtwork = ({
   song,
@@ -49,25 +86,54 @@ const MusicArtwork = ({
   aspectRatio?: "portrait" | "3/4";
 }) => {
   return (
-    <div {...rest} className={cn("group w-[250px] shrink-0 cursor-pointer space-y-3", className)} key={song.name}>
-      <div className="overflow-hidden rounded-md">
-        {/* Todo add a context menu here */}
-        <Image
-          className={cn(
-            "h-auto w-auto scale-100 object-cover transition ease-in hover:scale-105",
-            aspectRatio === "portrait" ? "aspect-[3/4]" : "aspect-square"
-          )}
-          width={364}
-          height={366}
-          src={song.image}
-          alt={`Cover image of the song ${song.name} by ${song.artist}`}
-        />
-      </div>
-      <div className="space-y-1">
-        <h3 className="text-sm font-medium">{song.name}</h3>
-        <p className="text-xs text-light-text">{song.artist}</p>
-      </div>
-    </div>
+    <ContextMenu>
+      <ContextMenuTrigger>
+        <div {...rest} className={cn("group w-[250px] shrink-0 cursor-pointer space-y-3", className)} key={song.name}>
+          <div className="overflow-hidden rounded-md">
+            <Image
+              className={cn(
+                "h-auto w-auto scale-100 object-cover transition ease-in hover:scale-105",
+                aspectRatio === "portrait" ? "aspect-[3/4]" : "aspect-square"
+              )}
+              width={364}
+              height={366}
+              src={song.image}
+              alt={`Cover image of the song ${song.name} by ${song.artist}`}
+            />
+          </div>
+          <div className="space-y-1">
+            <h3 className="text-sm font-medium">{song.name}</h3>
+            <p className="text-xs text-light-text">{song.artist}</p>
+          </div>
+        </div>
+      </ContextMenuTrigger>
+      <ContextMenuContent className="min-w-[10rem]">
+        <ContextMenuItem>Add to library</ContextMenuItem>
+        <ContextMenuSub>
+          <ContextMenuSubTrigger>Add to playlist</ContextMenuSubTrigger>
+          <ContextMenuSubContent className="min-w-[10rem]">
+            <ContextMenuItem>
+              <PlusCircle className="mr-2 h-4 w-4" />
+              New Playlist
+            </ContextMenuItem>
+            <ContextMenuSeparator />
+            {playlists.slice(0, 6).map((playlist) => (
+              <ContextMenuItem key={playlist.text}>
+                <playlist.icon className="mr-2 h-4 w-4" />
+                {playlist.text}
+              </ContextMenuItem>
+            ))}
+          </ContextMenuSubContent>
+        </ContextMenuSub>
+        <ContextMenuSeparator />
+        <ContextMenuItem>Play next</ContextMenuItem>
+        <ContextMenuItem>Play later</ContextMenuItem>
+        <ContextMenuSeparator />
+        <ContextMenuItem>Like</ContextMenuItem>
+        <ContextMenuItem>Share</ContextMenuItem>
+        <ContextMenuItem>Create station</ContextMenuItem>
+      </ContextMenuContent>
+    </ContextMenu>
   );
 };
 
@@ -262,20 +328,7 @@ const Music = () => {
                 {
                   title: "Playlists",
                   scrollable: true,
-                  items: [
-                    { text: "Metal and Rock", icon: PlayCircle, active: false },
-                    { text: "Pop Punk", icon: ListMusic },
-                    { text: "Random", icon: ListMusic },
-                    { text: "Recently Added", icon: ListMusic },
-                    { text: "Top Songs", icon: ListMusic },
-                    { text: "Top Artists", icon: ListMusic },
-                    { text: "Top Albums", icon: ListMusic },
-                    { text: "Take Me Back To Eden", icon: ListMusic },
-                    { text: "Sleep Token Discography", icon: ListMusic },
-                    { text: "Lorna Shore Discography", icon: ListMusic },
-                    { text: "Top of the Core", icon: ListMusic },
-                    { text: "Top All Time", icon: ListMusic },
-                  ],
+                  items: playlists,
                 },
               ].map((group) => (
                 <div className={"space-y-2 px-2"} key={group.title}>
@@ -321,31 +374,43 @@ const Music = () => {
                               image: "/examples/music/stTheApparition.png",
                               name: "The Apparition",
                               artist: "Sleep Token",
+                              width: 863,
+                              height: 863,
                             },
                             {
                               image: "/examples/music/stTheSummoning.webp",
                               name: "The Summoning",
                               artist: "Sleep Token",
+                              width: 640,
+                              height: 640,
                             },
                             {
                               image: "/examples/music/badOmensDotm.webp",
                               name: "The Grey",
                               artist: "Bad Omens",
+                              width: 660,
+                              height: 660,
                             },
                             {
                               image: "/examples/music/lornaEp.webp",
                               name: "Of The Abyss",
                               artist: "Lorna Shore",
+                              width: 640,
+                              height: 640,
                             },
                             {
                               image: "/examples/music/polarisTdom.jpeg",
                               name: "Masochist",
                               artist: "Polaris",
+                              width: 640,
+                              height: 640,
                             },
                             {
                               image: "/examples/music/weekndAfterHours.jpg",
                               name: "After Hours",
                               artist: "The Weeknd",
+                              width: 600,
+                              height: 600,
                             },
                           ].map((song) => (
                             <MusicArtwork song={song} />
@@ -367,31 +432,43 @@ const Music = () => {
                               image: "/examples/music/stTmbte.jpeg",
                               name: "Take Me Back To Eden",
                               artist: "Sleep Token",
+                              width: 225,
+                              height: 225,
                             },
                             {
                               image: "/examples/music/badOmensDotm.webp",
                               name: "THE DEATH OF PEACE OF MIND",
                               artist: "Bad Omens",
+                              width: 660,
+                              height: 660,
                             },
                             {
                               image: "/examples/music/stSundowning.jpeg",
                               name: "Sundowning",
                               artist: "Sleep Token",
+                              width: 640,
+                              height: 640,
                             },
                             {
                               image: "/examples/music/lornaEp.webp",
                               name: "...And I Return To Nothingness - EP",
                               artist: "Lorna Shore",
+                              width: 640,
+                              height: 640,
                             },
                             {
                               image: "/examples/music/polarisTdom.jpeg",
                               name: "The Death of Me",
                               artist: "Polaris",
+                              width: 640,
+                              height: 640,
                             },
                             {
                               image: "/examples/music/weekndAfterHours.jpg",
                               name: "After Hours",
                               artist: "The Weeknd",
+                              width: 600,
+                              height: 600,
                             },
                           ].map((song) => (
                             <MusicArtwork className="w-[150px]" song={song} aspectRatio="3/4" />

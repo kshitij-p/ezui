@@ -40,8 +40,7 @@ const SidebarContent = () => {
           {group.items.length > 0 && (
             <nav className="flex flex-col gap-2">
               {group.items.map((item) => (
-                //Todo flip this prefetch to true when docs for all comps are ready
-                <SidebarLink prefetch={false} href={item.path} key={item.title} active={item.path === pathName}>
+                <SidebarLink href={item.path} key={item.title} active={item.path === pathName}>
                   {item.title}
                 </SidebarLink>
               ))}
