@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { MDXComponents } from "mdx/types";
 import ComponentDemo from "./ComponentDemo";
 
-import Link from "next/link";
 import CodeBlock from "./CodeBlock";
 import { Code } from "@/components/ui/Code";
 import React from "react";
@@ -15,16 +14,7 @@ import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, Tabl
 import CodeCopyBlock from "./CodeCopyBlock";
 import ComponentSource from "./ComponentSource";
 import { Badge } from "../ui/Badge";
-
-const MdxLink = ({ className, ...rest }: React.ComponentPropsWithoutRef<typeof Link>) => (
-  <Link
-    {...rest}
-    className={cn(
-      "relative underline decoration-border underline-offset-4 transition hover:text-foreground/75 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/75 focus-visible:ring-offset-4 focus-visible:ring-offset-background",
-      className
-    )}
-  />
-);
+import MdxLink from "./MdxLink";
 
 const mdxComponents = {
   h1: ({ className, ...rest }: React.HTMLAttributes<HTMLHeadingElement>) => (

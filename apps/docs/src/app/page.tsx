@@ -1,13 +1,9 @@
 import { Button } from "@/components/ui/Button";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 
 import Link from "next/link";
 
-import Music from "./examples/Music";
-import Dashboard from "./examples/Dashboard";
-import Cards from "./examples/Cards";
-import Forms from "./examples/Forms";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card";
 import Image from "next/image";
@@ -17,6 +13,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/Accordion";
 import MakeToastBtn from "./docs/hero/MakeToastBtn";
 import { Metadata } from "next";
+import ExampleTabs from "./examples/ExampleTabs";
 
 export const metadata: Metadata = {
   title: "Ezui",
@@ -170,32 +167,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div id="examples" className="container mx-auto flex w-full flex-col px-6 py-8 xl:max-w-[1400px]">
-        <div className="mt-10 lg:mt-20">
-          <Tabs defaultValue="dashboard">
-            <TabsList className="max-w-full justify-normal overflow-y-auto">
-              <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
-              <TabsTrigger value="cards">Cards</TabsTrigger>
-              <TabsTrigger value="forms">Forms</TabsTrigger>
-              <TabsTrigger value="music">Music</TabsTrigger>
-            </TabsList>
-            <div className="mt-3 overflow-hidden rounded-xl border shadow">
-              <TabsContent tabIndex={-1} value="dashboard">
-                <Dashboard />
-              </TabsContent>
-              <TabsContent tabIndex={-1} value="cards">
-                <Cards />
-              </TabsContent>
-              <TabsContent tabIndex={-1} value="forms">
-                <Forms />
-              </TabsContent>
-              <TabsContent tabIndex={-1} className="mt-0" value="music">
-                <Music />
-              </TabsContent>
-            </div>
-          </Tabs>
-        </div>
-      </div>
+      <ExampleTabs />
     </div>
   );
 };

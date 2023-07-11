@@ -189,10 +189,10 @@ const Navbar = () => {
             </button>
           </li>
           <li className="inline-flex items-center justify-center">
-            {/* Todo add link to github when its made public */}
             <Link
               className="group rounded-sm p-0.5 focus:outline-2 focus-visible:outline-dashed focus-visible:outline-primary"
-              href="/"
+              href="https://github.com/kshitij-p/ezui"
+              target="_blank"
             >
               <svg className="h-5 w-5 group-focus-visible:text-primary" viewBox="0 0 438.549 438.549">
                 <path
