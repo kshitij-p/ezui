@@ -1,11 +1,9 @@
-# Ezui
+# EZ UI - Composable React Component Library
 
-## Components missing from shadcn
+![A screenshot of the Ezui website's home page](https://github.com/kshitij-p/ezui/blob/main/apps/docs/public/screenshots/homepage.png)
 
-### Alert
+EZ UI is a copy-pastable composable React component library designed to make building user interfaces easier. Fully own your ui and build beautiful interfaces with components that you can fully customize to match your design system. Streamline your development process by making one-off changes not feel unnecessarily hard.
 
-### Calendar
+## Installation
 
-### Data Table
-
-### Date Picker
+Follow the docs on the [website](https://ezui.vercel.app/docs)
