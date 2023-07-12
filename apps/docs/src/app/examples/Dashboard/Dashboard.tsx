@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/Select";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 
 import { CreditCard, DollarSign, Download, Users } from "lucide-react";
 import Chart from "./Chart";
@@ -52,10 +52,10 @@ const Dashboard = () => {
               </SelectTrigger>
             </Select>
             <div className="flex-items-center flex gap-4">
-              <p>Overview</p>
-              <p>Customers</p>
-              <p>Products</p>
-              <p>Settings</p>
+              <button disabled>Overview</button>
+              <button disabled>Customers</button>
+              <button disabled>Products</button>
+              <button disabled>Settings</button>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -94,92 +94,94 @@ const Dashboard = () => {
                 Settings
               </TabsTrigger>
             </TabsList>
+            <TabsContent className="mt-4 space-y-4" value="item-1">
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                {[
+                  { title: "Total Revenue", value: "$45,231.89", subtext: "+20.1% from last month", icon: DollarSign },
+                  { title: "Sales", value: "+2500", subtext: "+10.7% from last month", icon: CreditCard },
+                  { title: "Active Users", value: "+500", subtext: "+7.6% from last month", icon: Users },
+                  { title: "New Users", value: "+200", subtext: "-0.5% from last month", icon: UserPlus },
+                ].map((card) => (
+                  <Card className="rounded-xl" key={card.title}>
+                    <CardHeader className="flex-row items-center justify-between pb-2">
+                      <CardTitle className="text-sm">{card.title}</CardTitle>
+                      <card.icon className="h-4 w-4 text-light-text" />
+                    </CardHeader>
+                    <CardContent className="flex flex-col">
+                      <b className="bold text-2xl">{card.value}</b>
+                      <p className="text-xs text-light-text">{card.subtext}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-7">
+                <div className="col-span-4 grid place-items-end rounded-md border">
+                  <Chart />
+                </div>
+                <div className="col-span-3">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Recent Sales</CardTitle>
+                      <CardDescription>You made 265 sales this month</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="flex flex-col gap-6">
+                        {[
+                          {
+                            name: "Olivia Martin",
+                            email: "olivia.martin@gmail.com",
+                            sales: "1999",
+                            image: "/cat.jpg",
+                            fallback: "OM",
+                          },
+                          {
+                            name: "Sir Meowsers",
+                            email: "olivia.martin@gmail.com",
+                            sales: "1999",
+                            image: "/cat2.png",
+                            fallback: "SM",
+                          },
+                          {
+                            name: "Meowsalott",
+                            email: "olivia.martin@gmail.com",
+                            sales: "1999",
+                            image: "/cat3.png",
+                            fallback: "MT",
+                          },
+                          {
+                            name: "Orang Cat",
+                            email: "olivia.martin@gmail.com",
+                            sales: "1999",
+                            image: "/cat4.png",
+                            fallback: "OC",
+                          },
+                          {
+                            name: "El Catto",
+                            email: "olivia.martin@gmail.com",
+                            sales: "1999",
+                            image: "/cat5.png",
+                            fallback: "EC",
+                          },
+                        ].map((item) => (
+                          <li className="flex items-center gap-2" key={item.name}>
+                            <Avatar>
+                              <AvatarImage className="object-cover" src={item.image} alt={`@${item.name}`} />
+                              <AvatarFallback>{item.fallback}</AvatarFallback>
+                            </Avatar>
+                            <div className="flex flex-col text-sm">
+                              <b className="font-medium leading-none">{item.name}</b>
+                              <p className="text-light-text">{item.email}</p>
+                            </div>
+                            <p className="ml-auto font-semibold">{`+$${item.sales}`}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </TabsContent>
           </Tabs>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {[
-              { title: "Total Revenue", value: "$45,231.89", subtext: "+20.1% from last month", icon: DollarSign },
-              { title: "Sales", value: "+2500", subtext: "+10.7% from last month", icon: CreditCard },
-              { title: "Active Users", value: "+500", subtext: "+7.6% from last month", icon: Users },
-              { title: "New Users", value: "+200", subtext: "-0.5% from last month", icon: UserPlus },
-            ].map((card) => (
-              <Card className="rounded-xl" key={card.title}>
-                <CardHeader className="flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-sm">{card.title}</CardTitle>
-                  <card.icon className="h-4 w-4 text-light-text" />
-                </CardHeader>
-                <CardContent className="flex flex-col">
-                  <b className="bold text-2xl">{card.value}</b>
-                  <p className="text-xs text-light-text">{card.subtext}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-7">
-            <div className="col-span-4 grid place-items-end rounded-md border">
-              <Chart />
-            </div>
-            <div className="col-span-3">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Recent Sales</CardTitle>
-                  <CardDescription>You made 265 sales this month</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="flex flex-col gap-6">
-                    {[
-                      {
-                        name: "Olivia Martin",
-                        email: "olivia.martin@gmail.com",
-                        sales: "1999",
-                        image: "/cat.jpg",
-                        fallback: "OM",
-                      },
-                      {
-                        name: "Sir Meowsers",
-                        email: "olivia.martin@gmail.com",
-                        sales: "1999",
-                        image: "/cat2.png",
-                        fallback: "SM",
-                      },
-                      {
-                        name: "Meowsalott",
-                        email: "olivia.martin@gmail.com",
-                        sales: "1999",
-                        image: "/cat3.png",
-                        fallback: "MT",
-                      },
-                      {
-                        name: "Orang Cat",
-                        email: "olivia.martin@gmail.com",
-                        sales: "1999",
-                        image: "/cat4.png",
-                        fallback: "OC",
-                      },
-                      {
-                        name: "El Catto",
-                        email: "olivia.martin@gmail.com",
-                        sales: "1999",
-                        image: "/cat5.png",
-                        fallback: "EC",
-                      },
-                    ].map((item) => (
-                      <li className="flex items-center gap-2" key={item.name}>
-                        <Avatar>
-                          <AvatarImage className="object-cover" src={item.image} alt={`@${item.name}`} />
-                          <AvatarFallback>{item.fallback}</AvatarFallback>
-                        </Avatar>
-                        <div className="flex flex-col text-sm">
-                          <b className="font-medium leading-none">{item.name}</b>
-                          <p className="text-light-text">{item.email}</p>
-                        </div>
-                        <p className="ml-auto font-semibold">{`+$${item.sales}`}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
         </div>
       </div>
     </div>

@@ -186,6 +186,7 @@ const Navbar = () => {
               <span suppressHydrationWarning>
                 {hasMounted && !isLightTheme ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
               </span>
+              <p className="sr-only">Switch current preferred theme mode to {isLightTheme ? "light" : "dark"}</p>
             </button>
           </li>
           <li className="inline-flex items-center justify-center">
@@ -194,6 +195,7 @@ const Navbar = () => {
               href="https://github.com/kshitij-p/ezui"
               target="_blank"
             >
+              <p className="sr-only">Github profile link</p>
               <svg className="h-5 w-5 group-focus-visible:text-primary" viewBox="0 0 438.549 438.549">
                 <path
                   fill="currentColor"

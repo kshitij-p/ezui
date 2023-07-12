@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
 
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 
 import Link from "next/link";
 
@@ -96,9 +96,11 @@ const Home = () => {
                     className="h-auto rounded-full px-2 py-2"
                   >
                     <Rewind className="h-2.5 w-2.5 fill-accent/50 text-border xl:h-3 xl:w-3 2xl:h-4 2xl:w-4" />
+                    <p className="sr-only">Rewind current song to start</p>
                   </Button>
                   <Button variants={{ type: "secondary", size: "xs" }} className="h-auto rounded-full px-2 py-2">
                     <Play className="h-2.5 w-2.5 fill-accent/50 text-border xl:h-3 xl:w-3 2xl:h-4 2xl:w-4" />
+                    <p className="sr-only">Play music</p>
                   </Button>
                   <Button
                     disabled
@@ -106,6 +108,7 @@ const Home = () => {
                     className="h-auto rounded-full px-2 py-2"
                   >
                     <FastForward className="h-2.5 w-2.5 fill-accent/50 text-border xl:h-3 xl:w-3 2xl:h-4 2xl:w-4" />
+                    <p className="sr-only">Skip current song</p>
                   </Button>
                 </div>
               </div>
@@ -161,6 +164,11 @@ const Home = () => {
                     Punk
                   </TabsTrigger>
                 </TabsList>
+                <div className="hidden">
+                  <TabsContent value="metal" />
+                  <TabsContent value="rock" />
+                  <TabsContent value="punk" />
+                </div>
               </Tabs>
               <MakeToastBtn />
             </div>

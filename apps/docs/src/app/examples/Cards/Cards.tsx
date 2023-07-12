@@ -37,8 +37,8 @@ const Cards = () => {
           className="object-cover"
           src={"/examples/cards.png"}
           alt={"An example of a music webapp creating using Ezui"}
-          width={1350}
-          height={811}
+          width={1011}
+          height={794}
         />
       </div>
       <div className="hidden w-full items-start justify-center gap-6 p-8 md:grid lg:grid-cols-2 xl:grid-cols-3">

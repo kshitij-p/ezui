@@ -111,7 +111,7 @@ const Forms = () => {
           src={"/examples/forms.png"}
           alt={"An example of a forms creating using Ezui"}
           width={1350}
-          height={811}
+          height={724}
         />
       </div>
       <div className="hidden flex-col p-8 md:flex">

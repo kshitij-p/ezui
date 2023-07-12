@@ -145,8 +145,8 @@ const Music = () => {
           className="object-cover"
           src={"/examples/music.png"}
           alt={"An example of a music webapp creating using Ezui"}
-          width={1350}
-          height={811}
+          width={1082}
+          height={822}
         />
       </div>
 
