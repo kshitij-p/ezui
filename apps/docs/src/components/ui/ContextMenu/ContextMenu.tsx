@@ -80,7 +80,7 @@ const ContextMenuItem = React.forwardRef<
   <RadixContextMenu.Item
     {...rest}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm border border-transparent px-2 py-1.5 text-sm outline-none focus:border-border focus:bg-accent/50 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex cursor-default select-none items-center rounded border border-transparent px-2 py-1.5 text-sm outline-none focus:border-border focus:bg-accent/50 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       inset && "pl-8",
       className
     )}
