@@ -36,6 +36,7 @@ import DemoTextarea from "@/components/demo/DemoTextarea";
 
 import DemoButton from "@/components/demo/DemoButton";
 import DemoContextMenu from "@/components/demo/DemoContextMenu";
+import DemoCalendar from "@/components/demo/DemoCalendar";
 
 const page = () => {
   return (
@@ -68,6 +69,7 @@ const page = () => {
         <DemoToggle />
         <DemoToggleGroup />
         <DemoTabs />
+        <DemoCalendar />
         <DemoScrollArea />
         <DemoToast />
         <DemoCollapsible />

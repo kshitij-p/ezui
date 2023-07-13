@@ -1,0 +1,53 @@
+---
+title: Calendar
+description: A date field component that allows users to enter and edit date.
+otherApiReference: https://react-day-picker.js.org/start
+---
+
+<ComponentDemo name="Calendar" />
+
+## <HeaderLink href="#installation" id="installation">Installation</HeaderLink>
+
+<Steps>
+
+<Step className="inline-flex items-center gap-2 [&>p]:mt-0">
+  Follow the
+  <Link href={"/docs/getting-started"}>Getting Started</Link>
+  instructions to setup your project
+</Step>
+<Step>
+Calendar is built using some shared variables created in <Code>
+  \<Button />
+</Code> component.
+
+So install it or atleast create the <Code>buttonVariants</Code> cva object by following the instructions for the <Link href="/docs/components/Button">Button</Link> component.
+
+</Step>
+<Step>Install the primitive from react-day-picker</Step>
+<CodeCopyBlock className="mt-2 py-4">npm install react-day-picker date-fns</CodeCopyBlock>
+<Step>
+  Copy paste the following into <Code>Calendar.tsx</Code>
+</Step>
+<ComponentSource name="Calendar" />
+
+</Steps>
+
+## <HeaderLink href="#usage" id="usage">Usage</HeaderLink>
+
+<CodeCopyBlock>
+  ```tsx
+const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+return <Calendar mode="single" selected={date} onSelect={setDate} className="rounded-md border" />
+
+````
+</CodeCopyBlock>
+
+## <HeaderLink href="#anatomy" id="anatomy">Anatomy</HeaderLink>
+
+<CodeBlock>
+```tsx
+<Calendar />
+````
+
+</CodeBlock>
