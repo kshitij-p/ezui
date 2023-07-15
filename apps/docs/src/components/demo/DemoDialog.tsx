@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/Dialog";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
+import { Label } from "@/components/ui/Label";
 
 const DemoDialog = () => {
   return (
@@ -28,11 +29,11 @@ const DemoDialog = () => {
           </DialogHeader>
           <div className="grid gap-4">
             <div className="grid grid-cols-4 items-center gap-4">
-              <label htmlFor="name">Name</label>
+              <Label htmlFor="name">Name</Label>
               <Input variants={{ size: "sm" }} id="name" defaultValue="Pedro Duarte" className="col-span-3" />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
-              <label htmlFor="username">Username</label>
+              <Label className="truncate" htmlFor="username">Username</Label>
               <Input variants={{ size: "sm" }} id="username" defaultValue="@peduarte" className="col-span-3" />
             </div>
           </div>
