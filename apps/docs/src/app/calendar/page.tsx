@@ -1,12 +1,12 @@
-import DemoCalendar from '@/components/demo/DemoCalendar'
-import React from 'react'
+import DemoDatePicker from "@/components/demo/DemoDatePicker";
+import React from "react";
 
 const page = () => {
   return (
     <div>
-        <DemoCalendar />
+      <DemoDatePicker />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

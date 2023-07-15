@@ -12,6 +12,7 @@ export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 const Calendar = ({ className, classNames, showOutsideDays = true, ...rest }: CalendarProps) => {
   return (
     <DayPicker
+      {...rest}
       showOutsideDays={showOutsideDays}
       className={cn("p-3", className)}
       classNames={{
@@ -46,7 +47,6 @@ const Calendar = ({ className, classNames, showOutsideDays = true, ...rest }: Ca
         IconLeft: ({ className, ...rest }) => <ChevronLeft {...rest} className={cn("h-4 w-4", className)} />,
         IconRight: ({ className, ...rest }) => <ChevronRight {...rest} className={cn("h-4 w-4", className)} />,
       }}
-      {...rest}
     />
   );
 };

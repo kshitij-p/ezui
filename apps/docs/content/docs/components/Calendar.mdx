@@ -38,8 +38,12 @@ So install it or atleast create the <Code>buttonVariants</Code> cva object by fo
   ```tsx
 const [date, setDate] = React.useState<Date | undefined>(new Date())
 
-return <Calendar mode="single" selected={date} onSelect={setDate} className="rounded-md border" />
-
+<Calendar
+    mode="single"
+    selected={date}
+    onSelect={setDate}
+    className="rounded-md border"
+/>
 ````
 </CodeCopyBlock>
 
