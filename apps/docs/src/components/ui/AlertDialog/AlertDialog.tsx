@@ -93,7 +93,7 @@ const AlertDialogFooter = React.forwardRef(
   ) => (
     <div
       {...rest}
-      className={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className)}
+      className={cn("flex flex-col-reverse gap-2 sm:flex-row sm:justify-end", className)}
       ref={passedRef}
     >
       {children}
@@ -126,7 +126,7 @@ const AlertDialogCancel = React.forwardRef<
   React.ElementRef<typeof RadixAlertDialog.Cancel>,
   React.ComponentPropsWithoutRef<typeof RadixAlertDialog.Cancel>
 >(({ className, ...rest }, passedRef) => (
-  <RadixAlertDialog.Cancel {...rest} className={cn("mt-2 sm:mt-0", className)} ref={passedRef} />
+  <RadixAlertDialog.Cancel {...rest} className={cn(className)} ref={passedRef} />
 ));
 AlertDialogCancel.displayName = RadixAlertDialog.Cancel.displayName;
 
