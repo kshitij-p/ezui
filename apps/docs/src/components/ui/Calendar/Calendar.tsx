@@ -39,7 +39,8 @@ const Calendar = ({ className, classNames, showOutsideDays = true, ...rest }: Ca
         day_today: "bg-primary text-black font-semibold",
         day_outside: "text-light-text opacity-50",
         day_disabled: "text-light-text opacity-50",
-        day_range_middle: "aria-selected:bg-accent",
+        day_range_middle: "aria-selected:bg-accent/50",
+        day_range_end: "aria-selected:bg-accent",
         day_hidden: "invisible",
         ...classNames,
       }}
