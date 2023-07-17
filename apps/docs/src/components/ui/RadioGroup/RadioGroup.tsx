@@ -46,6 +46,7 @@ const RadioGroupItem = React.forwardRef<
       ref={passedRef}
     >
       <RadixRadioGroup.Indicator className="flex items-center justify-center">
+        {/* Todo fix this not being centered properly on ipad and small screens */}
         <Circle className="h-2.5 w-2.5 fill-primary text-primary group-aria-[invalid=true]:fill-invalid group-aria-[invalid=true]:text-invalid" />
       </RadixRadioGroup.Indicator>
     </RadixRadioGroup.Item>
