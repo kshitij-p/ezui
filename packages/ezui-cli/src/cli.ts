@@ -17,7 +17,14 @@ const addAction = async (
     dir: string;
   }>
 ) => {
-  const allComponents = await getRegistry();
+  const allComponents = (await (await fetch(`${REGISTRY_API}/components`)).json()) as {
+    [k: string]: {
+      files: Array<{
+        fileName: string;
+        fileContent: string;
+      }>;
+    };
+  };
 
   if (!allComponents) {
     error("Failed to get component registry");
@@ -27,9 +34,6 @@ const addAction = async (
   if (passedName) {
     passedName = Object.keys(allComponents).find((name) => name.toLowerCase() === passedName?.toLowerCase());
   }
-
-  //Todo add a fancy screen :>
-  log(chalk.blue("Welcome to the ezui cli"));
 
   const compName =
     passedName && passedName in allComponents
@@ -105,6 +109,9 @@ program
   .description("A react component library")
   .version("0.1.0")
   .action(async () => {
+    //Todo add a fancy screen :>
+    log(chalk.blue("Welcome to the ezui cli"));
+
     const action = (
       await prompts({
         type: "select",
@@ -119,19 +126,6 @@ program
       return;
     }
   });
-
-const getRegistry = async () => {
-  const res = await fetch(`${REGISTRY_API}/components`);
-
-  return (await res.json()) as {
-    [k: string]: {
-      files: Array<{
-        fileName: string;
-        fileContent: string;
-      }>;
-    };
-  };
-};
 
 program
   .command("add")
