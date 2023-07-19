@@ -7,7 +7,8 @@ export default defineConfig({
   banner: {
     js: "'use client'",
   },
-  format: ["cjs", "esm"],
+  format: ["esm"],
   external: ["react"],
   dts: true,
+  target: "node16",
 });
