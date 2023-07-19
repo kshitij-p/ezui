@@ -45,7 +45,7 @@ const addAction = async (
           await prompts({
             type: "autocomplete",
             name: "value",
-            message: "Which component do you want to install",
+            message: "Which component do you want to install ?",
             choices: Object.keys(allComponents).map((title) => ({ title })),
           })
         ).value;
@@ -54,7 +54,7 @@ const addAction = async (
 
   if (!comp) {
     error(
-      `Couldnt find a component called ${compName}. This is most likely an error, please file a github issue about it.`
+      `Couldnt find a component called ${compName}. This is most likely a bug, please file a github issue about it.`
     );
     process.exit(1);
   }
@@ -71,7 +71,7 @@ const addAction = async (
       await prompts({
         type: "confirm",
         name: "value",
-        message: `Confirm installing ${compName} at ${compDir}`,
+        message: `Confirm installing ${compName} at ${compDir} ?`,
       })
     ).value
   ) {
