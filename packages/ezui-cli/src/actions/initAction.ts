@@ -2,7 +2,7 @@ import prompts from "prompts";
 import path from "path";
 import { existsSync } from "fs";
 import { mkdir, writeFile } from "fs/promises";
-import { log } from "../utils";
+import { REGISTRY_API, log } from "../utils";
 
 const createOrOverwrite = async ({ path, content, fileName }: { path: string; content: string; fileName?: string }) => {
   let exists = existsSync(path);
@@ -31,6 +31,12 @@ const initAction = async (
     dir: string;
   }>
 ) => {
+  const files = (await (await fetch(`${REGISTRY_API}/init`)).json()) as {
+    "styles/globals.css": string;
+    "tailwind.config.ts": string;
+    "lib/utils.ts": string;
+  };
+
   let rootDir = path.resolve(
     options.dir
       ? options.dir
@@ -73,10 +79,9 @@ const initAction = async (
     });
   }
 
-  //Todo create api route in apps/docs that has data for all the files needed for init
   await createOrOverwrite({
     path: path.join(rootDir, "src", "styles", "globals.css"),
-    content: "asdsad",
+    content: files["styles/globals.css"],
     fileName: "styles/globals.css",
   });
 
@@ -84,7 +89,7 @@ const initAction = async (
   //Todo create api route in apps/docs that has data for all the files needed for init
   await createOrOverwrite({
     path: path.join(rootDir, "tailwind.config.ts"),
-    content: "asdsad",
+    content: files["tailwind.config.ts"],
     fileName: "tailwind.config.ts",
   });
 
@@ -97,7 +102,7 @@ const initAction = async (
 
   await createOrOverwrite({
     path: path.join(rootDir, "src", "lib", "utils.ts"),
-    content: "utils.ts",
+    content: files["lib/utils.ts"],
     fileName: "lib/utils.ts",
   });
 
