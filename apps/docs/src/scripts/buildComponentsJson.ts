@@ -19,6 +19,60 @@ const validate = async () => {
   return true;
 };
 
+const deps = {
+  Accordion: ["@radix-ui/react-accordion", "lucide-react"],
+  AlertDialog: ["@radix-ui/react-alert-dialog"],
+  AspectRatio: ["@radix-ui/react-aspect-ratio"],
+  Autocomplete: [
+    "@/components/ui/Popover",
+    "@/components/ui/Command",
+    "@/components/ui/ScrollArea",
+    "@/components/ui/Select",
+  ],
+  Avatar: ["@radix-ui/react-avatar"],
+  Badge: ["class-variance-authority"],
+  Button: ["class-variance-authority", "@radix-ui/react-slot"],
+  Calendar: ["react-day-picker", "@/components/ui/Button"],
+  Card: [],
+  Checkbox: ["@radix-ui/react-checkbox", "lucide-react"],
+  Code: [],
+  Collapsible: ["@radix-ui/react-collapsible"],
+  Command: ["cmdk", "@/components/ui/ScrollArea", "@/components/ui/Dialog"],
+  ContextMenu: ["@radix-ui/react-context-menu", "lucide-react"],
+  Dialog: ["@radix-ui/react-dialog"],
+  DropdownMenu: ["@radix-ui/react-dropdown-menu", "lucide-react"],
+  Form: [
+    "@radix-ui/react-label",
+    "@radix-ui/react-slot",
+    "react-hook-form",
+    "@hookform/resolvers",
+    "zod",
+    "@/components/ui/Label",
+  ],
+  HoverCard: ["@radix-ui/react-hover-card"],
+  Input: ["class-variance-authority"],
+  Label: ["@radix-ui/react-label"],
+  Menubar: ["@radix-ui/react-menubar", "lucide-react"],
+  NavigationMenu: ["@radix-ui/react-navigation-menu", "class-variance-authority", "lucide-react"],
+  Popover: ["@radix-ui/react-popover"],
+  Progress: ["@radix-ui/react-progress"],
+  RadioGroup: ["@radix-ui/react-radio-group", "lucide-react"],
+  ScrollArea: ["@radix-ui/react-scroll-area"],
+  Select: ["@radix-ui/react-select", "lucide-react", "@/components/ui/ScrollArea"],
+  Separator: ["@radix-ui/react-separator"],
+  Sheet: ["@radix-ui/react-dialog", "class-variance-authority", "@/components/ui/Dialog"],
+  Skeleton: [],
+  Slider: ["@radix-ui/react-slider"],
+  Switch: ["@radix-ui/react-switch"],
+  Table: [],
+  Tabs: ["@radix-ui/react-tabs"],
+  Textarea: ["@/components/ui/Input"],
+  Toast: ["@radix-ui/react-toast", "class-variance-authority", "lucide-react"],
+  Toggle: ["@radix-ui/react-toggle", "class-variance-authority"],
+  ToggleGroup: ["@radix-ui/react-toggle-group", "@/components/ui/Toggle"],
+  Tooltip: ["@radix-ui/react-tooltip"],
+};
+
 const run = async () => {
   if (!(await validate())) {
     return;
@@ -34,6 +88,7 @@ const run = async () => {
   let compsData = {} as {
     [k: string]: {
       files: ComponentFile[];
+      deps: string[];
     };
   };
 
@@ -51,6 +106,7 @@ const run = async () => {
             let fileContent = await readFile(path.resolve(compPath, fileName), {
               encoding: "utf-8",
             });
+
             files[idx] = {
               fileName,
               fileContent,
@@ -60,8 +116,15 @@ const run = async () => {
       )
     );
 
+    let compDeps = deps[compName as keyof typeof deps];
+    if (!compDeps) {
+      console.log(`WARNING: Coulnd't find deps for ${compName}. Falling back to empty deps.`);
+      compDeps = [];
+    }
+
     compsData[compName] = {
       files,
+      deps: compDeps,
     };
 
     writeFileSync(COMPS_JSON_PATH, JSON.stringify(compsData), {
