@@ -9,7 +9,7 @@ const getLocation = async () => {
     type: "text",
     name: "value",
     message: "Where would you like to install ?",
-    initial: "./src/components",
+    initial: "./src/components/ui",
   });
 };
 
@@ -26,6 +26,7 @@ const addAction = async (
         fileName: string;
         fileContent: string;
       }>;
+      deps: string[];
     };
   };
 
@@ -34,6 +35,7 @@ const addAction = async (
     process.exit(1);
   }
 
+  //Todo check in pascal case as well as snake case
   if (passedName) {
     passedName = Object.keys(allComponents).find((name) => name.toLowerCase() === passedName?.toLowerCase());
   }
@@ -97,6 +99,10 @@ const addAction = async (
   );
 
   log(chalk.blue(`Successfully installed ${compName}`));
+  log(
+    `Please install the following with your package manager:\n`,
+    chalk.blue(comp.deps.filter((str) => !str.startsWith("@/components/ui/")).join(" "))
+  );
 };
 
 export default addAction;

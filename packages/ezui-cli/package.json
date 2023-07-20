@@ -16,7 +16,7 @@
     "devAdd": "tsup src/index.ts --dts && node ./dist/index.js add",
     "lint": "eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "test": "vitest run --coverage"
+    "test": "pnpm build && vitest run --coverage"
   },
   "devDependencies": {
     "@ezui/tsconfig": "workspace:*",
