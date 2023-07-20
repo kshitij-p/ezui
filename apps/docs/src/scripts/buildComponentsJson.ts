@@ -21,7 +21,7 @@ const validate = async () => {
 
 const deps = {
   Accordion: ["@radix-ui/react-accordion", "lucide-react"],
-  AlertDialog: ["@radix-ui/react-alert-dialog"],
+  AlertDialog: ["@radix-ui/react-alert-dialog", "@/components/ui/Dialog"],
   AspectRatio: ["@radix-ui/react-aspect-ratio"],
   Autocomplete: [
     "@/components/ui/Popover",
