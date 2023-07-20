@@ -22,19 +22,19 @@ const DemoCalendar = () => {
     <div className="flex w-full flex-col items-center gap-4">
       <div className="flex flex-col items-center gap-1">
         <b>Single Date Mode</b>
-        <Calendar className="rounded-md border" mode="single" selected={date} onSelect={setDate} />
+        <Calendar mode="single" selected={date} onSelect={setDate} />
       </div>
       <div className="flex flex-col items-center gap-1">
         <b>Multiple Dates Mode</b>
-        <Calendar className="rounded-md border" mode="multiple" selected={multipleDates} onSelect={setMultipleDates} />
+        <Calendar mode="multiple" selected={multipleDates} onSelect={setMultipleDates} />
       </div>
       <div className="flex flex-col items-center gap-1">
         <b>Range Mode</b>
-        <Calendar className="rounded-md border" mode="range" selected={rangeDate} onSelect={setRangeDate} />
+        <Calendar mode="range" selected={rangeDate} onSelect={setRangeDate} />
       </div>
       <div className="flex flex-col items-center gap-1">
         <b>Default Mode</b>
-        <Calendar className="rounded-md border" mode="default" />
+        <Calendar mode="default" />
       </div>
     </div>
   );

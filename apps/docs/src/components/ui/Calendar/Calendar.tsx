@@ -14,7 +14,7 @@ const Calendar = ({ className, classNames, showOutsideDays = true, ...rest }: Ca
     <DayPicker
       {...rest}
       showOutsideDays={showOutsideDays}
-      className={cn("p-3", className)}
+      className={cn("rounded-md border p-3 shadow-md", className)}
       classNames={{
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
         month: "space-y-4",
@@ -36,11 +36,12 @@ const Calendar = ({ className, classNames, showOutsideDays = true, ...rest }: Ca
           "h-9 w-9 p-0 font-normal aria-selected:opacity-100 border border-transparent inline-flex justify-center items-center rounded-md focus-visible:outline-none focus-visible:border-border/60 hover:bg-accent/50 aria-selected:border-border"
         ),
         day_selected: cn("bg-accent/50"),
-        day_today: "bg-primary text-black font-semibold",
+        day_today: "bg-primary font-semibold",
         day_outside: "text-light-text opacity-50",
         day_disabled: "text-light-text opacity-50",
-        day_range_middle: "aria-selected:bg-accent/50",
-        day_range_end: "aria-selected:bg-accent",
+        day_range_start: "rounded-r-none aria-selected:bg-accent",
+        day_range_middle: "rounded-none aria-selected:bg-accent/50",
+        day_range_end: "rounded-l-none aria-selected:bg-accent",
         day_hidden: "invisible",
         ...classNames,
       }}
