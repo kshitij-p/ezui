@@ -11,7 +11,8 @@
     "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\"",
     "buildComps": "ts-node-esm ./src/scripts/buildComponentsJson.ts",
     "buildRegistry": "ts-node-esm ./src/scripts/buildRegistry.ts",
-    "buildAll": "pnpm buildComps && pnpm buildRegistry"
+    "buildInit": "ts-node-esm ./src/scripts/buildInitJson.ts",
+    "buildAll": "pnpm buildComps && pnpm buildRegistry && pnpm buildInit"
   },
   "dependencies": {
     "@ezui/cli": "workspace:*",
