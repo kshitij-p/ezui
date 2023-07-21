@@ -10,6 +10,9 @@
   "files": [
     "dist/**"
   ],
+  "bin": {
+    "ezui": "./dist/index.js"
+  },
   "scripts": {
     "build": "rm -rf dist && tsup src/index.ts --dts",
     "dev": "tsup src/index.ts --dts && node ./dist/index.js",

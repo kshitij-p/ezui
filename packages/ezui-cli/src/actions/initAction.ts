@@ -86,7 +86,7 @@ const initAction = async (
   });
 
   log("Creating tailwind.config.ts");
-  //Todo create api route in apps/docs that has data for all the files needed for init
+
   await createOrOverwrite({
     path: path.join(rootDir, "tailwind.config.ts"),
     content: files["tailwind.config.ts"],
@@ -107,7 +107,11 @@ const initAction = async (
   });
 
   log(
-    `Done! Install tailwindcss and import styles/globals.css. Install the following dependencies with your package manager: class-variance-authority clsx tailwind-merge`
+    `Done! Here are your next steps:
+    1) Install tailwindcss and import styles/globals.css. 
+    2) Install the following dependencies with your package manager: class-variance-authority clsx tailwind-merge
+    
+    And that's it. Have a good day :D`
   );
 };
 

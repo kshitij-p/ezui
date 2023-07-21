@@ -99,6 +99,7 @@ const addAction = async (
   );
 
   log(chalk.blue(`Successfully installed ${compName}`));
+  //Todo do somethin for local comp deps - either install them by prompting for it or show the user the command to paste in to do that
   log(
     `Please install the following with your package manager:\n`,
     chalk.blue(comp.deps.filter((str) => !str.startsWith("@/components/ui/")).join(" "))
