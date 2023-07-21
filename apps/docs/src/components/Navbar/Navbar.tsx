@@ -112,7 +112,7 @@ const Navbar = () => {
       <nav className="flex items-center justify-between gap-4 px-6 py-4 text-lg md:justify-evenly md:px-8 [&>*]:shrink-0">
         <div className="flex items-center gap-6 font-light tracking-wide">
           <Link
-            className="underline-teal-anim font-semibold mix-blend-difference focus:outline-2 focus-visible:outline-dashed focus-visible:outline-primary dark:mix-blend-normal"
+            className="underline-teal-anim font-semibold focus:outline-2 focus-visible:outline-dashed focus-visible:outline-primary"
             href={"/"}
           >
             Ezui
