@@ -33,7 +33,9 @@ const CodeCopyBlock = ({ children, ...rest }: React.ComponentPropsWithoutRef<typ
         <div className="flex h-5 w-5 items-center justify-center ">{copied ? <Check /> : <Copy />}</div>
         <p className="sr-only">Copy code to clipboard</p>
       </button>
-      <div ref={codeRef}>{children}</div>
+      <div className="text-[hsl(213_31%_91%)]" ref={codeRef}>
+        {children}
+      </div>
     </CodeBlock>
   );
 };
