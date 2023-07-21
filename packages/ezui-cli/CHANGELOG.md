@@ -1,10 +1,4 @@
-# ezui
-
-## 0.3.0
-
-### Minor Changes
-
-- create v 0.1.0
+# ezui-cli
 
 ## 0.2.0
 
@@ -16,4 +10,4 @@
 
 ### Minor Changes
 
-- create v 0.1.0
+- create v 0.2.0

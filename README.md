@@ -7,6 +7,6 @@ EZ UI is a copy-pastable composable React component library designed to make bui
 ## Installation
 
 Use the cli to get started with: <br />
-`npx ezui-cli`
+`npx ezui-cli@latest`
 
 Follow the docs on the [website](https://ezui.vercel.app/docs)
