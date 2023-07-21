@@ -9,7 +9,5 @@
     "eslint-plugin-react": "7.28.0",
     "eslint-config-turbo": "^1.9.3"
   },
-  "publishConfig": {
-    "access": "public"
-  }
+  "private": "true"
 }
