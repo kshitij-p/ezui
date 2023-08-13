@@ -2,6 +2,17 @@ import { withContentlayer } from "next-contentlayer";
 
 /** @type {import("next").NextConfig} */
 const config = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'fake-img.com',
+        port: '',
+        pathname: '*/**',
+      },
+    ],
+    domains: ["https://fake-img.com"]
+  },
   reactStrictMode: true,
 
   typescript: {
